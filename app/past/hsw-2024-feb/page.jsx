@@ -7,6 +7,7 @@ import Link from "next/link";
 // icons
 import { FiTarget } from "react-icons/fi";
 import { IoCameraOutline } from "react-icons/io5";
+import { GiTargetPrize } from "react-icons/gi";
 
 
 
@@ -76,46 +77,58 @@ export default function PastHackathon() {
 			</div>
 
 			{/* photo gallery */}
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[5%]">
+			<div className="flex flex-col items-center justify-center w-full h-fit px-[5%]">
 				<h1 className="text-4xl self-start">Some Photos</h1>
 
 				<div className="w-full h-full p-2 grid grid-flow-column grid-cols-4 gap-2 ">
 					<Image src="/images/pizza.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
 					<Image src="/images/everyone.JPEG" className="rounded-2xl w-full h-full col-span-2" width={500} height={500} alt="not found" />
-					<div className="w-full h-full rounded bg-accent" />
+					<Image src="/images/introduction.jpg" className="rounded-2xl w-full h-full" width={500} height={500} alt="not found" />
 					<Image src="/images/organisers.JPEG" className=" rounded-2xl w-full h-full object-cover col-span-2" width={500} height={500} alt="not found" />
 					
-					<div className="w-full h-full rounded bg-accent" />
+					<Image src="/images/presentation.JPEG" className="rounded-2xl w-full h-full" width={500} height={500} alt="not found" />
 					<Link href="https://onedrive.live.com/?authkey=%21AGQXRe896Z0mers&id=DF91CDD1C74AC0FB%2110730&cid=DF91CDD1C74AC0FB" className="h-full w-full rounded-2xl bg-primary border border-accent hover:border-text flex flex-col justify-center items-center">
 						<p>View More Photos</p>
 						<IoCameraOutline />
 					</Link>
+				</div>
+			</div>
+
+			<div className="flex flex-col items-center justify-center w-full h-fit px-[5%]">
+				<h1 className="text-4xl self-start">The Winners</h1>
+				<div className="w-full h-full flex gap-4 items-start">
+					
+					<div className="w-1/3 h-fit aspect-auto">
+						<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
+					</div>
+
+					<div className="w-2/3 h-full flex flex-col gap-2">
+						<p className="text-2xl font-bold">First Place</p>
+
+						<div className="flex gap-2 justify-start items-center">
+							<FiTarget />
+							<p className="text-xl">Headge Hackers</p>
+						</div>
+						
+						<div className="flex gap-2 justify-start items-center">
+							<FiTarget />
+							<p className="text-xl">LendEase</p>
+						</div>
+
+						<div className="flex gap-2 justify-start items-center">
+							<GiTargetPrize />
+							<p className="text-xl">Raspberry Pi Zeros</p>
+						</div>
+					</div>
 					
 				</div>
-
-				{/*
-				<div className="w-fit h-fit flex flex-col gap-2 items-center justify-center">
-					<Image src="/images/everyone.JPEG" className="object-contains rounded-2xl aspect-auto w-full" width={600} height={100} alt="not found" />
-
-					<div className="w-full h-96 flex gap-2">
-						<Image src="/images/pizza.JPEG" className="rounded-2xl aspect-auto" width={500} height={500} alt="not found" />
-						
-						
-					</div>
-				</div>
-				*/}
 			</div>
 
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[5%]">
-				<h1 className="text-4xl self-start">The Winners</h1>
-			</div>
-
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[5%]">
-				<h1 className="text-4xl self-start">The Runners Up</h1>
-			</div>
-
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[5%]">
+			<div className="flex flex-col items-center justify-center w-full h-fit px-[5%]">
 				<h1 className="text-4xl self-start">The Sponsors</h1>
+
+				<Image src="/excs.svg" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
+
 			</div>
 		</div>
 	)
