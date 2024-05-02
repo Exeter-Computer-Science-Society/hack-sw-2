@@ -17,7 +17,7 @@ export function SideBar() {
 					<h1 className="text-2xl">Current HSW</h1>
 					<div className="flex items-center justify-center gap-2">
 						<CiLocationArrow1 />
-						<Link href="/" className={(pathname==="/") && "text-accent"}>HSW 2024 Nov</Link>
+						<Link href="/" className={(pathname==="/") ? "text-accent" : ""}>HSW 2024 Nov</Link>
 					</div>
 				</div>
 				
@@ -25,7 +25,7 @@ export function SideBar() {
 					<h1 className='text-2xl'>Past HSW</h1>
 					<div className="flex items-center justify-center gap-2">
 						<CiLocationArrow1 />
-						<Link href="/past/hsw-2024-feb" className={(pathname==="/past/hsw-2024-feb") && "text-accent"}>HSW 2024 Feb</Link>
+						<Link href="/past/hsw-2024-feb" className={(pathname==="/past/hsw-2024-feb") ? "text-accent" : ""}>HSW 2024 Feb</Link>
 					</div>
 				</div>
 			</div>

@@ -1,14 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function Countdown() {
 
-	const [counter, setCounter] = useState(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime())
+	const [ counter, setCounter ] = useState(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime())
+	const [ mounted, setMounted ] = useState(false)
 
-	setInterval(() => setCounter(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime()), 1000);
+	useEffect(() => {
+		setMounted(true)
+		setInterval(() => setCounter(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime()), 1000);
+	}, [])
+	
 
-	return (
+	return mounted && (
 		<div className="flex flex-col gap-2">
 
 			{/* days */}
