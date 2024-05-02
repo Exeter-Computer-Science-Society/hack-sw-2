@@ -18,6 +18,7 @@ export default function Home() {
 
 			{/* front facing page */}
 			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
+				<div className="hidden text-red-500"/>
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div className="flex justify-start items-baseline">
 						<p className="text-8xl font-extrabold">Hack</p>

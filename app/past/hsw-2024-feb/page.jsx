@@ -28,7 +28,7 @@ export default function PastHackathon() {
 
 			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
 
-			<div className="flex flex-col gap-8 w-full h-full">
+				<div className="flex flex-col gap-8 w-full h-full">
 					<div className="flex justify-start items-baseline gap-4">
 						<div className="flex justify-start items-baseline">
 							<p className="text-8xl font-extrabold">Hack</p>
@@ -95,53 +95,102 @@ export default function PastHackathon() {
 				</div>
 			</div>
 
-			<div className="flex flex-col gap-8 items-center justify-center w-full h-fit px-[5%] py-[5%]">
+			<div className="flex flex-col gap-8 items-center justify-center w-full h-[100vh] px-[5%] py-[5%]">
 				<h1 className="text-4xl">Winners</h1>
-				<Flipper>
-					{/* front facing */}
-					<div>
 
-					</div>
-
-					{/* reat facing */}
-					<div>
-
-					</div>
-				</Flipper>
-				
-				<div className="w-full h-full flex gap-4 items-start">
+				<div className="flex gap-4 w-2/3 justify-between h-[300px]">
 					
-					<div className="w-fit h-fit aspect-auto">
-						<Image src="/images/winners.JPEG" className="rounded-2xl w-1/2 h-full object-cover" width={500} height={500} alt="not found" />
-					</div>
 
-					<div className="w-2/3 h-full flex flex-col gap-2">
-						<p className="text-2xl font-bold">First Place</p>
-
-						<div className="flex gap-2 justify-start items-center">
-							<FiTarget />
-							<p className="text-xl">Headge Hackers</p>
-						</div>
-						
-						<div className="flex gap-2 justify-start items-center">
-							<FiTarget />
-							<p className="text-xl">LendEase</p>
+					<Flipper className="w-full h-full">
+						{/* front facing */}
+						<div className="w-full h-full aspect-auto">
+							<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
 						</div>
 
-						<div className="flex gap-2 justify-start items-center">
-							<GiTargetPrize />
-							<p className="text-xl">Raspberry Pi Zeros</p>
+						{/* reat facing */}
+						<div className="w-full h-full flex flex-col justify-center items-center gap-2">
+							<p className="text-2xl font-bold">Second Place</p>
+
+							<div className="flex gap-2 justify-start items-center">
+								<FiTarget />
+								<p className="text-xl">BathX</p>
+							</div>
+							
+							<div className="flex gap-2 justify-start items-center">
+								<FiTarget />
+								<p className="text-xl">pool</p>
+							</div>
+
+							<div className="flex gap-2 justify-start items-center">
+								<GiTargetPrize />
+								<p className="text-xl text-red-500">Raspberry Pi Zeros</p>
+							</div>
 						</div>
-					</div>
-					
+					</Flipper>
+
+					<Flipper className="w-full h-full">
+						{/* front facing */}
+						<div className="w-full h-full aspect-auto">
+							<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
+						</div>
+
+						{/* reat facing */}
+						<div className="w-full h-full flex flex-col justify-center items-center gap-2">
+							<p className="text-2xl font-bold">First Place</p>
+
+							<div className="flex gap-2 justify-start items-center">
+								<FiTarget />
+								<p className="text-xl">Headge Hackers</p>
+							</div>
+							
+							<div className="flex gap-2 justify-start items-center">
+								<FiTarget />
+								<p className="text-xl">LendEase</p>
+							</div>
+
+							<div className="flex gap-2 justify-start items-center">
+								<GiTargetPrize />
+								<p className="text-xl">Raspberry Pi Zeros</p>
+							</div>
+						</div>
+					</Flipper>
+
+					<Flipper className="w-full h-full">
+						{/* front facing */}
+						<div className="w-full h-full">
+							<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
+						</div>
+
+						{/* reat facing */}
+						<div className="w-full h-full flex flex-col justify-center items-center gap-2">
+							<p className="text-2xl font-bold">Third Place</p>
+
+							<div className="flex gap-2 justify-start items-center">
+								<FiTarget />
+								<p className="text-xl">Asians ++</p>
+							</div>
+							
+							<div className="flex gap-2 justify-start items-center">
+								<FiTarget />
+								<p className="text-xl">Asians ++ Training</p>
+							</div>
+
+							<div className="flex gap-2 justify-start items-center">
+								<GiTargetPrize />
+								<p className="text-xl">Raspberry Pi Zeros</p>
+							</div>
+						</div>
+					</Flipper>
 				</div>
+				
 			</div>
 
-			<div className="flex flex-col items-center justify-center w-full h-fit px-[5%]">
-				<h1 className="text-4xl self-start">The Sponsors</h1>
-
-				<Image src="/excs.svg" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
-
+			<div className="flex items-center gap-2 justify-center w-full h-fit px-[5%] py-[5%]">
+				<h1 className="text-4xl self-center select-none">Sponsored By</h1>
+				<Link href={"https://excs.uk"} target="_blank">
+					<Image  src="/excs.svg" className="self-center rounded-2xl w-fit h-16 object-contain select-none" width={500} height={500} alt="not found" />
+				</Link>
+				
 			</div>
 		</div>
 	)
