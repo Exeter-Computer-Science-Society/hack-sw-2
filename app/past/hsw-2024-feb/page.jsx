@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FiTarget } from "react-icons/fi";
 import { IoCameraOutline } from "react-icons/io5";
 import { GiTargetPrize } from "react-icons/gi";
+import { Flipper } from "./Flipper";
 
 
 
@@ -94,12 +95,24 @@ export default function PastHackathon() {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center justify-center w-full h-fit px-[5%]">
-				<h1 className="text-4xl self-start">The Winners</h1>
+			<div className="flex flex-col gap-8 items-center justify-center w-full h-fit px-[5%] py-[5%]">
+				<h1 className="text-4xl">Winners</h1>
+				<Flipper>
+					{/* front facing */}
+					<div>
+
+					</div>
+
+					{/* reat facing */}
+					<div>
+
+					</div>
+				</Flipper>
+				
 				<div className="w-full h-full flex gap-4 items-start">
 					
-					<div className="w-1/3 h-fit aspect-auto">
-						<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
+					<div className="w-fit h-fit aspect-auto">
+						<Image src="/images/winners.JPEG" className="rounded-2xl w-1/2 h-full object-cover" width={500} height={500} alt="not found" />
 					</div>
 
 					<div className="w-2/3 h-full flex flex-col gap-2">
