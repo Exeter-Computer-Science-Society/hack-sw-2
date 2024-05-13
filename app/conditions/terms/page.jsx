@@ -4,12 +4,12 @@ import { TopBar } from "@/app/components/General/TopBar";
 
 export default function terms() {
 	return (
-		<div className="bg-HSWprimary w-full h-full flex flex-col">
+		<div className="bg-HSWprimary w-full h-fit flex flex-col">
 
 			<SideBar />
 			<TopBar />
 
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[30%]">
+			<div className="flex flex-col gap-4 items-center justify-center w-full h-fit py-[5%] px-[30%]">
 				<p className="text-4xl text-HSWaccent font-extrabold">Terms & Conditions</p>
 
 				<div className="flex flex-col gap-2 justify-center">
