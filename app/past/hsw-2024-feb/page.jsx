@@ -21,7 +21,7 @@ import { Flipper } from "./Flipper";
  */
 export default function PastHackathon() {
 	return (
-		<div className="bg-primary w-full h-fit">
+		<div className="bg-HSWprimary w-full h-fit">
 			<SideBar />
 			<TopBar />
 			<SouthWestImage />
@@ -33,10 +33,10 @@ export default function PastHackathon() {
 						<div className="flex justify-start items-baseline">
 							<p className="text-8xl font-extrabold">Hack</p>
 
-							<p className="text-accent text-8xl font-sans">S</p>
+							<p className="text-HSWaccent text-8xl font-sans">S</p>
 							<p className="text-4xl font-mono">outh</p>
 
-							<p className="text-accent text-8xl font-sans">W</p>
+							<p className="text-HSWaccent text-8xl font-sans">W</p>
 							<p className="text-4xl font-mono">est</p>
 						</div>
 					</div>
@@ -88,7 +88,7 @@ export default function PastHackathon() {
 					<Image src="/images/organisers.JPEG" className=" rounded-2xl w-full h-full object-cover col-span-2" width={500} height={500} alt="not found" />
 					
 					<Image src="/images/presentation.JPEG" className="rounded-2xl w-full h-full" width={500} height={500} alt="not found" />
-					<Link href="https://onedrive.live.com/?authkey=%21AGQXRe896Z0mers&id=DF91CDD1C74AC0FB%2110730&cid=DF91CDD1C74AC0FB" className="h-full w-full rounded-2xl bg-primary border border-accent hover:border-text flex flex-col justify-center items-center">
+					<Link href="https://onedrive.live.com/?authkey=%21AGQXRe896Z0mers&id=DF91CDD1C74AC0FB%2110730&cid=DF91CDD1C74AC0FB" className="h-full w-full rounded-2xl bg-HSWprimary border border-HSWaccent hover:border-HSWtext flex flex-col justify-center items-center" target="_blank">
 						<p>View More Photos</p>
 						<IoCameraOutline />
 					</Link>

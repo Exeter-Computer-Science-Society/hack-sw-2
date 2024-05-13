@@ -8,13 +8,15 @@ module.exports = {
 	theme: {
 		extend: {},
 		colors: {
-			primary: "#101010",
-			secondary: "#1b1b1b",
-			secondary2: "#1b1b1b",
-			accent: "#05ff61",
-			text: "#e4e4e4"
+			HSWprimary: "#101010",
+			HSWsecondary: "#1b1b1b",
+			HSWsecondary2: "#1b1b1b",
+			HSWaccent: "#05ff61",
+			HSWtext: "#e4e4e4"
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('daisyui'),
+	],
 }
 

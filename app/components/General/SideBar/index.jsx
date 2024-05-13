@@ -15,17 +15,27 @@ export function SideBar() {
 			<div className='flex flex-col w-fit h-fit gap-10'>
 				<div>
 					<h1 className="text-2xl">Current HSW</h1>
-					<div className="flex items-center justify-center gap-2">
+					<div className="flex items-center justify-start gap-2">
 						<CiLocationArrow1 />
-						<Link href="/" className={(pathname==="/") ? "text-accent" : ""}>HSW 2024 Nov</Link>
+						<Link href="/" className={(pathname==="/") ? "text-HSWaccent" : ""}>HSW 2024 Nov</Link>
+					</div>
+
+					<div className="flex items-center justify-start gap-2">
+						<CiLocationArrow1 />
+						<Link href="/conditions/terms" className={(pathname==="/conditions/terms") ? "text-HSWaccent" : ""}>Terms & Conditions</Link>
+					</div>
+
+					<div className="flex items-center justify-start gap-2">
+						<CiLocationArrow1 />
+						<Link href="/conditions/intellectual" className={(pathname==="/conditions/intellectual") ? "text-HSWaccent" : ""}>Intellectual Property</Link>
 					</div>
 				</div>
 				
 				<div>
 					<h1 className='text-2xl'>Past HSW</h1>
-					<div className="flex items-center justify-center gap-2">
+					<div className="flex items-center justify-start gap-2">
 						<CiLocationArrow1 />
-						<Link href="/past/hsw-2024-feb" className={(pathname==="/past/hsw-2024-feb") ? "text-accent" : ""}>HSW 2024 Feb</Link>
+						<Link href="/past/hsw-2024-feb" className={(pathname==="/past/hsw-2024-feb") ? "text-HSWaccent" : ""}>HSW 2024 Feb</Link>
 					</div>
 				</div>
 			</div>
