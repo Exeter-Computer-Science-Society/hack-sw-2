@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image"
 import { SouthWestImage } from "./components/General/SouthWestImage"
 import { TopBar } from "./components/General/TopBar"
@@ -8,9 +10,14 @@ import { CiLocationOn } from "react-icons/ci";
 import { Countdown } from "./components/General/Countdown";
 import { SideBar } from "./components/General/SideBar";
 import { Profile } from "./components/Team/Profiles";
+import { Sponsor } from "./components/General/Sponsor";
+import { Popup } from "./components/General/Popup";
+import { useState } from "react";
 
 
 export default function Home() {
+	const [ open, setOpen ] = useState(false)
+
 	return (
 		<div className="bg-HSWprimary w-full h-fit">
 			<SideBar />
@@ -19,7 +26,7 @@ export default function Home() {
 
 			{/* front facing page */}
 			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
-				<div className="hidden text-red-500"/>
+				<div className="hidden text-red-500" />
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div className="flex justify-start items-baseline">
 						<p className="text-8xl font-extrabold">Hack</p>
@@ -33,7 +40,7 @@ export default function Home() {
 
 					<div className="">
 						<p className="text-xl font-mono">The largest Hackathon in the South West</p>
-						<p className="flex gap-2"> 
+						<p className="flex gap-2">
 							<span className="font-bold">Exeter,</span>
 							<span className="font-bold">Bristol,</span>
 							<span className="font-bold">Plymouth,</span>
@@ -62,12 +69,12 @@ export default function Home() {
 			</div>
 
 			{/* countdown */}
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
+			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] py-[15%]">
 				<Countdown />
 			</div>
 
 			{/* about */}
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%]">
+			<div className="flex flex-col items-center justify-center w-full h-fit px-[15%]">
 				<div className="flex flex-col gap-2 justify-center items-center w-1/2">
 					<p className="text-2xl font-bold text-HSWaccent">What is Hack South West?</p>
 					<p className="text-center">Organised by the computer science society of University Of Exeter, Hack South West is the most fun and enjoyable experience for students around the uk. Available to everyone from beginners to experts, this is a great opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!</p>
@@ -77,24 +84,44 @@ export default function Home() {
 			</div>
 
 			{/* the team */}
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%]">
+			<div className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
+				<p className="text-2xl font-bold text-HSWaccent">Meet the Team</p>
 				<div className="w-full h-fit flex gap-2 justify-center items-center">
+					<Profile name="Ed" position="Leader" description="Oversee the creation of hack south west" image="/images/team/ed.jpeg" />
 
-					<Profile name="Ed" position="Leader" description="Oversee the creation of hack south west" image="/images/team/ed.jpeg"/>
+					<Profile name="Wiktor" position="Leader" description="Oversee the creation of hack south west" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
 
-					<Profile name="Wiktor" position="Leader" description="Oversee the creation of hack south west" image="/images/team/wiktor.jpeg" />
-
-					<Profile name="Joachim" position="Leader" description="Oversee the creation of hack south west" image="/images/team/callum.jpeg"/>
-
+					<Profile name="Joachim" position="Leader" description="Oversee the creation of hack south west" image="/images/team/callum.jpeg" />
 				</div>
 			</div>
 
-			{/* sponsors */}
+			{/* the day */}
 			<div className="">
 
 			</div>
 
+			{/* sponsors */}
+			<div className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
 
+				<Popup trigger={open} setTrigger={setOpen}>
+					<div className="bg-HSWtext w-full h-96 z-50 rounded-2xl ">
+
+					</div>
+				</Popup>
+
+				<p className="text-2xl font-bold text-HSWaccent">Meet the Sponsors</p>
+
+				<div className="w-full h-fit flex gap-2 justify-center items-center">
+					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+				</div>
+
+				<div className="w-full h-32 flex gap-2 justify-center items-center">
+					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+				</div>
+			</div>
 		</div>
-  	)
+	)
 }

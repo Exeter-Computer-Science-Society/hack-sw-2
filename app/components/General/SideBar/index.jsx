@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 
 // icons
 import { CiLocationArrow1 } from "react-icons/ci";
+import { IoDocumentOutline } from "react-icons/io5";
+
 
 
 export function SideBar() {
@@ -21,12 +23,12 @@ export function SideBar() {
 					</div>
 
 					<div className="flex items-center justify-start gap-2">
-						<CiLocationArrow1 />
+						<IoDocumentOutline />
 						<Link href="/conditions/terms" className={(pathname==="/conditions/terms") ? "text-HSWaccent" : ""}>Terms & Conditions</Link>
 					</div>
 
 					<div className="flex items-center justify-start gap-2">
-						<CiLocationArrow1 />
+						<IoDocumentOutline />
 						<Link href="/conditions/intellectual" className={(pathname==="/conditions/intellectual") ? "text-HSWaccent" : ""}>Intellectual Property</Link>
 					</div>
 				</div>
