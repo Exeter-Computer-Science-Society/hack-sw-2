@@ -83,6 +83,13 @@ export default function Home() {
 				</div>
 			</div>
 
+			{/* day plan */}
+			<div className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
+				<p className="text-2xl font-bold text-HSWaccent">The Day Plan</p>
+
+				{/* insert svg of plan here */}
+			</div>
+
 			{/* the team */}
 			<div className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
 				<p className="text-2xl font-bold text-HSWaccent">Meet the Team</p>
