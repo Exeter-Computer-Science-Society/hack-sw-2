@@ -1,14 +1,12 @@
 'use client'
 
-import Image from "next/image"
 import { SouthWestImage } from "./components/General/SouthWestImage"
-import { TopBar } from "./components/General/TopBar"
 
 // icons
 import { BsCalendar2Date } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
-import { Countdown } from "./components/General/Countdown";
-import { SideBar } from "./components/General/SideBar";
+import { Countdown } from "./components/Countdown";
+
 import { Profile } from "./components/Team/Profiles";
 import { Sponsor } from "./components/General/Sponsor";
 import { Popup } from "./components/General/Popup";
@@ -20,8 +18,6 @@ export default function Home() {
 
 	return (
 		<div className="bg-HSWprimary w-full h-fit">
-			<SideBar />
-			<TopBar />
 			<SouthWestImage />
 
 			{/* front facing page */}
@@ -94,7 +90,7 @@ export default function Home() {
 
 			{/* the team */}
 			<div id="team" className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
-				<p className="text-2xl font-bold text-HSWaccent">Meet the Team</p>
+				{/* <p className="text-2xl font-bold text-HSWaccent">Meet the Team</p> */}
 				<div className="flex flex-col gap-8">
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
 						<Profile name="Zara" position="Media Lead" description="Manage the socials and public image" image="/images/team/zara.jpeg" />

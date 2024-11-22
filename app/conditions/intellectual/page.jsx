@@ -1,13 +1,6 @@
-import { SideBar } from "@/app/components/General/SideBar";
-import { TopBar } from "@/app/components/General/TopBar";
-
 export default function intellectual() {
 	return (
 		<div className="bg-HSWprimary w-full h-fit flex flex-col">
-
-			<SideBar />
-			<TopBar />
-
 			<div className="flex flex-col gap-4 items-center justify-center w-full h-fit py-[5%] px-[30%]">
 				<p className="text-4xl text-HSWaccent font-extrabold">Intellectual Property</p>
 

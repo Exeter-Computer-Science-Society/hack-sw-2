@@ -13,6 +13,9 @@ module.exports = {
 				bronze: '0px 0px 10px #CD7F32',
 				gray: '0px 0px 10px #535354',
 			},
+			aspectRatio: {
+				'3/4': '3 / 4',
+			},
 		},
 		colors: {
 			HSWprimary: "#101010",

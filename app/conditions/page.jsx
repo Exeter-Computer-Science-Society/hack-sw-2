@@ -1,6 +1,4 @@
 import { DocumentCard } from "../components/General/DocumentCard"
-import { SideBar } from "../components/General/SideBar"
-import { TopBar } from "../components/General/TopBar"
 
 export default function DocumentsPage() {
 
@@ -21,8 +19,6 @@ export default function DocumentsPage() {
 
 	return (
 		<div className="bg-HSWprimary w-full h-full flex flex-col">
-			<SideBar />
-			<TopBar />
 			<div className="w-full h-full flex flex-col items-center justify-center gap-8 pb-72">
 
 

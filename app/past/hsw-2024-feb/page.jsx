@@ -1,6 +1,6 @@
 import { SideBar } from "@/app/components/General/SideBar";
 import { SouthWestImage } from "@/app/components/General/SouthWestImage";
-import { TopBar } from "@/app/components/General/TopBar";
+import { TopBar } from "@/app/components/TopBar";
 import Image from "next/image";
 import Link from "next/link";
 
