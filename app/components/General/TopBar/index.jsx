@@ -10,7 +10,7 @@ export function TopBar() {
 				<p className="text-HSWaccent self-center">2. </p>
 				<Link href={"/conditions/terms"} className="text-HSWtext self-center">Terms & Conditions </Link>
 
-				<p className="text-HSWaccent self-center">2. </p>
+				<p className="text-HSWaccent self-center">3. </p>
 				<Link href={"/conditions/intellectual"} className="text-HSWtext self-center">Intellectual Property </Link>
 			</div>
 			

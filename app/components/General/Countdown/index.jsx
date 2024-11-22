@@ -9,12 +9,12 @@ export function Countdown() {
 
 	useEffect(() => {
 		setMounted(true)
-		setInterval(() => setCounter(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime()), 1000);
+		setInterval(() => setCounter(new Date("2025-02-08T09:00:00").getTime() - new Date().getTime()), 1000);
 	}, [])
 	
 
 	return mounted && (
-		<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-2 items-center">
 
 			{/* days */}
 			<div className="flex items-center gap-2">
@@ -40,7 +40,7 @@ export function Countdown() {
 				<p>Seconds</p>
 			</div>
 
-			<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2">Enter for Free</button>
+			<button className="bg-HSWsecondary px-4 py-2 mt-8 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2">Registration Not Released</button>
 		</div>
 	)
 }

@@ -16,7 +16,7 @@ import { useState } from "react";
 
 
 export default function Home() {
-	const [ open, setOpen ] = useState(false)
+	const [open, setOpen] = useState(false)
 
 	return (
 		<div className="bg-HSWprimary w-full h-fit">
@@ -52,7 +52,7 @@ export default function Home() {
 					<div className="">
 						<div className="flex gap-2 items-center">
 							<BsCalendar2Date />
-							<p>Oct 2nd, 9:00am</p>
+							<p>Feb 7th, 9:00am</p>
 						</div>
 
 						<div className="flex gap-2 items-center">
@@ -62,7 +62,7 @@ export default function Home() {
 					</div>
 
 					<div className="flex gap-4">
-						<button className="bg-HSWaccent text-HSWprimary px-4 py-2 rounded-md">Enter for Free</button>
+						<button className="bg-HSWaccent text-HSWprimary px-4 py-2 rounded-md">Registration Not Released</button>
 						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent" onClick={() => {
 							document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
 						}}>Learn More</button>
@@ -76,7 +76,7 @@ export default function Home() {
 			</div>
 
 			{/* about */}
-			<div className="flex flex-col items-center justify-center w-full h-fit px-[15%]" id="about">
+			<div id="about" className="flex flex-col items-center justify-center w-full h-fit px-[15%]">
 				<div className="flex flex-col gap-2 justify-center items-center w-1/2">
 					<p className="text-2xl font-bold text-HSWaccent">What is Hack South West?</p>
 					<p className="text-center">Organised by the computer science society of University Of Exeter, Hack South West is the most fun and enjoyable experience for students around the uk. Available to everyone from beginners to experts, this is a great opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!</p>
@@ -86,26 +86,29 @@ export default function Home() {
 			</div>
 
 			{/* day plan */}
-			<div className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
+			<div id="plan" className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
 				<p className="text-2xl font-bold text-HSWaccent">The Day Plan</p>
 
 				{/* insert svg of plan here */}
 			</div>
 
 			{/* the team */}
-			<div className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
+			<div id="team" className="flex flex-col items-center justify-center w-full h-fit py-[5%] px-[15%]">
 				<p className="text-2xl font-bold text-HSWaccent">Meet the Team</p>
-				<div className="w-full h-fit flex gap-2 justify-center items-center">
-					<Profile name="Zara" position="Media Officer" description="Oversee the creation of hack south west" image="/images/team/callum.jpeg" />
-					<Profile name="Charles" position="Sponsorship" description="Oversee the creation of hack south west" image="/images/team/ed.jpeg" />
-					<Profile name="Wiktor" position="Leader" description="Oversee the creation of hack south west" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
-					<Profile name="Ed" position="helper" description="Oversee the creation of hack south west" image="/images/team/ed.jpeg" />
-					<Profile name="Callum" position="helper" description="Oversee the creation of hack south west" image="/images/team/callum.jpeg" />
-				</div>
-			</div>
+				<div className="flex flex-col gap-8">
+					<div className="w-full h-fit flex gap-2 justify-center items-center">
+						<Profile name="Zara" position="Media Lead" description="Manage the socials and public image" image="/images/team/zara.jpeg" />
+						<Profile name="Charles" position="Sponsorship Lead" description="Locate and talk to sponsors" image="/images/team/charles.jpg" />
+						<Profile name="Wiktor" position="Event Lead" description="Oversee the creation of hack south west" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
+						<Profile name="Nehir" position="Event Co Lead" description="Assist with the creation of hack south west" image="/images/team/nehir.webp" />
+						<Profile name="Swaroop" position="Website Lead" description="Take care of the website" image="/images/team/swaroop.webp" />
+					</div>
 
-			{/* the day */}
-			<div className="">
+					<div className="w-full h-fit flex gap-2 justify-center items-center">
+						<Profile name="1" position="Media" description="Oversee the creation of hack south west" image="/images/team/2.jpeg" />
+						<Profile name="2" position="Website" description="Oversee the creation of hack south west" image="/images/team/5.webp" />
+					</div>
+				</div>
 
 			</div>
 
@@ -121,14 +124,14 @@ export default function Home() {
 				<p className="text-2xl font-bold text-HSWaccent">Meet the Sponsors</p>
 
 				<div className="w-full h-fit flex gap-2 justify-center items-center">
-					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
-					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
-					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+					<Sponsor level={"gray"} setOpen={setOpen} info={null} />
+					<Sponsor level={"gray"} setOpen={setOpen} info={null} />
+					<Sponsor level={"gray"} setOpen={setOpen} info={null} />
 				</div>
 
 				<div className="w-full h-32 flex gap-2 justify-center items-center">
-					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
-					<Sponsor level={"gray"} setOpen={setOpen} info={null}/>
+					<Sponsor level={"gray"} setOpen={setOpen} info={null} />
+					<Sponsor level={"gray"} setOpen={setOpen} info={null} />
 				</div>
 			</div>
 		</div>

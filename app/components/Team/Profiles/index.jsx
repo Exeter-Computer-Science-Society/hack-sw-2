@@ -16,10 +16,10 @@ export function Profile({name, position, description, image, github="https://www
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className="mask mask-decagon w-3/4 self-center" draggable={false} width={500} height={500} alt="not found"/>
+					<Image src={image} className="mask mask-decagon h-36 w-36 self-center object-cover" draggable={false} width={500} height={500} alt="not found"/>
 				</div>
 
-				<div className="flex flex-col gap-2 z-10 ">
+				<div className="flex flex-col gap-2 z-10 min-h-52 justify-between">
 					<div className="flex flex-col gap-2 w-full">
 						<p className="text-2xl font-bold text-HSWaccent text-center">{name}</p>
 						<p className="text-center">{position}</p>
