@@ -220,8 +220,8 @@ export default function Home() {
 				<p className="text-6xl font-bold text-HSWtext mb-16">Meet the Sponsors</p>
 				
 				<div className="w-full h-32 flex gap-2 justify-center items-center">
-					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} />
-					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/dora.webp"} />
+					<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} />
+					<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/dora.webp"} />
 				</div>
 
 				<div className="w-full h-fit flex gap-2 justify-center items-center">

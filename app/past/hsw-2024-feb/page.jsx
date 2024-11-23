@@ -1,6 +1,4 @@
-import { SideBar } from "@/app/components/General/SideBar";
 import { SouthWestImage } from "@/app/components/General/SouthWestImage";
-import { TopBar } from "@/app/components/TopBar";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,8 +20,6 @@ import { Flipper } from "./Flipper";
 export default function PastHackathon() {
 	return (
 		<div className="bg-HSWprimary w-full h-fit">
-			<SideBar />
-			<TopBar />
 			<SouthWestImage />
 
 			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
