@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function TopBar() {
 	return (
-		<div className="absolute top-0 left-0 right-0 w-full h-fit px-[15%] py-5 flex justify-between bg-HSWsecondary z-50 border-b border-HSWtext">
+		<div className="absolute top-0 left-0 right-0 w-full h-fit px-[15%] max-lg:px-[5%] py-5 flex justify-between bg-HSWsecondary z-50 border-b border-HSWtext max-lg:text-sm">
 			<div className="flex gap-4 justify-center">
 				<p className="text-HSWaccent self-center">1. </p>
 				<Link href={"/"} className="text-HSWtext self-center">HSW 2024 </Link>

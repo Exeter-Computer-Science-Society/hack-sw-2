@@ -80,49 +80,49 @@ export default function Home() {
 	}, [])
 
 	return (
-		<div className="bg-HSWprimary w-full h-fit">
+		<div className="w-full h-fit">
 			<SouthWestImage />
 
 			{/* front facing page */}
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
+			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] max-lg:px-[5%] pt-[15%]">
 				<div className="hidden text-red-500" />
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div className="flex justify-start items-baseline">
-						<p className="text-8xl font-extrabold">Hack</p>
+						<p className="text-8xl max-lg:text-4xl font-extrabold">Hack</p>
 
-						<p className="text-HSWaccent text-8xl font-sans">S</p>
-						<p className="text-4xl font-mono">outh</p>
+						<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">S</p>
+						<p className="text-4xl max-lg:text-2xl font-mono">outh</p>
 
-						<p className="text-HSWaccent text-8xl font-sans">W</p>
-						<p className="text-4xl font-mono">est</p>
+						<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">W</p>
+						<p className="text-4xl max-lg:text-2xl font-mono">est</p>
 					</div>
 
 					<div className="">
-						<p className="text-xl font-mono">The largest Hackathon in the South West</p>
+						<p className="text-xl max-lg:text-md font-mono">The largest Hackathon in the South West</p>
 						<p className="flex gap-2">
-							<span className="font-bold">Exeter,</span>
-							<span className="font-bold">Bristol,</span>
-							<span className="font-bold">Plymouth,</span>
-							<span className="font-bold">Bournemouth,</span>
-							<span className="font-bold">Cardiff</span>
+							<span className="font-bold max-lg:text-md">Exeter,</span>
+							<span className="font-bold max-lg:text-md">Bristol,</span>
+							<span className="font-bold max-lg:text-md">Plymouth,</span>
+							<span className="font-bold max-lg:text-md">Bournemouth,</span>
+							<span className="font-bold max-lg:text-md">Cardiff</span>
 						</p>
 					</div>
 
 					<div className="">
 						<div className="flex gap-2 items-center">
 							<BsCalendar2Date />
-							<p>Saturday, Feb 8th, 9:00am</p>
+							<p className="max-lg:text-sm">Saturday, Feb 8th, 9:00am</p>
 						</div>
 
 						<div className="flex gap-2 items-center">
 							<CiLocationOn />
-							<p>University of Exeter, Innovation Center</p>
+							<p className="max-lg:text-sm">University of Exeter, Innovation Center</p>
 						</div>
 					</div>
 
 					<div className="flex gap-4">
-						<button className="bg-HSWaccent text-HSWprimary px-4 py-2 rounded-md">Registration Not Released</button>
-						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent" onClick={() => {
+						<button className="bg-HSWaccent text-HSWprimary px-4 py-2 rounded-md max-lg:text-sm">Registration Not Released</button>
+						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent max-lg:text-sm" onClick={() => {
 							document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
 						}}>Learn More</button>
 					</div>
