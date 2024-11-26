@@ -10,22 +10,23 @@ import { useEffect, useState } from "react";
 
 
 export function Profile({ name, position, description, image, github = "https://www.github.com", linkedin = "https://www.linkedin.com", website = "https://www.example.com", easter_egg = false }) {
-
 	const [lastTouched, setLastTouched] = useState(new Date().getTime());
 
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const currentTime = new Date().getTime();
 			if (currentTime - lastTouched > 5000) {
-				setLastTouched(currentTime);
-				console.log("resetting")
-				const div = document.getElementById("git");
-				div.style.transform = `translate(0px, 0px)`;
+				if (currentTime - lastTouched < 6000) {
+					setLastTouched(currentTime);
+					console.log("resetting")
+					const div = document.getElementById("git");
+					div.style.transform = `translate(0px, 0px)`;
+				}
 			}
 		}, 500)
 
 		return () => clearInterval(interval);
-	})
+	}, [])
 
 	return !easter_egg ? (
 		<div className="w-full h-fit flex flex-col justify-between gap-2 max-w-72 relative align-top select-none">
@@ -34,7 +35,7 @@ export function Profile({ name, position, description, image, github = "https://
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className="mask mask-decagon h-36 w-36 self-center object-cover" draggable={false} width={500} height={500} alt="not found" />
+					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-contain" draggable={false} width={1000} height={1000} alt="not found" />
 				</div>
 
 				<div className="flex flex-col gap-2 z-10 min-h-52 justify-between">
@@ -59,7 +60,7 @@ export function Profile({ name, position, description, image, github = "https://
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className="mask mask-decagon h-36 w-36 self-center object-cover" draggable={false} width={500} height={500} alt="not found" />
+					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-contain" draggable={false} width={500} height={500} alt="not found" />
 				</div>
 
 				<div className="flex flex-col gap-2 z-10 min-h-52 justify-between">
@@ -85,7 +86,7 @@ export function Profile({ name, position, description, image, github = "https://
 							const centerY = rect.y + rect.height / 2;
 
 							// console.log(centerX, centerY);
-							
+
 							// get the mouse position
 							const mouseX = window.event.clientX;
 							const mouseY = window.event.clientY;
@@ -99,15 +100,15 @@ export function Profile({ name, position, description, image, github = "https://
 							const angle = Math.atan2(distanceY, distanceX);
 							// console.log(angle);
 							// get the new position
-							let x = Math.sin(-angle-1.5)*100;
-							let y = Math.cos(-angle-1.5)*100;
+							let x = Math.sin(-angle - 1.5) * 100;
+							let y = Math.cos(-angle - 1.5) * 100;
 							// console.log(x)
 
 							// check if the bounds exceed the screen
-							if (centerX+x < 0) x = 100;
-							if (centerY+y < 200) y = 500;
-							if (centerX+x > window.innerWidth) x = window.innerWidth-100;
-							if (centerY+y > window.innerHeight) y = window.innerHeight-100;
+							if (centerX + x < 0) x = 100;
+							if (centerY + y < 200) y = 500;
+							if (centerX + x > window.innerWidth) x = window.innerWidth - 100;
+							if (centerY + y > window.innerHeight) y = window.innerHeight - 100;
 
 							div.style.transform = `translate(${x}px, ${y}px)`;
 
