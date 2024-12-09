@@ -7,6 +7,7 @@ import { BsCalendar2Date } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { Countdown } from "./components/Countdown";
 import { IoIosArrowDown } from "react-icons/io";
+import { BsGlobe2 } from "react-icons/bs";
 
 
 
@@ -17,6 +18,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Question } from "./components/Question";
+import { Loading } from "./components/Loading";
+import { CiLinkedin } from "react-icons/ci";
+
 
 
 export default function Home() {
@@ -30,35 +34,154 @@ export default function Home() {
 
 	const questions = [
 		{
+			question: "Should I attend Hack South West",
+			answer: "Absolutely! Hack South West is a great opportunity to learn new skills, meet new people, and have fun. Whether you're a beginner or an experienced hacker, there's something for everyone at Hack South West."
+		},
+		{
 			question: "What is a hackathon?",
 			answer: "A hackathon is an event where people come together to work on a project for a set amount of time. It is a great opportunity to learn new skills, meet new people, and have fun!"
 		},
 		{
 			question: "Who can attend?",
-			answer: "Anyone can"
+			answer: "We welcome everyone, weather your a student here or external university or working in industry, we welcome everyone to come and join us for a weekend of fun and learning."
 		},
+		{
+			question: "Where is Hack South West Happening?",
+			answer: "We are hosting the event in the innovation centre at the University of Exeter. The address is: University of Exeter, Innovation Centre, Rennes Drive, Exeter, EX4 4RN"
+		},
+		{
+			question: "What will be available to eat?",
+			answer: "We will be providing all hackers with food and drinks throughout the event. Dietary requirement will be catered for as well so no need to worry!"
+		},
+		{
+			question: "Do I need to be able to code to attend?",
+			answer: "Not at all! Hack South West is open to everyone, regardless of your coding experience. We will have workshops and mentors available to help you get started with your project."
+		},
+		{
+			question: "How large can my team be?",
+			answer: "We enforce team sizes of no more than 4 people. This is to ensure that everyone has a fair chance of winning the competition."
+		},
+		{
+			question: "What should I bring?",
+			answer: "You should bring your laptop, charger, and any additional items to make your stay comfortable. We will provide you with seating, power, and a lovely atmosphere."
+		},
+		{
+			question: "Do we have a code of conduct?",
+			answer: "Yes, we have a code of conduct that all attendees must adhere to. This is to ensure that everyone has a safe and enjoyable experience at Hack South West."
+		},
+		{
+			question: "Do we have a code of intellectual property?",
+			answer: "Yes, check the link just to the left of this :)"
+		},
+		{
+			question: "What are the terms and conditions?",
+			answer: "Check the link just to the left of this :)"
+		}
+
 	]
 
 	const info = {
 		"swcsc": {
 			name: "South West Cyber Security Cluster",
 			image: "/images/sponsors/swcsc.png",
-			description: "The South West Cyber Security Cluster is a group of cyber security professionals, academics, and enthusiasts who meet regularly to share knowledge and expertise. The cluster is a great place to learn about the latest trends in cyber security, network with other professionals, and find new opportunities in the field."
+			description: "The South West Cyber Security Cluster is a group of cyber security professionals, academics, and enthusiasts who meet regularly to share knowledge and expertise. The cluster is a great place to learn about the latest trends in cyber security, network with other professionals, and find new opportunities in the field.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.southwestcsc.org/",
+					html: <BsGlobe2 color="black" className="w-full h-full" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/south-west-cyber-security-cluster/",
+					html: <CiLinkedin color="black" className="w-full h-full" />
+				},
+			]
 		},
 		"dora": {
 			name: "Dora Hacks",
 			image: "/images/sponsors/dora.png",
-			description: "DoraHacks is a global hackathon organization that aims to foster innovation and creativity in the tech community. They host hackathons all over the world, bringing together developers, designers, and entrepreneurs to collaborate on projects and build new products. DoraHacks is committed to creating a diverse and inclusive community that welcomes people from all backgrounds and skill levels."
+			description: "DoraHacks is a global hackathon organization that aims to foster innovation and creativity in the tech community. They host hackathons all over the world, bringing together developers, designers, and entrepreneurs to collaborate on projects and build new products. DoraHacks is committed to creating a diverse and inclusive community that welcomes people from all backgrounds and skill levels.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.dorahacks.com/",
+					html: <BsGlobe2 color="black" className="w-full h-full" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/dorahacks/",
+					html: <CiLinkedin color="black" className="w-full h-full" />
+				},
+			]
 		},
 		"exeter": {
 			name: "University of Exeter",
 			image: "/images/sponsors/exeter.gif",
-			description: "University of Exeter is a UK based university that offers a wide range of undergraduate and postgraduate courses in a variety of subjects. The university is known for its high-quality teaching and research, as well as its beautiful campus and vibrant student community. University of Exeter is committed to providing students with an exceptional education and a supportive learning environment."
+			description: "University of Exeter is a UK based university that offers a wide range of undergraduate and postgraduate courses in a variety of subjects. The university is known for its high-quality teaching and research, as well as its beautiful campus and vibrant student community. University of Exeter is committed to providing students with an exceptional education and a supportive learning environment.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.exeter.ac.uk/",
+					html: <BsGlobe2 color="black" className="w-full h-full" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/school/university-of-exeter/",
+					html: <CiLinkedin color="black" className="w-full h-full" />
+				}
+			]
 		},
 		"excs": {
 			name: "Exeter Computer Science Society",
 			image: "/images/sponsors/excs.svg",
-			description: "The Exeter Computer Science Society is a student-run organization that aims to support and promote computer science education at the University of Exeter. The society organizes a variety of events and activities throughout the year, including hackathons, workshops, and socials. Exeter Computer Science Society is committed to creating a welcoming and inclusive community for all students interested in computer science."
+			description: "The Exeter Computer Science Society is a student-run organization that aims to support and promote computer science education at the University of Exeter. The society organizes a variety of events and activities throughout the year, including hackathons, workshops, and socials. Exeter Computer Science Society is committed to creating a welcoming and inclusive community for all students interested in computer science.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.excs.uk/",
+					html: <BsGlobe2 color="black" className="w-full h-full" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/school/exeter-computing-society",
+					html: <CiLinkedin color="black" className="w-full h-full" />
+				}
+			]
+		},
+		"mintsw": {
+			name: "Mint South West",
+			image: "/images/sponsors/mintswdark.png",
+			description: "Mint South West is an organization that supports the crypto community in the South West. They host collaborative work space every friday and a pizza/beer night on the last friday of every month.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.mrwedge.co.uk/mintsw",
+					html: <BsGlobe2 color="black" className="w-full h-full" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/mint-southwest/",
+					html: <CiLinkedin color="black" className="w-full h-full" />
+				}
+			]
+		},
+		"techexeter": {
+			name: "Tech Exeter",
+			image: "/images/sponsors/techexeterdark.jpg",
+			description: "Tech Exeter is a community of tech enthusiasts in Exeter. They host regular meetups, workshops, and conferences to bring together people who are passionate about technology. Tech Exeter is committed to creating a welcoming and inclusive community that supports learning and collaboration.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.techexeter.uk/",
+					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/tech-exeter/",
+					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+				}
+			]
 		}
 	}
 
@@ -122,15 +245,25 @@ export default function Home() {
 			<div className="relative flex flex-col items-center justify-center w-full h-[100vh] px-[15%] max-lg:px-[5%] pt-[15%] max-lg:pt-[50%] z-50">
 				<div className="hidden text-red-500" />
 				<div className="flex flex-col gap-8 w-full h-full">
-					<div className="flex justify-start items-baseline">
-						<p className="text-8xl max-lg:text-4xl font-extrabold">Hack</p>
+					<div>
+						<div className="flex justify-start items-baseline">
+							<p className="text-8xl max-lg:text-4xl font-extrabold">Hack</p>
 
-						<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">S</p>
-						<p className="text-4xl max-lg:text-2xl font-mono">outh</p>
+							<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">S</p>
+							<p className="text-4xl max-lg:text-2xl font-mono">outh</p>
 
-						<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">W</p>
-						<p className="text-4xl max-lg:text-2xl font-mono">est</p>
+							<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">W</p>
+							<p className="text-4xl max-lg:text-2xl font-mono">est</p>
+						</div>
+
+						<div className="flex">
+							<p>Made possible with</p>
+							<Link href={"https://southwestcsc.org/"}>
+								<Image src={"/images/sponsors/swcsc.png"} width={100} height={100} alt="EXCS" />
+							</Link>
+						</div>
 					</div>
+
 
 					<div className="text-wrap w-full">
 						<p className="text-xl max-lg:text-xs font-mono">The largest Hackathon in the South West</p>
@@ -221,7 +354,7 @@ export default function Home() {
 
 
 				{/* <div className="w-full h-fit grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] content-center gap-2"> */}
-				<div class="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
+				<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
 					<Profile name="Zara" position="Media Lead" description="Manage the socials and public image" image="/images/team/zara.jpeg" />
 					<Profile name="Charles" position="Sponsorship Lead" description="Locate and talk to sponsors" image="/images/team/charles.jpg" />
 					<Profile name="Wiktor" position="Event Lead" description="Oversee the creation of hack south west" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
@@ -274,16 +407,48 @@ export default function Home() {
 
 			</div>
 
+			{/* Track information */}
+			<div id="qa" className="flex flex-col">
+				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
+					<div className="w-full">
+						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Tracks &</p>
+						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">Challenges</p>
+						<br />
+						<p className="text-md font-extralight">What will you be doing during our event! This is secret for now, wait until the start of the event to find out!</p>
+					</div>
+
+					<div className="w-full flex justify-center items-center">
+						<Image src={"/images/faq.png"} className="object-cover h-full w-fit" width={500} height={500} alt="FAQ" />
+					</div>
+				</div>
+
+				<div className="bg-HSWprimary w-full h-fit flex justify-center items-center gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
+					<Loading message="Wait here for the challenge release!" />
+				</div>
+
+			</div>
+
 			{/* sponsors */}
 			<div className="flex flex-col items-center justify-center w-full h-screen py-[5%] px-[15%] max-lg:px-[5%]">
 
 				<Popup trigger={open} setTrigger={setOpen}>
 					<div className="bg-HSWtext w-full h-fit z-50 rounded-2xl p-2 flex flex-col gap-8">
-						<div className="flex">
+						<div className="flex justify-between">
 							<h1 className="text-HSWprimary text-2xl font-extrabold">{open.name}</h1>
-							<Image src={open.image} className="object-fit h-1/2 w-1/2" width={500} height={500} alt="sponsor" />
+							<Image src={open.image} className="object-fit h-1/2 w-1/2 rounded-xl" width={500} height={500} alt="sponsor" />
 						</div>
-						
+
+						<div className="w-full h-fit flex justify-start gap-4">
+							{
+								open?.links?.map((link, index) => (
+									<Link key={index} href={link.link} target="_blank" rel="noreferrer" className="w-8 h-8 text-black">
+										{link.html ? link.html : <a className="text-HSWaccent text-lg font-light underline">{link.name}</a>}
+									</Link>
+
+								))
+							}
+						</div>
+
 						<p className="text-HSWprimary text-lg font-light">{open.description}</p>
 					</div>
 				</Popup>
@@ -297,8 +462,8 @@ export default function Home() {
 
 				<div className="w-full h-fit flex gap-2 justify-center items-center">
 					<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/exeter.gif"} info={info["exeter"]} />
-					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
-					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
+					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/mintsw.png"} info={info["mintsw"]} cover={true} />
+					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/techexeter.png"} info={info["techexeter"]} />
 				</div>
 
 				<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
