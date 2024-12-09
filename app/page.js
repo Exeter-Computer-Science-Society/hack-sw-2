@@ -182,6 +182,23 @@ export default function Home() {
 					html: <CiLinkedin color="black" className="w-full h-full p-1" />
 				}
 			]
+		},
+		"hh": {
+			name: "Hacking Hub",
+			image: "/images/sponsors/HH-Logo-Full-Color.svg",
+			description: "HackingHub is a cutting-edge platform for web application hacking education, designed and run by seasoned security experts. Our interactive, hands-on labs replicate real-world applications and infrastructure, providing an engaging and practical learning experience that both challenges and educates users.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.hackinghub.io/",
+					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/hackinghub/",
+					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+				}
+			]
 		}
 	}
 
@@ -467,7 +484,7 @@ export default function Home() {
 				</div>
 
 				<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
+					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/HH-Logo-Full-Color-Icon.svg"} info={info["hh"]} />
 					<Sponsor level={"gray"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
 				</div>
 			</div>
