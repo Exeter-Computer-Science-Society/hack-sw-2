@@ -1,8 +1,10 @@
 'use client'
 
+import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-export function Countdown() {
+export function Countdown({registration}) {
 
 	const [counter, setCounter] = useState(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime())
 	const [mounted, setMounted] = useState(false)
@@ -50,7 +52,19 @@ export function Countdown() {
 
 			</div>
 
-			<button className="bg-HSWsecondary px-4 py-2 mt-8 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit">Registration Not Released</button>
+			{
+				(registration - new Date().getTime() > 0) ? (
+					<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit">Registration Not Released</button>
+				) : (
+					<Link href="https://dashboard.dorahacks.io/hackathon/hack-south-west/" target="_blank" className="bg-HSWsecondary text-orange-500 px-4 py-2 rounded-md max-lg:text-sm border border-orange-500 flex gap-2 justify-center items-center">
+						<Image src="/images/sponsors/dora.png" className="w-7 h-7" width={500} height={500} alt="as" />
+						<p className='text-2xl font-extrabold'>Registration</p>
+					</Link>
+				)
+			}
+
+
+
 		</div>
 
 	)

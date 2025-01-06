@@ -22,9 +22,14 @@ export function TopBar() {
 
 			</div>
 
-			<Link href="https://www.excs.uk" target="_blank" className="">
-				<Image src="/excs.svg" className="h-fit object-contain" width={100} height={100} alt="not found" />
-			</Link>
+			<div className="flex gap-4 justify-center items-center">
+				<Link href="https://www.excs.uk" target="_blank" className="">
+					<Image src="/excs.svg" className="h-fit object-contain" width={100} height={100} alt="not found" />
+				</Link>
+			</div>
+
+
+
 
 		</div>
 	)

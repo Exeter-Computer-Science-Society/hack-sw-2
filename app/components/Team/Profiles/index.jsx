@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 
 
-export function Profile({ name, position, description, image, github = "https://www.github.com", linkedin = "https://www.linkedin.com", website = "https://www.example.com", easter_egg = false }) {
+export function Profile({ name, position, description, image, github="", linkedin="", website="", cybersoc=false, easter_egg=false }) {
 	const [lastTouched, setLastTouched] = useState(new Date().getTime());
 
 	useEffect(() => {
@@ -35,20 +35,21 @@ export function Profile({ name, position, description, image, github = "https://
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-contain" draggable={false} width={1000} height={1000} alt="not found" />
+					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-cover" draggable={false} width={1000} height={1000} alt="not found" />
 				</div>
 
-				<div className="flex flex-col gap-2 z-10 min-h-52 justify-between">
+				<div className="flex flex-col gap-2 z-10 min-h-48 max-lg:min-h-64 justify-between">
 					<div className="flex flex-col gap-2 w-full">
-						<p className="text-2xl font-bold text-HSWaccent text-center">{name}</p>
-						<p className="text-center">{position}</p>
-						<p className="text-center">{description}</p>
+						<p className="text-2xl font-bold text-HSWaccent text-center max-lg:text-lg">{name}</p>
+						<p className="text-center max-lg:text-sm">{position}</p>
+						<p className="text-center max-lg:text-sm">{description}</p>
 					</div>
 
 					<div className="bg-HSWaccent flex gap-2 w-full p-2 justify-center">
-						<Link href={github} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><VscGithubAlt className="w-full h-full p-1" /></Link>
-						<Link href={linkedin} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><CiLinkedin className="w-full h-full p-1" /></Link>
-						<Link href={website} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><IoIosLink className="w-full h-full p-1" /></Link>
+						{cybersoc && <Link href={"https://cybersoc.uk"} className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer p-[2px]"><Image src="/images/sponsors/cybersoc.jpg" className="w-full h-full rounded-full" width={50} height={50} alt=""/></Link>}
+						{github !== "" && <Link href={github} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><VscGithubAlt className="w-full h-full p-1" /></Link>}
+						{linkedin !== "" && <Link href={linkedin} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><CiLinkedin className="w-full h-full p-1" /></Link>}
+						{website !== "" && <Link href={website} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><IoIosLink className="w-full h-full p-1" /></Link>}
 					</div>
 				</div>
 			</div>
@@ -63,11 +64,11 @@ export function Profile({ name, position, description, image, github = "https://
 					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-contain" draggable={false} width={500} height={500} alt="not found" />
 				</div>
 
-				<div className="flex flex-col gap-2 z-10 min-h-52 justify-between">
+				<div className="flex flex-col gap-2 z-10 min-h-48 max-lg:min-h-64 justify-between">
 					<div className="flex flex-col gap-2 w-full">
-						<p className="text-2xl font-bold text-HSWaccent text-center">{name}</p>
-						<p className="text-center">{position}</p>
-						<p className="text-center">{description}</p>
+						<p className="text-2xl font-bold text-HSWaccent text-center max-lg:text-lg">{name}</p>
+						<p className="text-center max-lg:text-sm">{position}</p>
+						<p className="text-center max-lg:text-sm">{description}</p>
 					</div>
 
 					<div className="bg-HSWaccent flex gap-2 w-full p-2 justify-center">
@@ -114,8 +115,8 @@ export function Profile({ name, position, description, image, github = "https://
 
 
 						}}><VscGithubAlt className="w-full h-full p-1 animate-pulse text-HSWprimary" /></Link>
-						<Link href={linkedin} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><CiLinkedin className="w-full h-full p-1" /></Link>
-						<Link href={website} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><IoIosLink className="w-full h-full p-1" /></Link>
+						{linkedin !== "" && <Link href={linkedin} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><CiLinkedin className="w-full h-full p-1" /></Link>}
+						{website !== "" && <Link href={website} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><IoIosLink className="w-full h-full p-1" /></Link>}
 					</div>
 				</div>
 			</div>

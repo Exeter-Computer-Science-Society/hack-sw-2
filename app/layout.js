@@ -6,6 +6,10 @@ import Head from 'next/head';
 
 const inter = REM({ weights: [400, 500, 600], subsets: ["latin"] })
 
+export const metadata = {
+	title: "Hack South West",
+	description: "Website for the annual hack south west (HSW) ocurring typically in early february",
+}
 
 export default function RootLayout({ children }) {
 	return (

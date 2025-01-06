@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js
+const colors = require('tailwindcss/colors')
+
 module.exports = {
 	content: [
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
+	],
+	safelist: [
+		{
+			pattern: /^drop-shadow-.+/,
+		},
 	],
 
 	theme: {
@@ -18,6 +26,7 @@ module.exports = {
 			},
 		},
 		colors: {
+			...colors,
 			HSWprimary: "#101010",
 			HSWsecondary: "#1b1b1b",
 			HSWsecondary2: "#1b1b1b",
