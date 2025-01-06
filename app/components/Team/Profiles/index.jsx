@@ -46,7 +46,7 @@ export function Profile({ name, position, description, image, github="", linkedi
 					</div>
 
 					<div className="bg-HSWaccent flex gap-2 w-full p-2 justify-center">
-						{cybersoc && <Link href={"https://cybersoc.uk"} className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer p-[2px]"><Image src="/images/sponsors/cybersoc.jpg" className="w-full h-full rounded-full" width={50} height={50} alt=""/></Link>}
+						{cybersoc && <Link href={"https://www.linkedin.com/company/exeter-cyber-security-society/posts/?feedView=all"} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer p-[2px]"><Image src="/images/sponsors/cybersoc.jpg" className="w-full h-full rounded-full" width={50} height={50} alt=""/></Link>}
 						{github !== "" && <Link href={github} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><VscGithubAlt className="w-full h-full p-1" /></Link>}
 						{linkedin !== "" && <Link href={linkedin} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><CiLinkedin className="w-full h-full p-1" /></Link>}
 						{website !== "" && <Link href={website} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><IoIosLink className="w-full h-full p-1" /></Link>}
