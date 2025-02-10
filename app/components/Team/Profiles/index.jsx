@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 
 
-export function Profile({ name, position, description, image, github="", linkedin="", website="", cybersoc=false, easter_egg=false }) {
+export function Profile({ name, position, description, image, github = "", linkedin = "", website = "", cybersoc = false, easter_egg = false, cover = false }) {
 	const [lastTouched, setLastTouched] = useState(new Date().getTime());
 
 	useEffect(() => {
@@ -35,7 +35,7 @@ export function Profile({ name, position, description, image, github="", linkedi
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-cover" draggable={false} width={1000} height={1000} alt="not found" />
+					<Image src={image} className={`mask mask-decagon h-36 w-2/3 self-center ${cover ? "object-cover" : "object-contain"}`} draggable={false} width={500} height={500} alt="not found" />
 				</div>
 
 				<div className="flex flex-col gap-2 z-10 min-h-48 max-lg:min-h-64 justify-between">
@@ -46,7 +46,7 @@ export function Profile({ name, position, description, image, github="", linkedi
 					</div>
 
 					<div className="bg-HSWaccent flex gap-2 w-full p-2 justify-center">
-						{cybersoc && <Link href={"https://www.linkedin.com/company/exeter-cyber-security-society/posts/?feedView=all"} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer p-[2px]"><Image src="/images/sponsors/cybersoc.jpg" className="w-full h-full rounded-full" width={50} height={50} alt=""/></Link>}
+						{cybersoc && <Link href={"https://www.linkedin.com/company/exeter-cyber-security-society/posts/?feedView=all"} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer p-[2px]"><Image src="/images/sponsors/cybersoc.jpg" className="w-full h-full rounded-full" width={50} height={50} alt="" /></Link>}
 						{github !== "" && <Link href={github} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><VscGithubAlt className="w-full h-full p-1" /></Link>}
 						{linkedin !== "" && <Link href={linkedin} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><CiLinkedin className="w-full h-full p-1" /></Link>}
 						{website !== "" && <Link href={website} target="_blank" className="text-center justify-center rounded-full w-8 h-8 bg-HSWsecondary cursor-pointer"><IoIosLink className="w-full h-full p-1" /></Link>}
@@ -61,7 +61,7 @@ export function Profile({ name, position, description, image, github="", linkedi
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className="mask mask-decagon h-36 w-2/3 self-center object-contain" draggable={false} width={500} height={500} alt="not found" />
+					<Image src={image} className={`mask mask-decagon h-36 w-2/3 self-center ${cover ? "object-cover" : "object-contain"}`} draggable={false} width={500} height={500} alt="not found" />
 				</div>
 
 				<div className="flex flex-col gap-2 z-10 min-h-48 max-lg:min-h-64 justify-between">

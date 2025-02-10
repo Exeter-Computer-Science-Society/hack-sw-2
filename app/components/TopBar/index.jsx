@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function TopBar() {
 	return (
-		<div className="absolute top-0 left-0 right-0 w-full h-fit px-[15%] max-lg:px-[5%] py-5 flex justify-between items-center gap-4 bg-HSWsecondary z-[100] border-b border-HSWtext max-lg:text-xs">
+		<div className="absolute top-0 left-0 right-0 w-full h-fit px-[15%] max-lg:px-[5%] py-4 flex justify-between items-center gap-4 bg-HSWsecondary z-[100] border-b border-HSWtext max-lg:text-xs">
 			<div className="flex gap-2 justify-center">
 				<div className="flex gap-1">
 					<p className="text-HSWaccent self-center">1.</p>
@@ -23,8 +23,8 @@ export function TopBar() {
 			</div>
 
 			<div className="flex gap-4 justify-center items-center">
-				<Link href="https://www.excs.uk" target="_blank" className="">
-					<Image src="/excs.svg" className="h-fit object-contain" width={100} height={100} alt="not found" />
+				<Link href="https://www.sec-ridge.com/" target="_blank" className="">
+					<Image src="/images/EX-removebg-preview.png" className="h-full w-full object-fill" width={100} height={100} alt="not found" />
 				</Link>
 			</div>
 

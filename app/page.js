@@ -24,8 +24,20 @@ import { BsDiamond } from "react-icons/bs";
 import { BsSuitDiamond } from "react-icons/bs";
 import { RiVipDiamondLine } from "react-icons/ri";
 import { FaArrowDown } from "react-icons/fa";
+import { VscFeedback } from "react-icons/vsc";
+import { TfiMore } from "react-icons/tfi";
 
 
+
+import excs from '/public/images/sponsors/excs.svg'
+import swcsc from '/public/images/sponsors/swcsc.png'
+import solana from '/public/images/sponsors/solana.png'
+// import imageAsset from '/public/images/sponsors/'
+// import imageAsset from '/public/images/sponsors/'
+// import imageAsset from '/public/images/sponsors/'
+// import imageAsset from '/public/images/sponsors/'
+// import imageAsset from '/public/images/sponsors/'
+// import imageAsset from '/public/images/sponsors/'
 
 
 export default function Home() {
@@ -37,7 +49,7 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration = new Date("2025-08-01T12:00:00").getTime()
+	const registration = new Date("2025-01-17T12:00:00").getTime()
 
 
 
@@ -68,11 +80,11 @@ export default function Home() {
 		},
 		{
 			question: "How large can my team be?",
-			answer: "We enforce team sizes of no more than 4 people. This is to ensure that everyone has a fair chance of winning the competition."
+			answer: "We enforce team sizes of no more than 5 people. This is to ensure that everyone has a fair chance of winning the competition."
 		},
 		{
 			question: "What should I bring?",
-			answer: "You should bring your laptop, charger, and any additional items to make your stay comfortable. We will provide you with seating, power, and a lovely atmosphere."
+			answer: "You should bring your laptop, charger, and any additional items to make your stay comfortable. We will provide you with seating, power, food, and a lovely atmosphere."
 		},
 		{
 			question: "Do we have a code of conduct?",
@@ -259,7 +271,41 @@ export default function Home() {
 					html: <CiLinkedin color="black" className="w-full h-full p-1" />
 				}
 			]
-		}
+		},
+		"superteam": {
+			name: "SuperTeam",
+			image: "/images/sponsors/superteam.png",
+			description: "We help the most promising projects in the Solana ecosystem launch and grow. We are organized as a collective of creatives, developers, and operators who are experienced in launching and growing technology businesses.",
+			links: [
+				{
+					name: "Website",
+					link: "https://superteam.fun/",
+					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/superteam-talent/",
+					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+				}
+			]
+		},
+		"solana": {
+			name: "Solana",
+			image: "/images/sponsors/solana.png",
+			description: "The Solana Foundation is a non-profit organization located in Zug, Switzerland dedicated to the decentralization, growth, and security of the Solana network. Solana is a proof of stake blockchain built for mass adoption ◎ Fast, composable, green, and globally distributed.",
+			links: [
+				{
+					name: "Website",
+					link: "https://www.solana.com/",
+					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+				},
+				{
+					name: "linkedin",
+					link: "https://www.linkedin.com/company/solana-foundation/",
+					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+				}
+			]
+		},
 	}
 
 
@@ -333,10 +379,14 @@ export default function Home() {
 							<p className="text-4xl max-lg:text-2xl font-mono">est</p>
 						</div>
 
-						<div className="flex">
+						<div className="flex gap-1">
 							<p>Made possible with</p>
 							<Link href={"https://southwestcsc.org/"}>
-								<Image src={"/images/sponsors/swcsc.png"} width={100} height={100} alt="EXCS" />
+								<Image src={"/images/sponsors/swcsc.png"} width={100} height={100} alt="swcsc" />
+							</Link>
+							<p> and </p>
+							<Link href={"https://www.sec-ridge.com/"} >
+								<Image src={"/images/sponsors/secridge.png"} width={100} height={100} alt="secridge" />
 							</Link>
 						</div>
 					</div>
@@ -344,7 +394,7 @@ export default function Home() {
 
 					<div className="text-wrap w-full">
 						<p className="text-xl max-lg:text-xs font-mono">The largest Hackathon in the South West</p>
-						<p className="flex gap-2 max-lg:text-xs font-bold">Exeter, Bristol, Plymouth, Bournemouth, Cardiff</p>
+						<p className="flex gap-2 max-lg:text-xs font-bold">Exeter, Bristol, Plymouth, Bournemouth</p>
 					</div>
 
 
@@ -360,21 +410,29 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="flex gap-4">
+					<div className="flex gap-4 max-lg:flex-col">
 						{/* <button className="bg-HSWaccent text-HSWprimary px-4 py-2 rounded-md max-lg:text-sm">Registration Not Released</button> */}
 						{
 							(registration - new Date().getTime() > 0) ? (
 								<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit">Registration Not Released</button>
 							) : (
-								<Link href="https://dashboard.dorahacks.io/hackathon/hack-south-west/" target="_blank" className="bg-HSWsecondary text-orange-500 px-4 py-2 rounded-md max-lg:text-sm border border-orange-500 flex gap-2 justify-center items-center">
-									<Image src="/images/sponsors/dora.png" className="w-7 h-7" width={500} height={500} alt="as" />
-									<p className='text-2xl font-extrabold'>Registration</p>
-								</Link>
+								<div className="bg-HSWsecondary text-red-500 px-4 py-2 rounded-md max-lg:text-sm border border-red-500 flex gap-2 justify-center items-center">
+									<Image src="/images/sponsors/dora.png" className="w-4 h-4" width={500} height={500} alt="as" />
+									<p className='text-2xl max-lg:text-sm font-extrabold'>Closed</p>
+								</div>
 							)
 						}
-						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent max-lg:text-sm" onClick={() => {
+						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent  flex gap-2 justify-center items-center" onClick={() => {
 							document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
-						}}>Learn More</button>
+						}}>
+							<TfiMore className="w-4 h-4"/>
+							<p className='text-2xl max-lg:text-sm font-extrabold text-nowrap'>Learn More</p>
+						</button>
+
+						<Link href="/feedback" className="bg-HSWsecondary px-4 py-2 rounded-md border border-blue-500 text-blue-500 max-lg:text-sm flex gap-2 justify-center items-center">
+							<VscFeedback className="w-4 h-4" />
+							<p className='text-2xl max-lg:text-sm font-extrabold'>feedback</p>
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -385,7 +443,7 @@ export default function Home() {
 			</div>
 
 			{/* about */}
-			<div id="about" className="flex max-lg:flex-col gap-32 max-lg:gap-8 w-full h-fit px-[15%] max-lg:px-[5%]">
+			<div id="about" className="flex max-lg:flex-col justify-center items-center gap-32 max-lg:gap-8 w-full h-fit px-[15%] py-[10%] max-lg:px-[5%]">
 
 				<div className="w-full flex gap-16 max-lg:p-16">
 					<div className="relative w-1/2 max-lg:w-full h-96 mt-32 ">
@@ -407,10 +465,10 @@ export default function Home() {
 									(registration - new Date().getTime() > 0) ? (
 										<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit">Registration Not Released</button>
 									) : (
-										<Link href="https://dashboard.dorahacks.io/hackathon/hack-south-west/" target="_blank" className="bg-HSWsecondary text-orange-500 px-4 py-2 rounded-md max-lg:text-sm border border-orange-500 flex gap-2 justify-center items-center">
+										<div className="bg-HSWsecondary text-red-500 px-4 py-2 rounded-md max-lg:text-sm border border-red-500 flex gap-2 justify-center items-center">
 											<Image src="/images/sponsors/dora.png" className="w-7 h-7" width={500} height={500} alt="as" />
-											<p className='text-2xl font-extrabold'>Registration</p>
-										</Link>
+											<p className='text-2xl font-extrabold'>Closed</p>
+										</div>
 									)
 								}
 							</div>
@@ -432,95 +490,21 @@ export default function Home() {
 					</div>
 
 					<div className="flex flex-col gap-2 justify-center items-center w-full font-light">
-						<p className="max-lg:rounded-xs">Organised by the computer science society of University Of Exeter, Hack South West is the most fun and enjoyable experience for students around the uk. Available to everyone from beginners to experts, this is a great opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!</p>
+						<p className="max-lg:rounded-xs">Organised by the Computer Science Society (EXCS) and Cyber Security Society (CyberSoc) of University Of Exeter, Hack South West is the most fun and enjoyable experience for students around the uk. Available to everyone from beginners to experts, this is a great opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!</p>
 						<p className="max-lg:rounded-xs">We will run a 24 hour event which will begin with registration and proceed to be ran overnight. Food and drinks will be provided throughout the duration of the event. We will also be providing a variety of workshops and talks to help you get started with your hackathon project.</p>
-						<p className="max-lg:rounded-xs">The winners of the hackathon will receive the iconic raspberry pi zeros! so turn up with your A game!</p>
 					</div>
 
 				</div>
-			</div>
-
-			{/* day plan */}
-			{/* <div id="plan" className="flex w-full h-fit py-[5%] px-[15%]">
-				<p className="text-2xl font-bold text-HSWaccent">The Day Plan</p>
-
-				
-			</div> */}
-
-			{/* the team */}
-			<div id="team" className="flex flex-col gap-32 items-center justify-center w-full h-fit py-[5%] px-[15%] max-lg:px-[5%]">
-
-
-				<div className="w-full">
-					<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
-						<Profile name="Zara" position="Media Director" description="Manage the socials & public image" image="/images/team/zara.jpeg" linkedin="https://www.linkedin.com/in/zara-brown-zb/" />
-						<Profile name="Charles" position="Sponsorship & VP of Cyber Soc" description="Sponsor communication & cyber soc engagement" image="/images/team/charles.jpg" github="https://github.com/charlesmentuni" linkedin="https://www.linkedin.com/in/charles-ment" />
-						<Profile name="Wiktor" position="Event Director" description="Oversee the creation of HSW" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
-						<Profile name="Nehir" position="Event Co Director" description="Assist with the creation of HSW" image="/images/team/nehir.webp" linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/" />
-						<Profile name="Myo" position="Media Director" description="Content creation & public image" image="/images/team/2.jpeg" linkedin="https://www.linkedin.com/in/myo-sandar-kyaw-10a5862a1/" />
-						<Profile name="Tasbir" position="Oversight Protection" description="Overlook the formulation of HSW" image="/images/team/tasbir.jpeg" linkedin="https://www.linkedin.com/in/tasbir-rahaman/" easter_egg={true} />
-						<Profile name="Ziyad" position="Helper" description="Budgeting and expenses" image="/images/team/Ziyad.png" linkedin="https://www.linkedin.com/in/ziyad-alnawfal-26b992294/" />
-						
-						<Profile name="Mohd Mohtesham Ali" position="President" description="Chief Collaborator @Cyber Security Society" image="/images/hacking.webp" github="" linkedin="https://www.linkedin.com/in/-mohtesham-ali/" website="" cybersoc={true} />
-						<Profile name="Charles Ment" position="Vice President" description="Operations Strategist @Cyber Security Society" image="/images/team/charles.jpg" github="https://github.com/charlesmentuni" linkedin="https://www.linkedin.com/in/charles-ment" cybersoc={true}/>
-						<Profile name="Pratik Shrestha" position="Academic Director" description="Education Innovator @Cyber Security Society" image="/images/team/pratik.jpg" github="https://github.com/Pratikshresth" linkedin="https://www.linkedin.com/in/pratik-shresth/" website="https://pratikshresth.github.io/pshrestha.github.io/" cybersoc={true}/>
-						<Profile name="Aykhan Mammadli" position="Academic Co-Director" description="Curriculum Specialist @Cyber Security Society" image="/images/team/aykhan.jpeg" github="" linkedin="" website="" cybersoc={true}/>
-						<Profile name="Max Morgan" position="Treasurer" description="Finance Guardian @Cyber Security Society" image="/images/team/max.jpeg" github="" linkedin="" website="" cybersoc={true}/>
-						<Profile name="Alif Annabal" position="External Relations Director" description="Partnership Architect @Cyber Security Society" image="/images/team/alif.jpeg" github="" linkedin="" website="" cybersoc={true}/>
-						<Profile name="Aaquib Siddiqui" position="Social's & Events Director" description="Event Maestro @Cyber Security Society" image="/images/team/aaquib.jpeg" github="" linkedin="" website="" cybersoc={true}/>
-					</div>
-				</div>
-			</div>
-
-			{/* FAQ */}
-			<div id="qa" className="flex flex-col">
-				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
-					<div className="w-full">
-						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Questions &</p>
-						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">Answers</p>
-						<br />
-						<p className="text-md font-extralight">Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us with absolutely any queries via our email.</p>
-					</div>
-
-					<div className="w-full flex justify-center items-center">
-						<Image src={"/images/faq.png"} className="object-cover h-full w-fit" width={500} height={500} alt="FAQ" />
-					</div>
-				</div>
-
-				<div className="bg-HSWprimary w-full h-fit flex gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
-					<div className="w-2/5 h-full flex flex-col gap-2 justify-center items-start max-lg:hidden">
-						<Link href={"/"} className="font-light underline text-HSWaccent">Hack South West 2025</Link>
-						<Link href={"/conditions/intellectual"} className="font-light underline text-HSWaccent">Intellectual Property</Link>
-						<Link href={"/conditions/terms"} className="font-light underline text-HSWaccent">Terms & Conditions</Link>
-						<Link href={"/conditions"} className="font-light underline text-HSWaccent">Files</Link>
-					</div>
-
-					<div className="w-full">
-						<p className="text-2xl font-bold">Questions</p>
-
-						<br />
-
-						<div className="w-full h-fit transition-all duration-100 flex flex-col">
-							{
-								questions.map((q, index) => (
-									<Question key={index} info={q} />
-								))
-							}
-						</div>
-
-					</div>
-				</div>
-
 			</div>
 
 			{/* Track information */}
-			<div id="qa" className="flex flex-col">
+			<div id="qa" className="flex flex-col h-fit">
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
 						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Tracks &</p>
 						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">Challenges</p>
 						<br />
-						<p className="text-md font-extralight">What will you be doing during our event! This is secret for now, wait until the start of the event to find out!</p>
+						<p className="text-md font-extralight">What will you be doing during our event! This is mostly secret for now, wait until the start of the event to find out about our two tracks!</p>
 					</div>
 
 					<div className="w-full flex justify-center items-center">
@@ -532,11 +516,59 @@ export default function Home() {
 					{
 
 						(new Date("2025-02-08T12:00:00").getTime() - new Date().getTime() > 0) ? (
-							<Loading message="Wait here for the challenge release!" />
+							<div className="w-full h-full flex flex-col justify-center items-center">
+								<div className="w-full h-fit flex justify-center items-start gap-16 pt-32">
+									<div className="w-1/4 h-full border border-green-500 ">
+										<h1 className="bg-green-500 text-black text-center text-2xl ">Easy Track</h1>
+										<div className="w-full h-full p-4 flex flex-col gap-4">
+
+											<div className="flex flex-col gap-1">
+												<h1 className="text-2xl font-extrabold">Information</h1>
+												<p>For all of you who are new to hackathons and would love to try out the experience while enjoying a slice of pizza playing our mini games, this is for you! rest assured you dont need any technical ability for this and we focus much more on the learning something new aspect here!</p>
+												<p>This track is less heavily sponsored but still includes a keyboard each for the winning team and chocolates for runners up. Everyone will also receive FREE food and drinks during the event!</p>
+											</div>
+
+											<div>
+												<h1 className="text-xl font-extrabold">Prizes available:</h1>
+												<ul className="p-2">
+													<li>Mechanical Keyboard</li>
+													<li>Chocolates</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div className="w-1/4 h-full border border-red-500 ">
+										<h1 className="bg-red-500 text-black text-center text-2xl ">Difficult Track</h1>
+										<div className="w-full h-full p-4 flex flex-col gap-8">
+
+											<div className="flex flex-col gap-1">
+												<h1 className="text-2xl font-extrabold">Information</h1>
+												<p>The experienced hackathon goers can choose this track! Here we explore cyber security in more depth with simple challenges for those of you who are completely new and more complex challenges to push yourselves, there is something for everyone here</p>
+												<p>This track is more heavily sponsored by our sponsors so expect better prizes here as well!</p>
+											</div>
+
+											<div>
+												<h1 className="text-xl font-extrabold">Prizes available:</h1>
+												<ul className="p-2">
+													<li>£100</li>
+													<li>£50</li>
+													<li>Bad USB Stick ( rubber duck alternative )</li>
+													<li>High capacity SSD Card</li>
+													<li>Hacking Hub Certificate</li>
+													<li>Hacking Hub Courses Access</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<Loading message="Wait here for the challenge release!" />
+							</div>
+
 						) : (
 							<div className="bg-HSWprimary w-full h-fit flex flex-col justify-center items-center gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
-
-								<div className="w-full h-fit flex justify-center items-center gap-16">
+								<div className="w-full h-fit flex max-md:flex-col justify-center items-center gap-16">
 
 									{/* track 1 hackathon challenge */}
 									<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
@@ -587,6 +619,29 @@ export default function Home() {
 				</div>
 			</div>
 
+			{/* the team */}
+			<div id="team" className="flex flex-col gap-32 items-center justify-center w-full h-fit py-[5%] px-[15%] max-lg:px-[5%]">
+				<div className="w-full">
+					<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
+						<Profile name="Zara" position="Media Director" description="Manage the socials & public image" image="/images/team/zara.jpeg" linkedin="https://www.linkedin.com/in/zara-brown-zb/" />
+						<Profile name="Charles" position="Sponsorship & VP of Cyber Soc" description="Sponsor communication & cyber soc engagement" image="/images/team/charles.jpg" github="https://github.com/charlesmentuni" linkedin="https://www.linkedin.com/in/charles-ment" />
+						<Profile name="Wiktor" position="Event Director" description="Oversee the creation of HSW" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
+						<Profile name="Nehir" position="Event Co Director" description="Assist with the creation of HSW" image="/images/team/nehir.webp" linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/" />
+						<Profile name="Myo" position="Media Director" description="Content creation & public image" image="/images/team/2.jpeg" linkedin="https://www.linkedin.com/in/myo-sandar-kyaw-10a5862a1/" />
+						<Profile name="Tasbir" position="Oversight Protection" description="Overlook the formulation of HSW" image="/images/team/tasbir.jpeg" linkedin="https://www.linkedin.com/in/tasbir-rahaman/" easter_egg={true} cover={true} />
+						<Profile name="Ziyad" position="Helper" description="Budgeting and expenses" image="/images/team/Ziyad.png" linkedin="https://www.linkedin.com/in/ziyad-alnawfal-26b992294/" cover={true} />
+
+						<Profile name="Mohd Mohtesham Ali" position="President" description="Chief Collaborator @Cyber Security Society" image="/images/hacking.webp" github="" linkedin="https://www.linkedin.com/in/-mohtesham-ali/" website="" cybersoc={true} />
+						<Profile name="Charles Ment" position="Vice President" description="Operations Strategist @Cyber Security Society" image="/images/team/charles.jpg" github="https://github.com/charlesmentuni" linkedin="https://www.linkedin.com/in/charles-ment" cybersoc={true} />
+						<Profile name="Pratik Shrestha" position="Academic Director" description="Education Innovator @Cyber Security Society" image="/images/team/pratik.jpg" github="https://github.com/Pratikshresth" linkedin="https://www.linkedin.com/in/pratik-shresth/" website="https://pratikshresth.github.io/pshrestha.github.io/" cybersoc={true} cover={true} />
+						<Profile name="Aykhan Mammadli" position="Academic Co-Director" description="Curriculum Specialist @Cyber Security Society" image="/images/team/aykhan.jpeg" github="" linkedin="" website="" cybersoc={true} cover={true} />
+						<Profile name="Max Morgan" position="Treasurer" description="Finance Guardian @Cyber Security Society" image="/images/team/max.jpeg" github="" linkedin="" website="" cybersoc={true} />
+						<Profile name="Alif Annabal" position="External Relations Director" description="Partnership Architect @Cyber Security Society" image="/images/team/alif.jpeg" github="" linkedin="" website="" cybersoc={true} />
+						<Profile name="Aaquib Siddiqui" position="Social's & Events Director" description="Event Maestro @Cyber Security Society" image="/images/team/aaquib.jpeg" github="" linkedin="https://www.linkedin.com/in/mohammed-aaquib-ali-siddiqui-a54566287/" website="" cybersoc={true} />
+					</div>
+				</div>
+			</div>
+
 			{/* sponsors */}
 			<div className="flex flex-col items-center justify-center w-full h-screen py-[5%] px-[15%] max-lg:px-[5%]">
 
@@ -594,7 +649,7 @@ export default function Home() {
 					<div className="bg-HSWtext w-full h-fit z-50 rounded-2xl p-2 flex flex-col gap-8">
 						<div className="flex justify-between">
 							<h1 className="text-HSWprimary text-2xl font-extrabold">{open.name}</h1>
-							<Image src={open.image} className="object-fit h-1/2 w-1/2 rounded-xl" width={500} height={500} alt="sponsor" />
+							<Image src={open.image} className="object-fit h-1/2 w-1/2 rounded-xl" width={250} height={250} alt="sponsor" />
 						</div>
 
 						<div className="w-full h-fit flex justify-start gap-4">
@@ -616,8 +671,8 @@ export default function Home() {
 
 				<div className="flex flex-col justify-center items-center max-lg:hidden">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
-						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/swcsc.png"} info={info["swcsc"]} />
+						<Sponsor level={"gold"} setOpen={setOpen} image={excs} info={info["excs"]} />
+						<Sponsor level={"gold"} setOpen={setOpen} image={swcsc} info={info["swcsc"]} />
 
 					</div>
 
@@ -632,11 +687,13 @@ export default function Home() {
 						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/HH-Logo-Full-Color-Icon.svg"} info={info["hh"]} />
 						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/techexeter.png"} info={info["techexeter"]} />
 						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/pydata.png"} info={info["pydata"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/secridge.png"} info={info["secridge"]} />
+						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/secridge.png"} info={info["secridge"]} />
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
+						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/superteam.png"} info={info["superteam"]} />
 						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/exeter.gif"} info={info["exeter"]} />
+						<Sponsor level={"bronze"} setOpen={setOpen} image={solana} info={info["solana"]} />
 					</div>
 				</div>
 
@@ -656,17 +713,60 @@ export default function Home() {
 
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
 						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/mintsw.png"} info={info["mintsw"]} cover={true} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/secridge.png"} info={info["secridge"]} />
+						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/secridge.png"} info={info["secridge"]} />
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
 						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/techexeter.png"} info={info["techexeter"]} />
 						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/pydata.png"} info={info["pydata"]} />
 						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/exeter.gif"} info={info["exeter"]} />
-						
+					</div>
+
+					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
+						<Sponsor level={"bronze"} setOpen={setOpen} image={solana} info={info["solana"]} cover={true} />
+						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/superteam.png"} info={info["superteam"]} />
+					</div>
+				</div>
+			</div>
+
+			{/* FAQ */}
+			<div id="qa" className="flex flex-col">
+				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
+					<div className="w-full">
+						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Questions &</p>
+						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">Answers</p>
+						<br />
+						<p className="text-md font-extralight">Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us with absolutely any queries via our email.</p>
+					</div>
+
+					<div className="w-full flex justify-center items-center">
+						<Image src={"/images/faq.png"} className="object-cover h-full w-fit" width={500} height={500} alt="FAQ" />
 					</div>
 				</div>
 
+				<div className="bg-HSWprimary w-full h-fit flex gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
+					<div className="w-2/5 h-full flex flex-col gap-2 justify-center items-start max-lg:hidden">
+						<Link href={"/"} className="font-light underline text-HSWaccent">Hack South West 2025</Link>
+						<Link href={"/conditions/intellectual"} className="font-light underline text-HSWaccent">Intellectual Property</Link>
+						<Link href={"/conditions/terms"} className="font-light underline text-HSWaccent">Terms & Conditions</Link>
+						<Link href={"/conditions"} className="font-light underline text-HSWaccent">Files</Link>
+					</div>
+
+					<div className="w-full">
+						<p className="text-2xl font-bold">Questions</p>
+
+						<br />
+
+						<div className="w-full h-fit transition-all duration-100 flex flex-col">
+							{
+								questions.map((q, index) => (
+									<Question key={index} info={q} />
+								))
+							}
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	)
