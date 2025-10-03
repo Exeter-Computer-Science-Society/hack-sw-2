@@ -1,8 +1,6 @@
 'use client'
 
 import Image from "next/image"
-import { useState } from "react"
-import { Popup } from "../Popup"
 
 export function Sponsor({ setOpen, level="gray", image, info, cover=false }) {
 	return (
