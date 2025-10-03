@@ -1,17 +1,15 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-export function Countdown({registration}) {
+export function Countdown({ registration }) {
 
-	const [counter, setCounter] = useState(new Date("2024-10-02T09:00:00").getTime() - new Date().getTime())
+	const [counter, setCounter] = useState(registration - new Date().getTime())
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
 		setMounted(true)
-		setInterval(() => setCounter(new Date("2025-02-08T09:00:00").getTime() - new Date().getTime()), 500);
+		setInterval(() => setCounter(registration - new Date().getTime()), 500);
 	}, [])
 
 

@@ -50,7 +50,7 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration = new Date("2025-01-17T12:00:00").getTime()
+	const registration = new Date("2025-11-08T08:00:00").getTime()
 
 
 
