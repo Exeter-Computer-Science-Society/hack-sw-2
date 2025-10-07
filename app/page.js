@@ -606,14 +606,12 @@ export default function Home() {
 			<div id="team" className="flex flex-col gap-32 items-center justify-center w-full h-fit py-[5%] px-[15%] max-lg:px-[5%]">
 				<div className="w-full">
 					<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
-						<Profile name="Charlie" position="" description="" image="" linkedin="" />
+						<Profile name="Charlie" position="Chief Organiser" description="Oversees organization of all hack south west affliated hackathons" image="/images/team/charlie.jpeg" linkedin=" https://www.linkedin.com/in/charlie-winders-187333346" github="https://github.com/cw1169"/>
 						<Profile name="Wiktor" position="Founder of Hack South West & President of EXCS" description="Oversee's the creation of HSW" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
-						<Profile name="Nehir" position="Event Co Director" description="Assist with the creation of HSW" image="/images/team/nehir.webp" linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/" />
-						<Profile name="Tasbir" position="Oversight Protection" description="Overlook the formulation of HSW" image="/images/team/tasbir.jpeg" linkedin="https://www.linkedin.com/in/tasbir-rahaman/" easter_egg={true} cover={true} />
-						<Profile name="Maxime" position="" description="" image="" linkedin="" />
-						<Profile name="Zeynep" position="" description="" image="" linkedin="" />
-						<Profile name="Brendan" position="" description="" image="" linkedin="" />
-						<Profile name="Finn" position="Website Maintainer" description="Oversee's the HSW website" image="/images/team/finn.jpeg" github="https://github.com/TheCheesyWiggle" linkedin="https://www.linkedin.com/in/finn-van-montfort-ab13731ab/" website="" />
+						<Profile name="Nehir" position="Event Co Director" description="Assist with the creation of HSW" image="/images/team/nehir.jpeg" linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/" />
+						<Profile name="Maxime" position="Cyber Security Society President" description="Collaboration on CTF and general assitance" image="/images/team/maxime.jpeg" linkedin="https://www.linkedin.com/in/maxime-reynaud-profile/" github="https://github.com/Stickman230" cybersoc={true}/>
+						<Profile name="Zeynep" position="Co-Academic Director of Cybersecurity society" description="" image="/images/team/zeynep.jpeg" linkedin="https://www.linkedin.com/in/zeynep-g%C3%BCler2005/" github="https://github.com/zeyneppguler23" cybersoc={true}/>
+						<Profile name="Finn" position="Web Developer/ Site Maintainer" description="Oversee's the HSW website" image="/images/team/finn.jpeg" github="https://github.com/TheCheesyWiggle" linkedin="https://www.linkedin.com/in/finn-van-montfort-ab13731ab/"/>
 					</div>
 				</div>
 			</div>
