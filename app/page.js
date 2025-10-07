@@ -44,7 +44,7 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration = new Date("2025-01-17T12:00:00").getTime()
+	const registration = new Date("2025-11-08T08:00:00").getTime()
 
 
 
@@ -406,17 +406,8 @@ export default function Home() {
 					</div>
 
 					<div className="flex gap-4 max-lg:flex-col">
-						{/* <button className="bg-HSWaccent text-HSWprimary px-4 py-2 rounded-md max-lg:text-sm">Registration Not Released</button> */}
-						{
-							(registration - new Date().getTime() > 0) ? (
-								<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit">Registration Not Released</button>
-							) : (
-								<div className="bg-HSWsecondary text-red-500 px-4 py-2 rounded-md max-lg:text-sm border border-red-500 flex gap-2 justify-center items-center">
-									<Image src="/images/sponsors/dora.png" className="w-4 h-4" width={500} height={500} alt="as" />
-									<p className='text-2xl max-lg:text-sm font-extrabold'>Closed</p>
-								</div>
-							)
-						}
+						<RegistrationButton registration={registration} />
+
 						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent  flex gap-2 justify-center items-center" onClick={() => {
 							document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
 						}}>
@@ -456,16 +447,7 @@ export default function Home() {
 						<div className="w-1/2 h-full flex items-center">
 
 							<div className="absolute -bottom-6 w-full h-fit flex justify-center z-50">
-								{
-									(registration - new Date().getTime() > 0) ? (
-										<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit">Registration Not Released</button>
-									) : (
-										<div className="bg-HSWsecondary text-red-500 px-4 py-2 rounded-md max-lg:text-sm border border-red-500 flex gap-2 justify-center items-center">
-											<Image src="/images/sponsors/dora.png" className="w-7 h-7" width={500} height={500} alt="as" />
-											<p className='text-2xl font-extrabold'>Closed</p>
-										</div>
-									)
-								}
+								<RegistrationButton registration={registration} />
 							</div>
 
 							{
