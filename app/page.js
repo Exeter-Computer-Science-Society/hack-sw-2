@@ -32,12 +32,7 @@ import { TfiMore } from "react-icons/tfi";
 import excs from '/public/images/sponsors/excs.svg'
 import liminal from '/public/images/sponsors/liminal.svg'
 import solana from '/public/images/sponsors/solana.png'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
+
 
 
 export default function Home() {
