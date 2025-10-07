@@ -30,15 +30,9 @@ import { TfiMore } from "react-icons/tfi";
 
 
 import excs from '/public/images/sponsors/excs.svg'
-import swcsc from '/public/images/sponsors/swcsc.png'
+import liminal from '/public/images/sponsors/liminal.svg'
 import solana from '/public/images/sponsors/solana.png'
-import { RegistrationButton } from "./components/RegistrationButton";
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
-// import imageAsset from '/public/images/sponsors/'
+
 
 
 export default function Home() {
@@ -103,19 +97,19 @@ export default function Home() {
 	]
 
 	const info = {
-		"swcsc": {
-			name: "South West Cyber Security Cluster",
-			image: "/images/sponsors/swcsc.png",
-			description: "The South West Cyber Security Cluster is a group of cyber security professionals, academics, and enthusiasts who meet regularly to share knowledge and expertise. The cluster is a great place to learn about the latest trends in cyber security, network with other professionals, and find new opportunities in the field.",
+		"liminal": {
+			name: "Liminal",
+			image: "/images/sponsors/liminal.svg",
+			description: "Liminal is a cybersecurity platform designed to help regulated enterprises securely adopt generative AI technologies. It offers a multi-model, model-agnostic solution that ensures robust data protection, governance, and compliance, enabling organizations to leverage AI across various workflows without compromising security. ",
 			links: [
 				{
 					name: "Website",
-					link: "https://www.southwestcsc.org/",
+					link: "https://www.liminal.ai",
 					html: <BsGlobe2 color="black" className="w-full h-full" />
 				},
 				{
 					name: "linkedin",
-					link: "https://www.linkedin.com/company/south-west-cyber-security-cluster/",
+					link: "https://www.linkedin.com/company/liminal-ai-security/",
 					html: <CiLinkedin color="black" className="w-full h-full" />
 				},
 			]
@@ -646,7 +640,7 @@ export default function Home() {
 				<div className="flex flex-col justify-center items-center max-lg:hidden">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
 						<Sponsor level={"gold"} setOpen={setOpen} image={excs} info={info["excs"]} />
-						<Sponsor level={"gold"} setOpen={setOpen} image={swcsc} info={info["swcsc"]} />
+						<Sponsor level={"gold"} setOpen={setOpen} image={liminal} info={info["liminal"]} />
 
 					</div>
 
@@ -674,7 +668,7 @@ export default function Home() {
 				<div className="flex-col justify-center items-center hidden max-lg:flex">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
 						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
-						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/swcsc.png"} info={info["swcsc"]} />
+						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/liminal.svg"} info={info["liminal"]} />
 
 					</div>
 

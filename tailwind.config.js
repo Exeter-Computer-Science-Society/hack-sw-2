@@ -8,8 +8,9 @@ module.exports = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	safelist: [
-		{
-			pattern: /^drop-shadow-.+/,
+		{ pattern: /^drop-shadow-.+/ },
+		{ pattern: /^bg-.+/,
+		  variants: ['hover'],
 		},
 	],
 
