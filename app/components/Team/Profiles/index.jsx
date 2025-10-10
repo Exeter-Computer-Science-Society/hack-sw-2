@@ -35,7 +35,7 @@ export function Profile({ name, position, description, image, github = "", linke
 				<div className="absolute bg-HSWsecondary2 w-full h-3/4 bottom-0 z-0"></div>
 
 				<div className="w-full flex justify-center">
-					<Image src={image} className={`mask mask-decagon h-36 w-2/3 self-center ${cover ? "object-cover" : "object-contain"}`} draggable={false} width={500} height={500} alt="not found" />
+					<Image src={image} className={`mask mask-decagon h-36 w-2/3 self-center ${cover ? "object-cover" : "object-contain"}`} draggable={false} width={500} height={500} alt="name" />
 				</div>
 
 				<div className="flex flex-col gap-2 z-10 min-h-48 max-lg:min-h-64 justify-between">
