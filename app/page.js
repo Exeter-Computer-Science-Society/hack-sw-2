@@ -6,8 +6,8 @@ import { SouthWestImage } from "./components/General/SouthWestImage"
 import { BsCalendar2Date } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { Countdown } from "./components/Countdown";
-import { IoIosArrowDown } from "react-icons/io";
 import { BsGlobe2 } from "react-icons/bs";
+import { VscFileSymlinkDirectory } from "react-icons/vsc";
 
 
 
@@ -499,6 +499,11 @@ export default function Home() {
 						<p className="max-lg:rounded-xs">Organised by the Computer Science Society (EXCS) and Cyber Security Society (CyberSoc) of University Of Exeter, Hack South West is the most fun and enjoyable experience for students around the uk. Available to everyone from beginners to experts, this is a great opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!</p>
 						<p className="max-lg:rounded-xs">We will run a 24 hour event which will begin with registration and proceed to be ran overnight. Food and drinks will be provided throughout the duration of the event. We will also be providing a variety of workshops and talks to help you get started with your hackathon project.</p>
 					</div>
+
+                    <Link className="w-fit bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent flex gap-2 justify-center items-center" href={"https://guildgroupssetup-my.sharepoint.com/:f:/g/personal/excs_groups_exeterguild_com/Ej3uvzjcOhxJshyqPG-i7A4Bj-Vd2GYqpygapE_MtUPqgA?e=Xwt0sm"} target="_blank">
+                        <VscFileSymlinkDirectory className="w-6 h-6"/>
+                        <p className='text-2xl max-lg:text-sm font-semibold text-nowrap'>Check Out Our Files</p>
+                    </Link>
 				</div>
 			</div>
 
