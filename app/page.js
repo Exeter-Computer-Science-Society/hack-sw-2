@@ -306,49 +306,77 @@ export default function Home() {
 
 
 	useEffect(() => {
+
+        // change the image every 5 seconds
 		const unload = setInterval(() => {
 
 			console.log("selecting new image for 1")
 			setFading1(true)
 
+            // select the next image after the fade out
 			setTimeout(() => {
 
 				// select the next image
-				const nextImage = images[Math.floor(Math.random() * images.length)]
-				setCurrentImage1(nextImage)
+				let nextImage = images[Math.floor(Math.random() * images.length)]
 
-				console.log(nextImage)
+                // only set if its not the same as the other image or itself
+                if (nextImage === currentImage1 || nextImage === currentImage2) {
+                    console.log("same image selected, reselecting")
+                    let newImage = images[Math.floor(Math.random() * images.length)]
+                    while (newImage === currentImage1 || newImage === currentImage2) {
+                        newImage = images[Math.floor(Math.random() * images.length)]
+                    }
+
+					setCurrentImage1(newImage)
+                } else {
+					setCurrentImage1(nextImage)
+				}
 			}, 400)
 
+            // fade in the new image
 			setTimeout(() => {
 				setFading1(false)
 			}, 500)
-
 		}, 5000)
 
+        // Cleanup to avoid memory leaks
 		return () => clearInterval(unload)
 	}, [])
 
 	useEffect(() => {
+
+        // offset the second image change by 2.5 seconds
 		const timeout = setTimeout(() => {
-			// change the image
+
+			// change the image every 5 seconds
 			const unload = setInterval(() => {
-				console.log("selecting new image for 2")
+				
+                // fade out the current image
 				setFading2(true)
 
+                // select the next image after the fade out
 				setTimeout(() => {
-					// select the next image
-					const nextImage = images[Math.floor(Math.random() * images.length)]
-					setCurrentImage2(nextImage)
+					
+                    // select the next image
+                    let nextImage = images[Math.floor(Math.random() * images.length)]
 
-					console.log(nextImage)
+                    if (nextImage === currentImage2 || nextImage === currentImage1) {
+                        console.log("same image selected, reselecting")
+                        let newImage = images[Math.floor(Math.random() * images.length)]
+                        while (newImage === currentImage2 || newImage === currentImage1) {
+                            newImage = images[Math.floor(Math.random() * images.length)]
+                        }
+
+                        setCurrentImage2(newImage)
+                    } else {
+                        setCurrentImage2(nextImage)
+                    }
 				}, 400)
 
+                // fade in the new image
 				setTimeout(() => {
 					setFading2(false)
 				}, 500)
-
-
 			}, 5000)
 		}, 2500);
 
