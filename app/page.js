@@ -425,7 +425,7 @@ export default function Home() {
 					<div className="">
 						<div className="flex gap-2 items-center">
 							<BsCalendar2Date />
-							<p className="max-lg:text-sm">Saturday, Feb 8th, 9:00am</p>
+							<p className="max-lg:text-sm">Saturday, Nov 8th, 9:00am</p>
 						</div>
 
 						<div className="flex gap-2 items-center">
