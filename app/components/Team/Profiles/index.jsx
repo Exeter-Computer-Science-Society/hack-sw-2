@@ -20,7 +20,9 @@ export function Profile({ name, position, description, image, github = "", linke
 					setLastTouched(currentTime);
 					console.log("resetting")
 					const div = document.getElementById("git");
-					div.style.transform = `translate(0px, 0px)`;
+                    if (div) {
+						div.style.transform = `translate(0px, 0px)`;
+					}
 				}
 			}
 		}, 500)
