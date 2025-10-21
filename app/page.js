@@ -26,7 +26,7 @@ import { VscFeedback } from "react-icons/vsc"
 import { TfiMore } from "react-icons/tfi"
 import { CiTrophy } from "react-icons/ci"
 
-import excs from "/public/images/sponsors/excs.svg"
+import excs from "/public/images/sponsors/thumbnail_EXCS.png"
 import liminal from "/public/images/sponsors/liminal.svg"
 import solana from "/public/images/sponsors/solana.png"
 import { RegistrationButton } from "./components/RegistrationButton"
@@ -176,9 +176,8 @@ export default function Home() {
 		},
 		excs: {
 			name: "Exeter Computer Science Society",
-			image: "/images/sponsors/excs.svg",
-			description:
-				"The Exeter Computer Science Society is a student-run organization that aims to support and promote computer science education at the University of Exeter. The society organizes a variety of events and activities throughout the year, including hackathons, workshops, and socials. Exeter Computer Science Society is committed to creating a welcoming and inclusive community for all students interested in computer science.",
+			image: "/images/sponsors/thumbnail_EXCS.png",
+			description: "The Exeter Computer Science Society is a student-run organization that aims to support and promote computer science education at the University of Exeter. The society organizes a variety of events and activities throughout the year, including hackathons, workshops, and socials. Exeter Computer Science Society is committed to creating a welcoming and inclusive community for all students interested in computer science.",
 			links: [
 				{
 					name: "Website",
@@ -1053,18 +1052,9 @@ export default function Home() {
 
 				<div className="flex-col justify-center items-center hidden max-lg:flex mt-16">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor
-							level={"gold"}
-							setOpen={setOpen}
-							image={"/images/sponsors/excs.svg"}
-							info={info["excs"]}
-						/>
-						<Sponsor
-							level={"gold"}
-							setOpen={setOpen}
-							image={"/images/sponsors/liminal.svg"}
-							info={info["liminal"]}
-						/>
+						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/thumbnail_EXCS.png"} info={info["excs"]} />
+						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/liminal.svg"} info={info["liminal"]} />
+
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">

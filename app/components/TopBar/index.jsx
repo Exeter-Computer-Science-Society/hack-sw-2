@@ -24,7 +24,7 @@ export function TopBar() {
 
 			<div className="flex gap-4 justify-center items-center">
 				<Link href="https://www.sec-ridge.com/" target="_blank" className="">
-					<Image src="/images/EX-removebg-preview.png" className="h-full w-full object-fill" width={100} height={100} alt="not found" />
+					<Image src="/images/EX-removebg-preview.png" className="h-full w-full object-fill" width={500} height={100} alt="not found" />
 				</Link>
 			</div>
 
