@@ -389,19 +389,13 @@ export default function Home() {
 			<SouthWestImage />
 
 			{/* front facing page */}
-			<div className="relative flex flex-col items-center justify-center w-full h-[100vh] px-[15%] max-lg:px-[5%] pt-[15%] max-lg:pt-[50%] z-50">
+			<div className="relative flex flex-col items-center justify-center w-full h-[100vh] px-[15%] max-lg:px-[5%] pt-[10%] max-lg:pt-[40%] z-50">
 				<div className="hidden text-red-500" />
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div>
-						<div className="flex justify-start items-baseline">
-							<p className="text-8xl max-lg:text-4xl font-extrabold">Hack</p>
-
-							<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">S</p>
-							<p className="text-4xl max-lg:text-2xl font-mono">outh</p>
-
-							<p className="text-HSWaccent text-8xl max-lg:text-4xl font-sans">W</p>
-							<p className="text-4xl max-lg:text-2xl font-mono">est</p>
-						</div>
+						<Link href={"https://hack-south-west.excs.uk/"}>
+							<Image src={"/images/HSW-logo.png"} width={500} height={500} alt="Hack South West Logo" />
+						</Link>
 
 						<div className="flex gap-1">
 							<p>Made possible with</p>
@@ -491,8 +485,7 @@ export default function Home() {
 
 				<div className="flex flex-col gap-16 max-lg:gap-8 w-fit">
 					<div>
-						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Something</p>
-						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">About Us</p>
+						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">About Us</h1>
 					</div>
 
 					<div className="flex flex-col gap-2 justify-center items-center w-full font-light">
@@ -511,8 +504,8 @@ export default function Home() {
 			<div id="qa" className="flex flex-col h-fit">
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
-						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Tracks &</p>
-						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">Challenges</p>
+						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Tracks &</h1>
+						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Challenges</h1>
 						<br />
 						<p className="text-md font-extralight">What will you be doing during our event! This is mostly secret for now, wait until the start of the event to find out about our two tracks!</p>
 					</div>
@@ -630,6 +623,10 @@ export default function Home() {
 			</div>
 
 			{/* the team */}
+			<div className="flex justify-center items-center">
+				<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Meet the Team</h1>
+			</div>
+
 			<div id="team" className="flex flex-col gap-32 items-center justify-center w-full h-fit py-[5%] px-[15%] max-lg:px-[5%]">
 				<div className="w-full">
 					<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
@@ -644,7 +641,7 @@ export default function Home() {
 			</div>
 
 			{/* sponsors */}
-			<div className="flex flex-col items-center justify-center w-full h-screen py-[5%] px-[15%] max-lg:px-[5%]">
+			<div className="flex flex-col items-center justify-center w-full py-[5%] px-[15%] max-lg:px-[5%]">
 
 				<Popup trigger={open} setTrigger={setOpen}>
 					<div className="bg-HSWtext w-full h-fit z-50 rounded-2xl p-2 flex flex-col gap-8">
@@ -668,9 +665,9 @@ export default function Home() {
 					</div>
 				</Popup>
 
-				<p className="text-6xl font-bold text-HSWtext mb-16 max-lg:text-lg">Meet the Sponsors</p>
+				<p className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Our Sponsors</p>
 
-				<div className="flex flex-col justify-center items-center max-lg:hidden">
+				<div className="flex flex-col justify-center items-center max-lg:hidden mt-16">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
 						<Sponsor level={"gold"} setOpen={setOpen} image={excs} info={info["excs"]} />
 						<Sponsor level={"gold"} setOpen={setOpen} image={liminal} info={info["liminal"]} />
@@ -698,7 +695,7 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="flex-col justify-center items-center hidden max-lg:flex">
+				<div className="flex-col justify-center items-center hidden max-lg:flex mt-16">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
 						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
 						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/liminal.svg"} info={info["liminal"]} />
@@ -734,8 +731,8 @@ export default function Home() {
 			<div id="qa" className="flex flex-col">
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
-						<p className="text-6xl font-bold text-HSWtext max-lg:text-lg">Questions &</p>
-						<p className="text-6xl font-bold text-HSWtext pl-16 max-lg:pl-8 max-lg:text-lg">Answers</p>
+						<p className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Questions &</p>
+						<p className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Answers</p>
 						<br />
 						<p className="text-md font-extralight">Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us with absolutely any queries via our email.</p>
 					</div>
