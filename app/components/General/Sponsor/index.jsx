@@ -3,6 +3,13 @@
 import SponsorCard from "./Card"
 
 const info = {
+    liminal: {
+		name: "Liminal",
+		image: "/images/sponsors/liminal.svg",
+		description: "Liminal is a cybersecurity platform designed to help regulated enterprises securely adopt generative AI technologies.",
+		site: "https://www.liminal.ai",
+		linkedin: "https://www.linkedin.com/company/liminal-ai-security/"
+	},
     southwestcybersecuritycluster: {
 		name: "South West Cyber Security Cluster",
 		image: "/images/sponsors/swcsc.png",
@@ -10,14 +17,6 @@ const info = {
 		site: "https://southwestcsc.org/",
 		linkedin: "https://www.linkedin.com/company/south-west-cyber-security-cluster/"
 	},
-	// liminal: {
-	// 	name: "Liminal",
-	// 	image: "/images/sponsors/liminal.svg",
-	// 	description: "Liminal is a cybersecurity platform designed to help regulated enterprises securely adopt generative AI technologies.",
-	// 	site: "https://www.liminal.ai",
-	// 	linkedin: "https://www.linkedin.com/company/liminal-ai-security/"
-	// },
-	
 	// exeter: {
 	// 	name: "University of Exeter",
 	// 	image: "/images/sponsors/exeter.gif",
