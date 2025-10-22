@@ -697,217 +697,167 @@ export default function Home() {
 				</div>
 
 				<div>
-					{new Date("2025-02-08T12:00:00").getTime() - new Date().getTime() > 0 ? (
-						<div className="w-full h-full flex flex-col justify-center items-center">
-							<div className="w-full h-fit flex justify-center items-start gap-16 pt-32">
-								<div className="w-1/4 h-full border border-green-500 ">
-									<h1 className="bg-green-500 text-black text-center text-2xl ">Easy Track</h1>
-									<div className="w-full h-full p-4 flex flex-col gap-4">
-										<div className="flex flex-col gap-1">
-											<h1 className="text-2xl font-extrabold">Information</h1>
-											<p>
-												For all of you who are new to hackathons and would love to try out the experience while enjoying a slice of
-												pizza playing our mini games, this is for you! rest assured you dont need any technical ability for this and we
-												focus much more on the learning something new aspect here!
-											</p>
-											<p>
-												This track is less heavily sponsored but still includes a keyboard each for the winning team and chocolates for
-												runners up. Everyone will also receive FREE food and drinks during the event!
-											</p>
+					<div className="bg-HSWprimary w-full h-fit flex flex-col justify-center items-center gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
+						<div className="w-full h-fit flex max-md:flex-col justify-center items-center gap-16">
+							{/* CTF Event */}
+							<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
+								<p className="text-3xl font-thin text-HSWtext pb-80">
+									<b className="text-HSWaccent font-extrabold">Capture The Flag</b> Event
+								</p>
+
+								<Image
+									src={"/images/hacking.webp"}
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25"
+									width={500}
+									height={500}
+									alt="CTF Hackathon Background"
+								/>
+
+								{/* Intro */}
+								<p className="px-[10%]">
+									Join us for an action-packed <b className="text-HSWaccent">12-hour Capture the Flag Hackathon</b> on{" "}
+									<b>Friday, 8th November</b>, hosted at the <b>Innovation Centre, Phase 2</b>. In this track, your cybersecurity knowledge
+									will be pushed to the limit! With three exciting difficulties and <b>30 unique boxes</b> to solve, there’s something for
+									everyone. Every completed challenge will grant you a flag to unlock points at <b className="text-HSWaccent">any moment</b>{" "}
+									during the hackathon. Explore hidden Easter eggs around the venue, meet our sponsors, and enjoy a full day of hacking,
+									learning, and collaboration.
+								</p>
+
+								{/* Schedule */}
+								<div className="px-[10%] w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
+
+									<div className="relative border-l-2 border-HSWaccent ml-4">
+										{/* 8:00 AM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">8:00 AM</p>
+											<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
 										</div>
 
-										<div>
-											<h1 className="text-xl font-extrabold">Prizes available:</h1>
-											<ul className="p-2">
-												<li>Mechanical Keyboard</li>
-												<li>Chocolates</li>
-											</ul>
+										{/* 8:30 AM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">8:30 AM</p>
+											<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
+										</div>
+
+										{/* 9:00 AM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">9:00 AM</p>
+											<p className="text-sm text-HSWtext/80">Hacking Begins</p>
+										</div>
+
+										{/* Throughout the Day */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">Throughout the Day</p>
+											<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
+										</div>
+
+										{/* 9:00 PM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">9:00 PM</p>
+											<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
+										</div>
+
+										{/* 10:00 PM */}
+										<div className="ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">10:00 PM</p>
+											<p className="text-sm text-HSWtext/80">Event Close</p>
 										</div>
 									</div>
+
+									<p className="mt-4 text-center text-HSWtext/80">
+										🍕 <b>Food and refreshments provided throughout the day!</b>
+									</p>
 								</div>
 
-								<div className="w-1/4 h-full border border-red-500 ">
-									<h1 className="bg-red-500 text-black text-center text-2xl ">Difficult Track</h1>
-									<div className="w-full h-full p-4 flex flex-col gap-8">
-										<div className="flex flex-col gap-1">
-											<h1 className="text-2xl font-extrabold">Information</h1>
-											<p>
-												The experienced hackathon goers can choose this track! Here we explore cyber security in more depth with simple
-												challenges for those of you who are completely new and more complex challenges to push yourselves, there is
-												something for everyone here
-											</p>
-											<p>This track is more heavily sponsored by our sponsors so expect better prizes here as well!</p>
-										</div>
+								{/* Prizes */}
+								<div className="px-[10%] text-left w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-gold mt-6 mb-2">🏆 Prizes</p>
 
+									<div className="bg-HSWsecondary2 p-4 rounded-md mb-4 flex gap-2 justify-between">
 										<div>
-											<h1 className="text-xl font-extrabold">Prizes available:</h1>
-											<ul className="p-2">
+											<p className="font-semibold">🥇 1st Place</p>
+											<ul className="list-disc list-inside mb-3">
 												<li>£100</li>
+												<li>512GB SSD</li>
+												<li>PicoUSB</li>
+												<li>XXL Mouse Pads</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥈 2nd Place</p>
+											<ul className="list-disc list-inside mb-3">
 												<li>£50</li>
-												<li>Bad USB Stick ( rubber duck alternative )</li>
-												<li>High capacity SSD Card</li>
-												<li>Hacking Hub Certificate</li>
-												<li>Hacking Hub Courses Access</li>
+												<li>PicoUSB</li>
+												<li>Beanies</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥉 3rd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>Thermos Bottles</li>
 											</ul>
 										</div>
 									</div>
 								</div>
-							</div>
-							<Loading message="Wait here for the challenge release!" />
-						</div>
-					) : (
-						<div className="bg-HSWprimary w-full h-fit flex flex-col justify-center items-center gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
-							<div className="w-full h-fit flex max-md:flex-col justify-center items-center gap-16">
-								{/* CTF Event */}
-								<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
-									<p className="text-3xl font-thin text-HSWtext pb-80">
-										<b className="text-HSWaccent font-extrabold">Capture The Flag</b> Event
-									</p>
 
-									<Image
-										src={"/images/hacking.webp"}
-										className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25"
-										width={500}
-										height={500}
-										alt="CTF Hackathon Background"
-									/>
-
-									{/* Intro */}
-									<p className="px-[10%]">
-										Join us for an action-packed <b className="text-HSWaccent">12-hour Capture the Flag Hackathon</b> on{" "}
-										<b>Friday, 8th November</b>, hosted at the <b>Innovation Centre, Phase 2</b>. In this track, your cybersecurity
-										knowledge will be pushed to the limit! With three exciting difficulties and <b>30 unique boxes</b> to solve, there’s
-										something for everyone. Every completed challenge will grant you a flag to unlock points at{" "}
-										<b className="text-HSWaccent">any moment</b> during the hackathon. Explore hidden Easter eggs around the venue, meet our
-										sponsors, and enjoy a full day of hacking, learning, and collaboration.
-									</p>
-
-									{/* Schedule */}
-									<div className="px-[10%] w-full max-w-3xl">
-										<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
-
-										<div className="relative border-l-2 border-HSWaccent ml-4">
-											{/* 8:00 AM */}
-											<div className="mb-6 ml-6 relative">
-												<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">8:00 AM</p>
-												<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
-											</div>
-
-											{/* 8:30 AM */}
-											<div className="mb-6 ml-6 relative">
-												<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">8:30 AM</p>
-												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
-											</div>
-
-											{/* 9:00 AM */}
-											<div className="mb-6 ml-6 relative">
-												<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">9:00 AM</p>
-												<p className="text-sm text-HSWtext/80">Hacking Begins</p>
-											</div>
-
-											{/* Throughout the Day */}
-											<div className="mb-6 ml-6 relative">
-												<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Throughout the Day</p>
-												<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
-											</div>
-
-											{/* 9:00 PM */}
-											<div className="mb-6 ml-6 relative">
-												<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">9:00 PM</p>
-												<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
-											</div>
-
-											{/* 10:00 PM */}
-											<div className="ml-6 relative">
-												<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">10:00 PM</p>
-												<p className="text-sm text-HSWtext/80">Event Close</p>
-											</div>
-										</div>
-
-										<p className="mt-4 text-center text-HSWtext/80">
-											🍕 <b>Food and refreshments provided throughout the day!</b>
-										</p>
-									</div>
-
-
-									{/* Prizes */}
-									<div className="px-[10%] text-left w-full max-w-3xl">
-										<p className="text-2xl font-semibold text-gold mt-6 mb-2">🏆 Prizes</p>
-
-										<div className="bg-HSWsecondary2 p-4 rounded-md mb-4 flex gap-2 justify-between">
-                                            <div>
-                                                    
-                                                <p className="font-semibold">🥇 1st Place</p>
-                                                <ul className="list-disc list-inside mb-3">
-                                                    <li>£100</li>
-                                                    <li>512GB SSD</li>
-                                                    <li>PicoUSB</li>
-                                                    <li>XXL Mouse Pads</li>
-                                                </ul>
-                                            </div>
-
-                                            <div>
-                                                <p className="font-semibold">🥈 2nd Place</p>
-                                                <ul className="list-disc list-inside mb-3">
-                                                    <li>£50</li>
-                                                    <li>PicoUSB</li>
-                                                    <li>Beanies</li>
-                                                </ul>
-                                            </div>
-
-                                            <div>
-                                                <p className="font-semibold">🥉 3rd Place</p>
-                                                <ul className="list-disc list-inside mb-3">
-                                                    <li>Thermos Bottles</li>
-                                                </ul>
-                                            </div>
-										</div>
-									</div>
-
-									{/* Registration */}
-									<div className="px-[10%] self-start z-50">
-										<RegistrationButton registration={registration} />
-									</div>
-								</div>
-
-								{/*  hackathon event */}
-								<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
-									<Image
-										src={"/images/hackathon.webp"}
-										className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25 z-0"
-										width={500}
-										height={500}
-										alt="smt"
-									/>
-									<p className="text-3xl font-thin text-HSWtext pb-80">
-										<b className="text-HSWaccent font-bold">Hackathon</b> Event
-									</p>
-									<p className="px-[10%]">
-										This event will push you to develop your own creative solution to a challenge faced by the world. We look out for solutions
-										that incorporate a high level of technical knowledge to a problem of significant <b className="text-HSWaccent">impact</b> in
-										the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to
-										continue to develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also
-										benefit humanity!
-									</p>
-									<p className="px-[10%]"></p>
-
-									<div className="px-[10%] self-start z-50">
-										<RegistrationButton registration={new Date("2026-01-31T08:00:00Z")} force={true} />
-									</div>
+								{/* Registration */}
+								<div className="px-[10%] self-start z-50">
+									<RegistrationButton registration={registration} />
 								</div>
 							</div>
 
-							<br />
+							{/*  hackathon event */}
+							<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
+								<Image
+									src={"/images/hackathon.webp"}
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25 z-0"
+									width={500}
+									height={500}
+									alt="smt"
+								/>
+								<p className="text-3xl font-thin text-HSWtext pb-80">
+									<b className="text-HSWaccent font-bold">Hackathon</b> Event
+								</p>
+								<p className="px-[10%]">
+									This event will push you to develop your own creative solution to a challenge faced by the world. We look out for solutions
+									that incorporate a high level of technical knowledge to a problem of significant <b className="text-HSWaccent">impact</b> in
+									the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to continue to
+									develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also benefit
+									humanity!
+								</p>
 
-							<div>{/* Submssion */}</div>
+                                <p className="px-[10%]">
+									We are still working hard on organising this, please check out our socials for more information as it comes! <br />
+									
+								</p>
+
+                                <p className="px-[10%] z-50">
+                                    Follow us on <Link href="https://www.linkedin.com/company/hack-south-west/" className="text-HSWaccent">LinkedIn</Link> and <Link href="https://www.instagram.com/hacksouthwest/" className="text-HSWaccent">Instagram</Link> for the latest updates.
+                                </p>
+
+
+								<div className="px-[10%] self-start z-50">
+									<RegistrationButton
+										registration={new Date("2026-01-31T08:00:00Z")}
+										force={true}
+									/>
+								</div>
+							</div>
 						</div>
-					)}
+
+						<br />
+
+						<div>{/* Submssion */}</div>
+					</div>
 				</div>
 			</div>
 
