@@ -70,7 +70,7 @@ const info = {
 		linkedin: "https://www.linkedin.com/company/solana-foundation/"
 	},
     checkout: {
-		name: "Checkout",
+		name: "Checkout.com",
 		image: "/images/sponsors/checkout.jpeg",
 		description: "Checkout is a global payment solutions provider",
 		site: "https://www.checkout.com/",
