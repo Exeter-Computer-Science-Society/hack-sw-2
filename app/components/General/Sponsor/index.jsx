@@ -3,14 +3,14 @@
 import SponsorCard from "./Card"
 
 const info = {
-    liminal: {
+	liminal: {
 		name: "Liminal",
 		image: "/images/sponsors/liminal.svg",
 		description: "Liminal is a cybersecurity platform designed to help regulated enterprises securely adopt generative AI technologies.",
 		site: "https://www.liminal.ai",
 		linkedin: "https://www.linkedin.com/company/liminal-ai-security/"
 	},
-    southwestcybersecuritycluster: {
+	southwestcybersecuritycluster: {
 		name: "South West Cyber Security Cluster",
 		image: "/images/sponsors/swcsc.png",
 		description: "The South West Cyber Security Cluster is a community of cyber security professionals in the South West of England.",
@@ -24,7 +24,7 @@ const info = {
 	// 	site: "https://www.exeter.ac.uk/",
 	// 	linkedin: "https://www.linkedin.com/school/university-of-exeter/"
 	// },
-    hh: {
+	hh: {
 		name: "Hacking Hub",
 		image: "/images/sponsors/HackingHub.svg",
 		description: "HackingHub is a cutting-edge platform for web application hacking education",
@@ -45,7 +45,7 @@ const info = {
 	// 	site: "https://www.techexeter.uk/",
 	// 	linkedin: "https://www.linkedin.com/company/tech-exeter/"
 	// },
-	
+
 	// pydata: {
 	// 	name: "Py Data",
 	// 	image: "/images/sponsors/pydata.png",
@@ -53,7 +53,7 @@ const info = {
 	// 	site: "https://pydata.org/",
 	// 	linkedin: "https://www.linkedin.com/company/pydata-exeter/"
 	// },
-	
+
 	superteam: {
 		name: "SuperTeam",
 		image: "/images/sponsors/superteam.png",
@@ -68,58 +68,60 @@ const info = {
 		site: "https://www.solana.com/",
 		linkedin: "https://www.linkedin.com/company/solana-foundation/"
 	},
-    checkout: {
+	checkout: {
 		name: "Checkout.com",
 		image: "/images/sponsors/checkout.jpeg",
 		description: "Checkout is a global payment solutions provider",
 		site: "https://www.checkout.com/",
 		linkedin: "https://www.linkedin.com/company/checkout/"
 	},
-    dora: {
+	dora: {
 		name: "Dora Hacks",
 		image: "/images/sponsors/dora.png",
 		description: "DoraHacks is a global hackathon organization that aims to foster innovation and creativity in the tech community.",
 		site: "https://www.dorahacks.com/",
 		linkedin: "https://www.linkedin.com/company/dorahacks/"
 	},
-    excs: {
+	excs: {
 		name: "Computer Science Society",
 		image: "/images/sponsors/excs.svg",
 		description: "The Exeter Computer Science Society supports computer science students through hackathons, workshops, and social events",
 		site: "https://excs.uk/",
 		linkedin: "https://www.linkedin.com/school/exeter-computing-society/"
 	},
-    cybersoc: {
+	cybersoc: {
 		name: "Cyber Security Society",
 		image: "/images/sponsors/cybersoc.png",
 		description: "The Exeter CyberSecurity Society is building a vibrant cyber community at the University of Exeter",
 		site: "https://my.exeterguild.com/groups/TT2W9/cyber-security-society",
 		linkedin: "https://www.linkedin.com/company/exeter-cyber-security-society/"
-	},
+	}
 }
 
 export default function Sponsor() {
 	const sponsors = Object.values(info)
 
 	return (
-		<section className="w-full px-8 py-16">
-			<h2 className="text-6xl font-bold text-HSWaccent mb-16 max-lg:text-lg">Meet the Sponsors</h2>
+		<section className="w-full px-4 sm:px-8 py-8 sm:py-16">
+			<h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-HSWaccent mb-8 sm:mb-12 lg:mb-16">Meet the Sponsors</h2>
 
 			<div className="mx-auto max-w-7xl">
 				<div
 					className="
 					grid
-					grid-cols-1
+					grid-cols-2
+					sm:grid-cols-3
 					lg:grid-cols-4
-					xl:grid-cols-6
-					gap-1
-					p-3 sm:p-4 lg:p-6
-
+					xl:grid-cols-5
+					gap-2
+					sm:gap-3
+					lg:gap-4
+					p-2 sm:p-4 lg:p-6
 				"
 				>
 					{sponsors.map((s, index) => (
 						<SponsorCard
-                            key={index}
+							key={index}
 							sName={s.name}
 							sSite={s.site}
 							sSummary={s.description}
