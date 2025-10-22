@@ -69,7 +69,7 @@ export default function Home() {
 		},
 		{
 			question: "How large can my team be?",
-			answer: "We enforce team sizes of no more than 5 people. This is to ensure that everyone has a fair chance of winning the competition."
+			answer: "We enforce team sizes of no more than 4 people. This is to ensure that everyone has a fair chance of winning the competition."
 		},
 		{
 			question: "What should I bring?",
