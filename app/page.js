@@ -1,40 +1,35 @@
-'use client'
+"use client"
 
 import { SouthWestImage } from "./components/General/SouthWestImage"
 
 // icons
-import { BsCalendar2Date } from "react-icons/bs";
-import { CiLocationOn } from "react-icons/ci";
-import { Countdown } from "./components/Countdown";
-import { BsGlobe2 } from "react-icons/bs";
-import { VscFileSymlinkDirectory } from "react-icons/vsc";
+import { BsCalendar2Date } from "react-icons/bs"
+import { CiLocationOn } from "react-icons/ci"
+import { Countdown } from "./components/Countdown"
+import { BsGlobe2 } from "react-icons/bs"
+import { VscFileSymlinkDirectory } from "react-icons/vsc"
 
+import { Profile } from "./components/Team/Profiles"
+import { Sponsor } from "./components/General/Sponsor"
+import { Popup } from "./components/General/Popup"
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { Question } from "./components/Question"
+import { Loading } from "./components/Loading"
+import { CiLinkedin } from "react-icons/ci"
+import { BsDiamond } from "react-icons/bs"
+import { BsSuitDiamond } from "react-icons/bs"
+import { RiVipDiamondLine } from "react-icons/ri"
+import { FaArrowDown } from "react-icons/fa"
+import { VscFeedback } from "react-icons/vsc"
+import { TfiMore } from "react-icons/tfi"
+import { CiTrophy } from "react-icons/ci"
 
-
-import { Profile } from "./components/Team/Profiles";
-import { Sponsor } from "./components/General/Sponsor";
-import { Popup } from "./components/General/Popup";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Question } from "./components/Question";
-import { Loading } from "./components/Loading";
-import { CiLinkedin } from "react-icons/ci";
-import { BsDiamond } from "react-icons/bs";
-import { BsSuitDiamond } from "react-icons/bs";
-import { RiVipDiamondLine } from "react-icons/ri";
-import { FaArrowDown } from "react-icons/fa";
-import { VscFeedback } from "react-icons/vsc";
-import { TfiMore } from "react-icons/tfi";
-
-
-
-import excs from '/public/images/sponsors/excs.svg'
-import liminal from '/public/images/sponsors/liminal.svg'
-import solana from '/public/images/sponsors/solana.png'
-import { RegistrationButton } from "./components/RegistrationButton";
-
-
+import excs from "/public/images/sponsors/excs.svg"
+import liminal from "/public/images/sponsors/liminal.svg"
+import solana from "/public/images/sponsors/solana.png"
+import { RegistrationButton } from "./components/RegistrationButton"
 
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
@@ -46,8 +41,6 @@ export default function Home() {
 	const [fading2, setFading2] = useState(false)
 
 	const registration = new Date("2025-11-08T08:00:00").getTime()
-
-
 
 	const questions = [
 		{
@@ -76,7 +69,7 @@ export default function Home() {
 		},
 		{
 			question: "How large can my team be?",
-			answer: "We enforce team sizes of no more than 5 people. This is to ensure that everyone has a fair chance of winning the competition."
+			answer: "We enforce team sizes of no more than 4 people. This is to ensure that everyone has a fair chance of winning the competition."
 		},
 		{
 			question: "What should I bring?",
@@ -94,294 +87,417 @@ export default function Home() {
 			question: "What are the terms and conditions?",
 			answer: "Check the link just to the left of this :)"
 		}
-
 	]
 
 	const info = {
-		"liminal": {
+		liminal: {
 			name: "Liminal",
 			image: "/images/sponsors/liminal.svg",
-			description: "Liminal is a cybersecurity platform designed to help regulated enterprises securely adopt generative AI technologies. It offers a multi-model, model-agnostic solution that ensures robust data protection, governance, and compliance, enabling organizations to leverage AI across various workflows without compromising security. ",
+			description:
+				"Liminal is a cybersecurity platform designed to help regulated enterprises securely adopt generative AI technologies. It offers a multi-model, model-agnostic solution that ensures robust data protection, governance, and compliance, enabling organizations to leverage AI across various workflows without compromising security. ",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.liminal.ai",
-					html: <BsGlobe2 color="black" className="w-full h-full" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/liminal-ai-security/",
-					html: <CiLinkedin color="black" className="w-full h-full" />
-				},
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full"
+						/>
+					)
+				}
 			]
 		},
-		"dora": {
+		dora: {
 			name: "Dora Hacks",
 			image: "/images/sponsors/dora.png",
-			description: "DoraHacks is a global hackathon organization that aims to foster innovation and creativity in the tech community. They host hackathons all over the world, bringing together developers, designers, and entrepreneurs to collaborate on projects and build new products. DoraHacks is committed to creating a diverse and inclusive community that welcomes people from all backgrounds and skill levels.",
+			description:
+				"DoraHacks is a global hackathon organization that aims to foster innovation and creativity in the tech community. They host hackathons all over the world, bringing together developers, designers, and entrepreneurs to collaborate on projects and build new products. DoraHacks is committed to creating a diverse and inclusive community that welcomes people from all backgrounds and skill levels.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.dorahacks.com/",
-					html: <BsGlobe2 color="black" className="w-full h-full" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/dorahacks/",
-					html: <CiLinkedin color="black" className="w-full h-full" />
-				},
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full"
+						/>
+					)
+				}
 			]
 		},
-		"exeter": {
+		exeter: {
 			name: "University of Exeter",
 			image: "/images/sponsors/exeter.gif",
-			description: "University of Exeter is a UK based university that offers a wide range of undergraduate and postgraduate courses in a variety of subjects. The university is known for its high-quality teaching and research, as well as its beautiful campus and vibrant student community. University of Exeter is committed to providing students with an exceptional education and a supportive learning environment.",
+			description:
+				"University of Exeter is a UK based university that offers a wide range of undergraduate and postgraduate courses in a variety of subjects. The university is known for its high-quality teaching and research, as well as its beautiful campus and vibrant student community. University of Exeter is committed to providing students with an exceptional education and a supportive learning environment.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.exeter.ac.uk/",
-					html: <BsGlobe2 color="black" className="w-full h-full" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/school/university-of-exeter/",
-					html: <CiLinkedin color="black" className="w-full h-full" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				}
 			]
 		},
-		"excs": {
+		excs: {
 			name: "Exeter Computer Science Society",
 			image: "/images/sponsors/excs.svg",
-			description: "The Exeter Computer Science Society is a student-run organization that aims to support and promote computer science education at the University of Exeter. The society organizes a variety of events and activities throughout the year, including hackathons, workshops, and socials. Exeter Computer Science Society is committed to creating a welcoming and inclusive community for all students interested in computer science.",
+			description:
+				"The Exeter Computer Science Society is a student-run organization that aims to support and promote computer science education at the University of Exeter. The society organizes a variety of events and activities throughout the year, including hackathons, workshops, and socials. Exeter Computer Science Society is committed to creating a welcoming and inclusive community for all students interested in computer science.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.excs.uk/",
-					html: <BsGlobe2 color="black" className="w-full h-full" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/school/exeter-computing-society",
-					html: <CiLinkedin color="black" className="w-full h-full" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				}
 			]
 		},
-		"mintsw": {
+		mintsw: {
 			name: "Mint South West",
 			image: "/images/sponsors/mintswdark.png",
-			description: "Mint South West is an organization that supports the crypto community in the South West. They host collaborative work space every friday and a pizza/beer night on the last friday of every month.",
+			description:
+				"Mint South West is an organization that supports the crypto community in the South West. They host collaborative work space every friday and a pizza/beer night on the last friday of every month.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.mrwedge.co.uk/mintsw",
-					html: <BsGlobe2 color="black" className="w-full h-full" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/mint-southwest/",
-					html: <CiLinkedin color="black" className="w-full h-full" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full"
+						/>
+					)
 				}
 			]
 		},
-		"techexeter": {
+		techexeter: {
 			name: "Tech Exeter",
 			image: "/images/sponsors/techexeterdark.jpg",
-			description: "Tech Exeter is a community of tech enthusiasts in Exeter. They host regular meetups, workshops, and conferences to bring together people who are passionate about technology. Tech Exeter is committed to creating a welcoming and inclusive community that supports learning and collaboration.",
+			description:
+				"Tech Exeter is a community of tech enthusiasts in Exeter. They host regular meetups, workshops, and conferences to bring together people who are passionate about technology. Tech Exeter is committed to creating a welcoming and inclusive community that supports learning and collaboration.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.techexeter.uk/",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/tech-exeter/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
 		},
-		"hh": {
+		hh: {
 			name: "Hacking Hub",
 			image: "/images/sponsors/HH-Logo-Full-Color.svg",
-			description: "HackingHub is a cutting-edge platform for web application hacking education, designed and run by seasoned security experts. Our interactive, hands-on labs replicate real-world applications and infrastructure, providing an engaging and practical learning experience that both challenges and educates users.",
+			description:
+				"HackingHub is a cutting-edge platform for web application hacking education, designed and run by seasoned security experts. Our interactive, hands-on labs replicate real-world applications and infrastructure, providing an engaging and practical learning experience that both challenges and educates users.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.hackinghub.io/",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/hackinghub/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
 		},
-		"pydata": {
+		pydata: {
 			name: "Py Data",
 			image: "/images/sponsors/pydatabig.jpeg",
-			description: "Py Data is an Exeter based tech event organiser. They regularly host a wide range of exciting talks, involving the Exeter community to gain deeper knowledge in a variety of fields outside your domain! It is truly a remarkable movement ",
+			description:
+				"Py Data is an Exeter based tech event organiser. They regularly host a wide range of exciting talks, involving the Exeter community to gain deeper knowledge in a variety of fields outside your domain! It is truly a remarkable movement ",
 			links: [
 				{
 					name: "Website",
 					link: "https://pydata.org/",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/pydata-exeter/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
 		},
-		"cybersoc": {
+		cybersoc: {
 			name: "Exeter CyberSecurity Society",
 			image: "/images/sponsors/cybersoc.jpg",
-			description: "We aim to establish a vibrant Cyber Community at the University of Exeter for current aspirants and prospective students, including undergraduates, postgraduates, and alumni. With enthusiastic backing from our professors, who are eager to participate, we aim to make a significant impact.",
+			description:
+				"We aim to establish a vibrant Cyber Community at the University of Exeter for current aspirants and prospective students, including undergraduates, postgraduates, and alumni. With enthusiastic backing from our professors, who are eager to participate, we aim to make a significant impact.",
 			links: [
 				{
 					name: "Website",
 					link: "https://my.exeterguild.com/groups/TT2W9/cyber-security-society",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/exeter-cyber-security-society/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
 		},
-		"secridge": {
+		secridge: {
 			name: "Sec Ridge",
 			image: "/images/sponsors/secridgeblack.png",
-			description: "Sec Ridge is a group empowering the next generation of cybersecurity professionals through ctf challenges and sponsorship. They have very generously assisted us with the creation of the ctf challenges and help with the organisation and running of the event. Check them out above!",
+			description:
+				"Sec Ridge is a group empowering the next generation of cybersecurity professionals through ctf challenges and sponsorship. They have very generously assisted us with the creation of the ctf challenges and help with the organisation and running of the event. Check them out above!",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.sec-ridge.com/",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/secridge/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
 		},
-		"superteam": {
+		superteam: {
 			name: "SuperTeam",
 			image: "/images/sponsors/superteam.png",
-			description: "We help the most promising projects in the Solana ecosystem launch and grow. We are organized as a collective of creatives, developers, and operators who are experienced in launching and growing technology businesses.",
+			description:
+				"We help the most promising projects in the Solana ecosystem launch and grow. We are organized as a collective of creatives, developers, and operators who are experienced in launching and growing technology businesses.",
 			links: [
 				{
 					name: "Website",
 					link: "https://superteam.fun/",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/superteam-talent/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
 		},
-		"solana": {
+		solana: {
 			name: "Solana",
 			image: "/images/sponsors/solana.png",
-			description: "The Solana Foundation is a non-profit organization located in Zug, Switzerland dedicated to the decentralization, growth, and security of the Solana network. Solana is a proof of stake blockchain built for mass adoption ◎ Fast, composable, green, and globally distributed.",
+			description:
+				"The Solana Foundation is a non-profit organization located in Zug, Switzerland dedicated to the decentralization, growth, and security of the Solana network. Solana is a proof of stake blockchain built for mass adoption ◎ Fast, composable, green, and globally distributed.",
 			links: [
 				{
 					name: "Website",
 					link: "https://www.solana.com/",
-					html: <BsGlobe2 color="black" className="w-full h-full p-1" />
+					html: (
+						<BsGlobe2
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				},
 				{
 					name: "linkedin",
 					link: "https://www.linkedin.com/company/solana-foundation/",
-					html: <CiLinkedin color="black" className="w-full h-full p-1" />
+					html: (
+						<CiLinkedin
+							color="black"
+							className="w-full h-full p-1"
+						/>
+					)
 				}
 			]
-		},
+		}
 	}
 
-
 	useEffect(() => {
-
-        // change the image every 5 seconds
+		// change the image every 5 seconds
 		const unload = setInterval(() => {
-
 			console.log("selecting new image for 1")
 			setFading1(true)
 
-            // select the next image after the fade out
+			// select the next image after the fade out
 			setTimeout(() => {
-
 				// select the next image
 				let nextImage = images[Math.floor(Math.random() * images.length)]
 
-                // only set if its not the same as the other image or itself
-                if (nextImage === currentImage1 || nextImage === currentImage2) {
-                    console.log("same image selected, reselecting")
-                    let newImage = images[Math.floor(Math.random() * images.length)]
-                    while (newImage === currentImage1 || newImage === currentImage2) {
-                        newImage = images[Math.floor(Math.random() * images.length)]
-                    }
+				// only set if its not the same as the other image or itself
+				if (nextImage === currentImage1 || nextImage === currentImage2) {
+					console.log("same image selected, reselecting")
+					let newImage = images[Math.floor(Math.random() * images.length)]
+					while (newImage === currentImage1 || newImage === currentImage2) {
+						newImage = images[Math.floor(Math.random() * images.length)]
+					}
 
 					setCurrentImage1(newImage)
-                } else {
+				} else {
 					setCurrentImage1(nextImage)
 				}
 			}, 400)
 
-            // fade in the new image
+			// fade in the new image
 			setTimeout(() => {
 				setFading1(false)
 			}, 500)
 		}, 5000)
 
-        // Cleanup to avoid memory leaks
+		// Cleanup to avoid memory leaks
 		return () => clearInterval(unload)
 	}, [])
 
 	useEffect(() => {
-
-        // offset the second image change by 2.5 seconds
+		// offset the second image change by 2.5 seconds
 		const timeout = setTimeout(() => {
-
 			// change the image every 5 seconds
 			const unload = setInterval(() => {
-				
-                // fade out the current image
+				// fade out the current image
 				setFading2(true)
 
-                // select the next image after the fade out
+				// select the next image after the fade out
 				setTimeout(() => {
-					
-                    // select the next image
-                    let nextImage = images[Math.floor(Math.random() * images.length)]
+					// select the next image
+					let nextImage = images[Math.floor(Math.random() * images.length)]
 
-                    if (nextImage === currentImage2 || nextImage === currentImage1) {
-                        console.log("same image selected, reselecting")
-                        let newImage = images[Math.floor(Math.random() * images.length)]
-                        while (newImage === currentImage2 || newImage === currentImage1) {
-                            newImage = images[Math.floor(Math.random() * images.length)]
-                        }
+					if (nextImage === currentImage2 || nextImage === currentImage1) {
+						console.log("same image selected, reselecting")
+						let newImage = images[Math.floor(Math.random() * images.length)]
+						while (newImage === currentImage2 || newImage === currentImage1) {
+							newImage = images[Math.floor(Math.random() * images.length)]
+						}
 
-                        setCurrentImage2(newImage)
-                    } else {
-                        setCurrentImage2(nextImage)
-                    }
+						setCurrentImage2(newImage)
+					} else {
+						setCurrentImage2(nextImage)
+					}
 				}, 400)
 
-                // fade in the new image
+				// fade in the new image
 				setTimeout(() => {
 					setFading2(false)
 				}, 500)
 			}, 5000)
-		}, 2500);
+		}, 2500)
 
 		// Cleanup to avoid memory leaks
-		return () => clearTimeout(timeout);
+		return () => clearTimeout(timeout)
 	}, [])
 
 	return (
@@ -394,53 +510,77 @@ export default function Home() {
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div>
 						<Link href={"https://hack-south-west.excs.uk/"}>
-							<Image src={"/images/HSW-logo.png"} width={500} height={500} alt="Hack South West Logo" />
+							<Image
+								src={"/images/HSW-logo.png"}
+								width={500}
+								height={500}
+								alt="Hack South West Logo"
+							/>
 						</Link>
 
 						<div className="flex gap-1">
 							<p>Made possible with</p>
 							<Link href={"https://southwestcsc.org/"}>
-								<Image src={"/images/sponsors/swcsc.png"} width={100} height={100} alt="swcsc" />
+								<Image
+									src={"/images/sponsors/swcsc.png"}
+									width={100}
+									height={100}
+									alt="swcsc"
+								/>
 							</Link>
 							<p> and </p>
-							<Link href={"https://www.sec-ridge.com/"} >
-								<Image src={"/images/sponsors/secridge.png"} width={100} height={100} alt="secridge" />
+							<Link href={"https://www.sec-ridge.com/"}>
+								<Image
+									src={"/images/sponsors/secridge.png"}
+									width={100}
+									height={100}
+									alt="secridge"
+								/>
 							</Link>
 						</div>
 					</div>
-
 
 					<div className="text-wrap w-full">
 						<p className="text-xl max-lg:text-xs font-mono">The largest Hackathon in the South West</p>
 						<p className="flex gap-2 max-lg:text-xs font-bold">Exeter, Bristol, Plymouth, Bournemouth</p>
 					</div>
 
-
 					<div className="">
 						<div className="flex gap-2 items-center">
 							<BsCalendar2Date />
-							<p className="max-lg:text-sm">Saturday, Nov 8th, 9:00am</p>
+							<p className="max-lg:text-sm">Saturday, Nov 8th, 8:00am</p>
 						</div>
 
 						<div className="flex gap-2 items-center">
 							<CiLocationOn />
 							<p className="max-lg:text-sm">University of Exeter, Innovation Center</p>
 						</div>
+
+						<div className="flex gap-2 items-center">
+							<CiTrophy />
+							<p className="max-lg:text-sm">Over £500 in prizes!</p>
+						</div>
 					</div>
 
 					<div className="flex gap-4 max-lg:flex-col">
 						<RegistrationButton registration={registration} />
 
-						<button className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent  flex gap-2 justify-center items-center" onClick={() => {
-							document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
-						}}>
-							<TfiMore className="w-4 h-4"/>
-							<p className='text-2xl max-lg:text-sm font-extrabold text-nowrap'>Learn More</p>
+						<button
+							className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent  flex gap-2 justify-center items-center"
+							onClick={() => {
+								document.getElementById("about").scrollIntoView({ behavior: "smooth" })
+							}}
+						>
+							<TfiMore className="w-4 h-4" />
+							<p className="text-2xl max-lg:text-sm font-extrabold text-nowrap">Learn More</p>
 						</button>
 
-						<Link href="/feedback" className="bg-HSWsecondary px-4 py-2 rounded-md border border-blue-500 text-blue-500 max-lg:text-sm flex gap-2 justify-center items-center">
+						<Link
+							href="/feedback"
+							className="bg-HSWsecondary px-4 py-2 rounded-md border border-blue-500 text-blue-500 max-lg:text-sm flex gap-2 justify-center items-center"
+						>
 							<VscFeedback className="w-4 h-4" />
-							<p className='text-2xl max-lg:text-sm font-extrabold'>feedback</p>
+							<p className="text-2xl max-lg:text-sm font-extrabold">feedback</p>
 						</Link>
 					</div>
 				</div>
@@ -452,33 +592,48 @@ export default function Home() {
 			</div>
 
 			{/* about */}
-			<div id="about" className="flex max-lg:flex-col justify-center items-center gap-32 max-lg:gap-8 w-full h-fit px-[15%] py-[10%] max-lg:px-[5%]">
-
+			<div
+				id="about"
+				className="flex max-lg:flex-col justify-center items-center gap-32 max-lg:gap-8 w-full h-fit px-[15%] py-[10%] max-lg:px-[5%]"
+			>
 				<div className="w-full flex gap-16 max-lg:p-16">
 					<div className="relative w-1/2 max-lg:w-full h-96 mt-32 ">
 						<div className="w-1/2 max-lg:w-full h-full">
 							<div className="absolute w-full h-full border border-white -top-12 max-lg:-top-4 -left-8 max-lg:-left-3" />
-							{
-								currentImage1 && (
-									<Image src={currentImage1} className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${fading1 ? "opacity-0" : "opacity-100"}`} draggable={false} width={500} height={500} alt="not found" />
-								)
-							}
+							{currentImage1 && (
+								<Image
+									src={currentImage1}
+									className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${
+										fading1 ? "opacity-0" : "opacity-100"
+									}`}
+									draggable={false}
+									width={500}
+									height={500}
+									alt="not found"
+								/>
+							)}
 						</div>
 					</div>
 
 					<div className="relative w-1/2 h-96 max-lg:hidden">
 						<div className="w-1/2 h-full flex items-center">
-
 							<div className="absolute -bottom-6 w-full h-fit flex justify-center z-50">
 								<RegistrationButton registration={registration} />
 							</div>
 
-							{
-								currentImage2 && (
-									// <Image src={currentImage2} className="absolute top-0 left-0 w-full h-full object-cover" draggable={false} width={500} height={500} alt="not found" />
-									<Image src={currentImage2} className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${fading2 ? "opacity-0" : "opacity-100"}`} draggable={false} width={500} height={500} alt="not found" />
-								)
-							}
+							{currentImage2 && (
+								// <Image src={currentImage2} className="absolute top-0 left-0 w-full h-full object-cover" draggable={false} width={500} height={500} alt="not found" />
+								<Image
+									src={currentImage2}
+									className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${
+										fading2 ? "opacity-0" : "opacity-100"
+									}`}
+									draggable={false}
+									width={500}
+									height={500}
+									alt="not found"
+								/>
+							)}
 						</div>
 					</div>
 				</div>
@@ -489,136 +644,220 @@ export default function Home() {
 					</div>
 
 					<div className="flex flex-col gap-2 justify-center items-center w-full font-light">
-						<p className="max-lg:rounded-xs">Organised by the Computer Science Society (EXCS) and Cyber Security Society (CyberSoc) of University Of Exeter, Hack South West is the most fun and enjoyable experience for students around the uk. Available to everyone from beginners to experts, this is a great opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!</p>
-						<p className="max-lg:rounded-xs">We will run a 24 hour event which will begin with registration and proceed to be ran overnight. Food and drinks will be provided throughout the duration of the event. We will also be providing a variety of workshops and talks to help you get started with your hackathon project.</p>
+						<p className="max-lg:rounded-xs">
+							Organised by the Computer Science Society (EXCS) and Cyber Security Society (CyberSoc) of University Of Exeter, Hack South West is
+							the most fun and enjoyable experience for students around the UK. Available to everyone from beginners to experts, this is a great
+							opportunity to get into hackathons. Our welcoming atmosphere will surely encourage you to go to more!
+						</p>
+						<p className="max-lg:rounded-xs">
+							We will run two events this year! Firstly in November there will be a Capture The Flag (CTF) competition, followed by the main
+							hackathon event in February. The CTF will be a great way for anyone to get involved with problem solving and cybersecurity
+							challenges, while the main hackathon will allow participants to build projects, learn new skills, and network with like-minded
+							individuals. Both events include exceptional prizes and plenty of food to keep you going! To find out more about either event visit
+							our registration website which you may find on this part of the website and also at the top!
+						</p>
 					</div>
 
-                    <Link className="w-fit bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent flex gap-2 justify-center items-center" href={"https://guildgroupssetup-my.sharepoint.com/:f:/g/personal/excs_groups_exeterguild_com/Ej3uvzjcOhxJshyqPG-i7A4Bj-Vd2GYqpygapE_MtUPqgA?e=Xwt0sm"} target="_blank">
-                        <VscFileSymlinkDirectory className="w-6 h-6"/>
-                        <p className='text-2xl max-lg:text-sm font-semibold text-nowrap'>Check Out Our Files</p>
-                    </Link>
+					<Link
+						className="w-fit bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent flex gap-2 justify-center items-center"
+						href={
+							"https://guildgroupssetup-my.sharepoint.com/:f:/g/personal/excs_groups_exeterguild_com/Ej3uvzjcOhxJshyqPG-i7A4Bj-Vd2GYqpygapE_MtUPqgA?e=Xwt0sm"
+						}
+						target="_blank"
+					>
+						<VscFileSymlinkDirectory className="w-6 h-6" />
+						<p className="text-2xl max-lg:text-sm font-semibold text-nowrap">Pictures from previous events</p>
+					</Link>
 				</div>
 			</div>
 
 			{/* Track information */}
-			<div id="qa" className="flex flex-col h-fit">
+			<div
+				id="qa"
+				className="flex flex-col h-fit"
+			>
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
-						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Tracks &</h1>
-						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Challenges</h1>
+						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Our Events</h1>
 						<br />
-						<p className="text-md font-extralight">What will you be doing during our event! This is mostly secret for now, wait until the start of the event to find out about our two tracks!</p>
+						<p className="text-md font-extralight">
+							What will you be doing during our events! Here you can find out more about both of our events!
+						</p>
 					</div>
 
 					<div className="w-full flex justify-center items-center">
-						<Image src={"/images/smt.png"} className="object-cover h-full w-fit" width={500} height={500} alt="FAQ" />
+						<Image
+							src={"/images/smt.png"}
+							className="object-cover h-full w-fit"
+							width={500}
+							height={500}
+							alt="FAQ"
+						/>
 					</div>
 				</div>
 
 				<div>
-					{
+					<div className="bg-HSWprimary w-full h-fit flex flex-col justify-center items-center gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
+						<div className="w-full h-fit flex max-md:flex-col justify-center items-center gap-16">
+							{/* CTF Event */}
+							<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
+								<p className="text-3xl font-thin text-HSWtext pb-80">
+									<b className="text-HSWaccent font-extrabold">Capture The Flag</b> Event
+								</p>
 
-						(new Date("2025-02-08T12:00:00").getTime() - new Date().getTime() > 0) ? (
-							<div className="w-full h-full flex flex-col justify-center items-center">
-								<div className="w-full h-fit flex justify-center items-start gap-16 pt-32">
-									<div className="w-1/4 h-full border border-green-500 ">
-										<h1 className="bg-green-500 text-black text-center text-2xl ">Easy Track</h1>
-										<div className="w-full h-full p-4 flex flex-col gap-4">
+								<Image
+									src={"/images/hacking.webp"}
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25"
+									width={500}
+									height={500}
+									alt="CTF Hackathon Background"
+								/>
 
-											<div className="flex flex-col gap-1">
-												<h1 className="text-2xl font-extrabold">Information</h1>
-												<p>For all of you who are new to hackathons and would love to try out the experience while enjoying a slice of pizza playing our mini games, this is for you! rest assured you dont need any technical ability for this and we focus much more on the learning something new aspect here!</p>
-												<p>This track is less heavily sponsored but still includes a keyboard each for the winning team and chocolates for runners up. Everyone will also receive FREE food and drinks during the event!</p>
-											</div>
+								{/* Intro */}
+								<p className="px-[10%] z-50">
+									Join us for an action-packed <b className="text-HSWaccent">12-hour Capture the Flag Hackathon</b> on{" "}
+									<b>Friday, 8th November</b>, hosted at the <b>Innovation Centre, Phase 2</b>. In this track, your cybersecurity knowledge
+									will be pushed to the limit! With three exciting difficulties and <b>30 unique boxes</b> to solve, there’s something for
+									everyone. Every completed challenge will grant you a flag to unlock points at <b className="text-HSWaccent">any moment</b>{" "}
+									during the hackathon. Explore hidden Easter eggs around the venue, meet our sponsors, and enjoy a full day of hacking,
+									learning, and collaboration.
+								</p>
 
-											<div>
-												<h1 className="text-xl font-extrabold">Prizes available:</h1>
-												<ul className="p-2">
-													<li>Mechanical Keyboard</li>
-													<li>Chocolates</li>
-												</ul>
-											</div>
+								{/* Schedule */}
+								<div className="px-[10%] w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
+
+									<div className="relative border-l-2 border-HSWaccent ml-4">
+										{/* 8:00 AM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">8:00 AM</p>
+											<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+										</div>
+
+										{/* 8:30 AM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">8:30 AM</p>
+											<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
+										</div>
+
+										{/* 9:00 AM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">9:00 AM</p>
+											<p className="text-sm text-HSWtext/80">Hacking Begins</p>
+										</div>
+
+										{/* Throughout the Day */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">Throughout the Day</p>
+											<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
+										</div>
+
+										{/* 9:00 PM */}
+										<div className="mb-6 ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">9:00 PM</p>
+											<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
+										</div>
+
+										{/* 10:00 PM */}
+										<div className="ml-6 relative">
+											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
+											<p className="font-semibold text-lg text-HSWtext">10:00 PM</p>
+											<p className="text-sm text-HSWtext/80">Event Close</p>
 										</div>
 									</div>
 
-									<div className="w-1/4 h-full border border-red-500 ">
-										<h1 className="bg-red-500 text-black text-center text-2xl ">Difficult Track</h1>
-										<div className="w-full h-full p-4 flex flex-col gap-8">
-
-											<div className="flex flex-col gap-1">
-												<h1 className="text-2xl font-extrabold">Information</h1>
-												<p>The experienced hackathon goers can choose this track! Here we explore cyber security in more depth with simple challenges for those of you who are completely new and more complex challenges to push yourselves, there is something for everyone here</p>
-												<p>This track is more heavily sponsored by our sponsors so expect better prizes here as well!</p>
-											</div>
-
-											<div>
-												<h1 className="text-xl font-extrabold">Prizes available:</h1>
-												<ul className="p-2">
-													<li>£100</li>
-													<li>£50</li>
-													<li>Bad USB Stick ( rubber duck alternative )</li>
-													<li>High capacity SSD Card</li>
-													<li>Hacking Hub Certificate</li>
-													<li>Hacking Hub Courses Access</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-
+									<p className="mt-4 text-center text-HSWtext/80">
+										🍕 <b>Food and refreshments provided throughout the day!</b>
+									</p>
 								</div>
-								<Loading message="Wait here for the challenge release!" />
+
+								{/* Prizes */}
+								<div className="px-[10%] text-left w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-gold mt-6 mb-2">🏆 Prizes</p>
+
+									<div className="bg-HSWsecondary2 p-4 rounded-md mb-4 flex gap-2 justify-between">
+										<div>
+											<p className="font-semibold">🥇 1st Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>£100</li>
+												<li>512GB SSD</li>
+												<li>PicoUSB</li>
+												<li>XXL Mouse Pads</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥈 2nd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>£50</li>
+												<li>PicoUSB</li>
+												<li>Beanies</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥉 3rd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>Thermos Bottles</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								{/* Registration */}
+								<div className="px-[10%] self-start z-50">
+									<RegistrationButton registration={registration} />
+								</div>
 							</div>
 
-						) : (
-							<div className="bg-HSWprimary w-full h-fit flex flex-col justify-center items-center gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
-								<div className="w-full h-fit flex max-md:flex-col justify-center items-center gap-16">
+							{/*  hackathon event */}
+							<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
+								<Image
+									src={"/images/hackathon.webp"}
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25 z-0"
+									width={500}
+									height={500}
+									alt="smt"
+								/>
+								<p className="text-3xl font-thin text-HSWtext pb-80">
+									<b className="text-HSWaccent font-bold">Hackathon</b> Event
+								</p>
+								<p className="px-[10%]">
+									This event will push you to develop your own creative solution to a challenge faced by the world. We look out for solutions
+									that incorporate a high level of technical knowledge to a problem of significant <b className="text-HSWaccent">impact</b> in
+									the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to continue to
+									develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also benefit
+									humanity!
+								</p>
 
-									{/* track 1 hackathon challenge */}
-									<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
-										<Image src={"/images/hackathon.webp"} className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25 z-0" width={500} height={500} alt="smt" />
-										<p className="text-3xl font-thin text-HSWtext pb-80"><b className="text-gold">Data 4 Good</b> Track</p>
-										<p className="px-[10%]">This track will push you to develop your own solution to a data challenge faced by the world. We look out for solutions that incorporate a high level of technical knowledge to a problem of significant <b className="text-gold">impact</b> in the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to continue to develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also benefit humanity!</p>
-										<p className="px-[10%]"></p>
+                                <p className="px-[10%]">
+									We are still working hard on organising this, please check out our socials for more information as it comes! <br />
+									
+								</p>
 
-										<div className="px-[10%] self-start z-50">
-											<Link href="https://dorahacks.io" target="_blank" className="border border-HSWtext rounded-lg px-4 py-2 w-fit h-fit self-start hover:border-HSWaccent hover:text-HSWaccent cursor-pointer transition-all duration-200">
-												Learn More
-											</Link>
-										</div>
-									</div>
+                                <p className="px-[10%] z-50">
+                                    Follow us on <Link href="https://www.linkedin.com/company/hack-south-west/" className="text-HSWaccent">LinkedIn</Link> and <Link href="https://www.instagram.com/hacksouthwest/" className="text-HSWaccent">Instagram</Link> for the latest updates.
+                                </p>
 
-									<br />
 
-									{/* track 2 ctf challenge */}
-									<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
-										<p className="text-3xl font-thin text-HSWtext pb-80"><b className="text-gold font-extrabold">Capture The Flag</b> Track</p>
-										<Image src={"/images/hacking.webp"} className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25" width={500} height={500} alt="smt" />
-										<p className="px-[10%]">In this track, your cyber security technical knowledge will be pushed to the limit! With three exciting difficulties, there is something for everyone. Every completed challenge will grant you a key/flag which can be used to unlock points at <b className="text-gold">any moment</b> during the hackathon. To help you on your journey we have volunteers who work in the cyber security field to give you pointers and tips on how to approach these problems.</p>
-
-										<div className="px-[10%] h-fit flex justify-center items-center gap-4">
-											<BsDiamond className="w-16 h-16 text-bronze" />
-											<FaArrowDown />
-											<BsSuitDiamond className="w-16 h-16 text-silver" />
-											<FaArrowDown />
-											<RiVipDiamondLine className="w-16 h-16 text-gold" />
-										</div>
-
-										<p className="px-[10%]">There will be mystery prizes for those who win this track</p>
-
-										<div className="px-[10%] self-start z-50">
-											<Link href="https://dorahacks.io" target="_blank" className="border border-HSWtext rounded-lg px-4 py-2 w-fit h-fit self-start hover:border-HSWaccent hover:text-HSWaccent cursor-pointer transition-all duration-200">
-												Learn More
-											</Link>
-										</div>
-									</div>
-								</div>
-
-								<div>
-									{/* Submssion */}
+								<div className="px-[10%] self-start z-50">
+									<RegistrationButton
+										registration={new Date("2026-01-31T08:00:00Z")}
+										force={true}
+									/>
 								</div>
 							</div>
-						)
-					}
+						</div>
+
+						<br />
+
+						<div>{/* Submssion */}</div>
+					</div>
 				</div>
 			</div>
 
@@ -627,38 +866,96 @@ export default function Home() {
 				<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Meet the Team</h1>
 			</div>
 
-			<div id="team" className="flex flex-col gap-32 items-center justify-center w-full h-fit py-[5%] px-[15%] max-lg:px-[5%]">
+			<div
+				id="team"
+				className="flex flex-col gap-32 items-center justify-center w-full h-fit py-[5%] px-[15%] max-lg:px-[5%]"
+			>
 				<div className="w-full">
 					<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
-						<Profile name="Charlie" position="Chief Organiser" description="Oversees organization of all hack south west affliated hackathons" image="/images/team/charlie.jpeg" linkedin=" https://www.linkedin.com/in/charlie-winders-187333346" github="https://github.com/cw1169"/>
-						<Profile name="Wiktor" position="Founder of Hack South West & President of EXCS" description="Oversee's the creation of HSW" image="/images/team/wiktor.jpeg" github="https://github.com/inspizzz" linkedin="https://www.linkedin.com/in/wiktor-wiejak/" website="https://www.wiktor.uk" />
-						<Profile name="Nehir" position="Event Co Director" description="Assist with the creation of HSW" image="/images/team/nehir.jpeg" linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/" />
-						<Profile name="Maxime" position="Cyber Security Society President" description="Collaboration on CTF and general assitance" image="/images/team/maxime.jpeg" linkedin="https://www.linkedin.com/in/maxime-reynaud-profile/" github="https://github.com/Stickman230" cybersoc={true}/>
-						<Profile name="Zeynep" position="Co-Academic Director of Cybersecurity society" description="" image="/images/team/zeynep.jpeg" linkedin="https://www.linkedin.com/in/zeynep-g%C3%BCler2005/" github="https://github.com/zeyneppguler23" cybersoc={true}/>
-						<Profile name="Finn" position="Web Developer/ Site Maintainer" description="Oversee's the HSW website" image="/images/team/finn.jpeg" github="https://github.com/TheCheesyWiggle" linkedin="https://www.linkedin.com/in/finn-van-montfort-ab13731ab/"/>
+						<Profile
+							name="Charlie"
+							position="Chief Organiser"
+							description="Oversees organization of all hack south west affliated hackathons"
+							image="/images/team/charlie.jpeg"
+							linkedin=" https://www.linkedin.com/in/charlie-winders-187333346"
+							github="https://github.com/cw1169"
+						/>
+						<Profile
+							name="Wiktor"
+							position="Founder of Hack South West & President of EXCS"
+							description="Oversee's the creation of HSW"
+							image="/images/team/wiktor.jpeg"
+							github="https://github.com/inspizzz"
+							linkedin="https://www.linkedin.com/in/wiktor-wiejak/"
+							website="https://www.wiktor.uk"
+						/>
+						<Profile
+							name="Nehir"
+							position="Event Co Director"
+							description="Assist with the creation of HSW"
+							image="/images/team/nehir.jpeg"
+							linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/"
+						/>
+						<Profile
+							name="Maxime"
+							position="Cyber Security Society President"
+							description="Collaboration on CTF and general assitance"
+							image="/images/team/maxime.jpeg"
+							linkedin="https://www.linkedin.com/in/maxime-reynaud-profile/"
+							github="https://github.com/Stickman230"
+							cybersoc={true}
+						/>
+						<Profile
+							name="Zeynep"
+							position="Co-Academic Director of Cybersecurity society"
+							description=""
+							image="/images/team/zeynep.jpeg"
+							linkedin="https://www.linkedin.com/in/zeynep-g%C3%BCler2005/"
+							github="https://github.com/zeyneppguler23"
+							cybersoc={true}
+						/>
+						<Profile
+							name="Finn"
+							position="Web Developer/ Site Maintainer"
+							description="Oversee's the HSW website"
+							image="/images/team/finn.jpeg"
+							github="https://github.com/TheCheesyWiggle"
+							linkedin="https://www.linkedin.com/in/finn-van-montfort-ab13731ab/"
+						/>
 					</div>
 				</div>
 			</div>
 
 			{/* sponsors */}
 			<div className="flex flex-col items-center justify-center w-full py-[5%] px-[15%] max-lg:px-[5%]">
-
-				<Popup trigger={open} setTrigger={setOpen}>
+				<Popup
+					trigger={open}
+					setTrigger={setOpen}
+				>
 					<div className="bg-HSWtext w-full h-fit z-50 rounded-2xl p-2 flex flex-col gap-8">
 						<div className="flex justify-between">
 							<h1 className="text-HSWprimary text-2xl font-extrabold">{open.name}</h1>
-							<Image src={open.image} className="object-fit h-1/2 w-1/2 rounded-xl" width={250} height={250} alt="sponsor" />
+							<Image
+								src={open.image}
+								className="object-fit h-1/2 w-1/2 rounded-xl"
+								width={250}
+								height={250}
+								alt="sponsor"
+							/>
 						</div>
 
 						<div className="w-full h-fit flex justify-start gap-4">
-							{
-								open?.links?.map((link, index) => (
-									<Link key={index} href={link.link} target="_blank" rel="noreferrer" className="w-8 h-8 text-black">
-										{link.html ? link.html : <a className="text-HSWaccent text-lg font-light underline">{link.name}</a>}
-									</Link>
-
-								))
-							}
+							{open?.links?.map((link, index) => (
+								<Link
+									key={index}
+									href={link.link}
+									target="_blank"
+									rel="noreferrer"
+									className="w-8 h-8 text-black"
+								>
+									{link.html ? link.html : <a className="text-HSWaccent text-lg font-light underline">{link.name}</a>}
+								</Link>
+							))}
 						</div>
 
 						<p className="text-HSWprimary text-lg font-light">{open.description}</p>
@@ -669,85 +966,239 @@ export default function Home() {
 
 				<div className="flex flex-col justify-center items-center max-lg:hidden mt-16">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor level={"gold"} setOpen={setOpen} image={excs} info={info["excs"]} />
-						<Sponsor level={"gold"} setOpen={setOpen} image={liminal} info={info["liminal"]} />
-
+						<Sponsor
+							level={"gold"}
+							setOpen={setOpen}
+							image={excs}
+							info={info["excs"]}
+						/>
+						<Sponsor
+							level={"gold"}
+							setOpen={setOpen}
+							image={liminal}
+							info={info["liminal"]}
+						/>
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/mintsw.png"} info={info["mintsw"]} cover={true} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/cybersoc.png"} info={info["cybersoc"]} />
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/dora.png"} info={info["dora"]} />
-
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/mintsw.png"}
+							info={info["mintsw"]}
+							cover={true}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/cybersoc.png"}
+							info={info["cybersoc"]}
+						/>
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/dora.png"}
+							info={info["dora"]}
+						/>
 					</div>
 
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/HH-Logo-Full-Color-Icon.svg"} info={info["hh"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/techexeter.png"} info={info["techexeter"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/pydata.png"} info={info["pydata"]} />
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/secridge.png"} info={info["secridge"]} />
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/HH-Logo-Full-Color-Icon.svg"}
+							info={info["hh"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/techexeter.png"}
+							info={info["techexeter"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/pydata.png"}
+							info={info["pydata"]}
+						/>
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/secridge.png"}
+							info={info["secridge"]}
+						/>
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/superteam.png"} info={info["superteam"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/exeter.gif"} info={info["exeter"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={solana} info={info["solana"]} />
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/superteam.png"}
+							info={info["superteam"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/exeter.gif"}
+							info={info["exeter"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={solana}
+							info={info["solana"]}
+						/>
 					</div>
 				</div>
 
 				<div className="flex-col justify-center items-center hidden max-lg:flex mt-16">
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/excs.svg"} info={info["excs"]} />
-						<Sponsor level={"gold"} setOpen={setOpen} image={"/images/sponsors/liminal.svg"} info={info["liminal"]} />
-
+						<Sponsor
+							level={"gold"}
+							setOpen={setOpen}
+							image={"/images/sponsors/excs.svg"}
+							info={info["excs"]}
+						/>
+						<Sponsor
+							level={"gold"}
+							setOpen={setOpen}
+							image={"/images/sponsors/liminal.svg"}
+							info={info["liminal"]}
+						/>
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/HH-Logo-Full-Color-Icon.svg"} info={info["hh"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/cybersoc.png"} info={info["cybersoc"]} />
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/dora.png"} info={info["dora"]} />
-
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/HH-Logo-Full-Color-Icon.svg"}
+							info={info["hh"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/cybersoc.png"}
+							info={info["cybersoc"]}
+						/>
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/dora.png"}
+							info={info["dora"]}
+						/>
 					</div>
 
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/mintsw.png"} info={info["mintsw"]} cover={true} />
-						<Sponsor level={"silver"} setOpen={setOpen} image={"/images/sponsors/secridge.png"} info={info["secridge"]} />
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/mintsw.png"}
+							info={info["mintsw"]}
+							cover={true}
+						/>
+						<Sponsor
+							level={"silver"}
+							setOpen={setOpen}
+							image={"/images/sponsors/secridge.png"}
+							info={info["secridge"]}
+						/>
 					</div>
 
 					<div className="w-full h-fit flex gap-2 justify-center items-center">
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/techexeter.png"} info={info["techexeter"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/pydata.png"} info={info["pydata"]} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/exeter.gif"} info={info["exeter"]} />
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/techexeter.png"}
+							info={info["techexeter"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/pydata.png"}
+							info={info["pydata"]}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/exeter.gif"}
+							info={info["exeter"]}
+						/>
 					</div>
 
 					<div className="w-full h-32 max-lg:w-2/3 max-lg:h-20 flex gap-2 justify-center items-center">
-						<Sponsor level={"bronze"} setOpen={setOpen} image={solana} info={info["solana"]} cover={true} />
-						<Sponsor level={"bronze"} setOpen={setOpen} image={"/images/sponsors/superteam.png"} info={info["superteam"]} />
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={solana}
+							info={info["solana"]}
+							cover={true}
+						/>
+						<Sponsor
+							level={"bronze"}
+							setOpen={setOpen}
+							image={"/images/sponsors/superteam.png"}
+							info={info["superteam"]}
+						/>
 					</div>
 				</div>
 			</div>
 
 			{/* FAQ */}
-			<div id="qa" className="flex flex-col">
+			<div
+				id="qa"
+				className="flex flex-col"
+			>
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
 						<p className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Questions &</p>
 						<p className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Answers</p>
 						<br />
-						<p className="text-md font-extralight">Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us with absolutely any queries via our email.</p>
+						<p className="text-md font-extralight">
+							Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us
+							with absolutely any queries via our email.
+						</p>
 					</div>
 
 					<div className="w-full flex justify-center items-center">
-						<Image src={"/images/faq.png"} className="object-cover h-full w-fit" width={500} height={500} alt="FAQ" />
+						<Image
+							src={"/images/faq.png"}
+							className="object-cover h-full w-fit"
+							width={500}
+							height={500}
+							alt="FAQ"
+						/>
 					</div>
 				</div>
 
 				<div className="bg-HSWprimary w-full h-fit flex gap-16 max-lg:gap-8 px-[15%] pt-32 pb-16 max-lg:px-[5%]">
 					<div className="w-2/5 h-full flex flex-col gap-2 justify-center items-start max-lg:hidden">
-						<Link href={"/"} className="font-light underline text-HSWaccent">Hack South West 2025</Link>
-						<Link href={"/conditions/intellectual"} className="font-light underline text-HSWaccent">Intellectual Property</Link>
-						<Link href={"/conditions/terms"} className="font-light underline text-HSWaccent">Terms & Conditions</Link>
-						<Link href={"https://guildgroupssetup-my.sharepoint.com/:f:/g/personal/excs_groups_exeterguild_com/Ej3uvzjcOhxJshyqPG-i7A4Bj-Vd2GYqpygapE_MtUPqgA?e=Xwt0sm"} target="_blank" className="font-light underline text-HSWaccent">Access Files</Link>
+						<Link
+							href={"/"}
+							className="font-light underline text-HSWaccent"
+						>
+							Hack South West 2025
+						</Link>
+						<Link
+							href={"/conditions/intellectual"}
+							className="font-light underline text-HSWaccent"
+						>
+							Intellectual Property
+						</Link>
+						<Link
+							href={"/conditions/terms"}
+							className="font-light underline text-HSWaccent"
+						>
+							Terms & Conditions
+						</Link>
+						<Link
+							href={
+								"https://guildgroupssetup-my.sharepoint.com/:f:/g/personal/excs_groups_exeterguild_com/Ej3uvzjcOhxJshyqPG-i7A4Bj-Vd2GYqpygapE_MtUPqgA?e=Xwt0sm"
+							}
+							target="_blank"
+							className="font-light underline text-HSWaccent"
+						>
+							Access Files
+						</Link>
 					</div>
 
 					<div className="w-full">
@@ -756,13 +1207,13 @@ export default function Home() {
 						<br />
 
 						<div className="w-full h-fit transition-all duration-100 flex flex-col">
-							{
-								questions.map((q, index) => (
-									<Question key={index} info={q} />
-								))
-							}
+							{questions.map((q, index) => (
+								<Question
+									key={index}
+									info={q}
+								/>
+							))}
 						</div>
-
 					</div>
 				</div>
 			</div>
