@@ -714,7 +714,7 @@ export default function Home() {
 								/>
 
 								{/* Intro */}
-								<p className="px-[10%]">
+								<p className="px-[10%] z-50">
 									Join us for an action-packed <b className="text-HSWaccent">12-hour Capture the Flag Hackathon</b> on{" "}
 									<b>Friday, 8th November</b>, hosted at the <b>Innovation Centre, Phase 2</b>. In this track, your cybersecurity knowledge
 									will be pushed to the limit! With three exciting difficulties and <b>30 unique boxes</b> to solve, there’s something for
