@@ -11,7 +11,7 @@ export function RegistrationButton({ registration_open, registration_closed, for
                     <>
                         {
                             (registration_closed - new Date().getTime() > 0) ? (
-                                <Link href="https://dorahacks.com/hack-south-west-ctf" target="_blank" className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit max-lg:text-sm flex text-center hover:scale-105 animate-all duration-200 ">
+                                <Link href="https://dorahacks.io/hackathon/hack-south-west-ctf" target="_blank" className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent hover:bg-HSWsecondary-2 w-fit max-lg:text-sm flex text-center hover:scale-105 animate-all duration-200 ">
                                     <p className='text-2xl max-lg:text-sm font-extrabold'>Register Now</p>
                                 </Link>
                             ) : (
