@@ -6,9 +6,9 @@ const PinContainer = dynamic(() => import("@/app/components/ui/3d-pin").then((m)
 	ssr: false
 })
 
-export default function SponsorCard({ sName, sSite, sSummary, sImage }) {
+export default function SponsorCard({ sName, sSite, sImage, sLevel }) {
 	return (
-		<div className="h-full w-full flex items-center justify-center p-2 sm:p-3">
+		<div className={`h-full w-full flex items-center justify-center hover:drop-shadow-${sLevel} p-2 sm:p-3`}>
 			<PinContainer
 				title={sSite}
 				href={sSite}
