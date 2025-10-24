@@ -17,6 +17,13 @@ const info = {
 		site: "https://southwestcsc.org/",
 		linkedin: "https://www.linkedin.com/company/south-west-cyber-security-cluster/"
 	},
+    rootmepro: {
+        name: "Root Me Pro",
+        image: "/images/sponsors/rootmepro.png",
+        description: "Root Me Pro is a platform for learning and practicing hacking skills.",
+        site: "https://pro.root-me.org/",
+        linkedin: "https://www.linkedin.com/company/root-me-pro/"
+    },
 	// exeter: {
 	// 	name: "University of Exeter",
 	// 	image: "/images/sponsors/exeter.gif",
