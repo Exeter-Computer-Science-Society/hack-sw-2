@@ -40,7 +40,9 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration = new Date("2025-11-08T08:00:00").getTime()
+	const registration_open = new Date("2025-10-23T12:00:00").getTime()
+    const registration_closed = new Date("2025-11-08T08:00:00").getTime()
+    const event_date = new Date("2025-11-08T08:00:00").getTime()
 
 	const questions = [
 		{
@@ -563,23 +565,22 @@ export default function Home() {
 					</div>
 
 					<div className="flex gap-4 max-lg:flex-col">
-						<RegistrationButton registration={registration} />
+						<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
 
 						<button
-							className="bg-HSWsecondary px-4 py-2 rounded-md border border-HSWaccent text-HSWaccent  flex gap-2 justify-center items-center"
+							className="bg-HSWsecondary px-4 py-2 rounded-md border border-gray-500 text-warmGray-500 flex gap-2 justify-center items-center"
 							onClick={() => {
 								document.getElementById("about").scrollIntoView({ behavior: "smooth" })
 							}}
 						>
-							<TfiMore className="w-4 h-4" />
-							<p className="text-2xl max-lg:text-sm font-extrabold text-nowrap">Learn More</p>
+                            <p className="text-2xl max-lg:text-sm font-extrabold">Learn More</p>
+
 						</button>
 
 						<Link
 							href="/feedback"
-							className="bg-HSWsecondary px-4 py-2 rounded-md border border-blue-500 text-blue-500 max-lg:text-sm flex gap-2 justify-center items-center"
+							className="bg-HSWsecondary px-4 py-2 rounded-md border border-blue-300 text-blue-300 max-lg:text-sm flex gap-2 justify-center items-center"
 						>
-							<VscFeedback className="w-4 h-4" />
 							<p className="text-2xl max-lg:text-sm font-extrabold">feedback</p>
 						</Link>
 					</div>
@@ -588,7 +589,7 @@ export default function Home() {
 
 			{/* countdown */}
 			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] py-[15%]">
-				<Countdown registration={registration} />
+				<Countdown registration={event_date} />
 			</div>
 
 			{/* about */}
@@ -618,7 +619,7 @@ export default function Home() {
 					<div className="relative w-1/2 h-96 max-lg:hidden">
 						<div className="w-1/2 h-full flex items-center">
 							<div className="absolute -bottom-6 w-full h-fit flex justify-center z-50">
-								<RegistrationButton registration={registration} />
+								<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
 							</div>
 
 							{currentImage2 && (
@@ -811,7 +812,7 @@ export default function Home() {
 
 								{/* Registration */}
 								<div className="px-[10%] self-start z-50">
-									<RegistrationButton registration={registration} />
+									<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
 								</div>
 							</div>
 
@@ -846,10 +847,7 @@ export default function Home() {
 
 
 								<div className="px-[10%] self-start z-50">
-									<RegistrationButton
-										registration={new Date("2026-01-31T08:00:00Z")}
-										force={true}
-									/>
+									<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} force={true}/>
 								</div>
 							</div>
 						</div>
