@@ -31,7 +31,7 @@ const info = {
 		name: "Mint South West",
 		image: "/images/sponsors/mintsw.png",
 		site: "https://www.mrwedge.co.uk/mintsw",
-		level: "bronze",
+		level: "silver",
 	},
 	superteam: {
 		name: "SuperTeam",

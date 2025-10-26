@@ -9,6 +9,7 @@ export const PinContainer = ({
   href,
   className,
   containerClassName,
+  sLevel="default",
 }) => {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
@@ -20,6 +21,20 @@ export const PinContainer = ({
   
   const onMouseLeave = () => {
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
+  };
+
+  // Define shadow classes based on sponsor level
+  const getShadowClass = () => {
+    switch(sLevel) {
+      case 'gold':
+        return 'group-hover/pin:shadow-yellow-400/60';
+      case 'silver':
+        return 'group-hover/pin:shadow-slate-300/70';
+      case 'bronze':
+        return 'group-hover/pin:shadow-orange-600/60';
+      default:
+        return 'group-hover/pin:shadow-slate-500/50';
+    }
   };
 
   return (
@@ -43,7 +58,10 @@ export const PinContainer = ({
           style={{
             transform: transform,
           }}
-          className="absolute left-1/2 p-4 top-1/2 flex justify-start items-start rounded-2xl bg-black border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-300 overflow-hidden"
+          className={cn(
+            "absolute left-1/2 p-4 top-1/2 flex justify-start items-start rounded-2xl bg-black border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-300 overflow-hidden group-hover/pin:shadow-2xl",
+            getShadowClass()
+          )}
         >
           <div className={cn("relative z-50", className)}>{children}</div>
         </div>
