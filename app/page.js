@@ -1,11 +1,10 @@
 "use client"
-"use client"
 
 import { SouthWestImage } from "./components/General/SouthWestImage"
 
 // icons
 import { BsCalendar2Date } from "react-icons/bs"
-import { CiLocationOn } from "react-icons/ci"
+import { CiLocationOn, CiTrophy } from "react-icons/ci"
 import { Countdown } from "./components/Countdown"
 import { IoIosArrowDown } from "react-icons/io"
 
@@ -20,8 +19,9 @@ import { BsDiamond } from "react-icons/bs"
 import { BsSuitDiamond } from "react-icons/bs"
 import { RiVipDiamondLine } from "react-icons/ri"
 import { FaArrowDown } from "react-icons/fa"
-import { VscFeedback } from "react-icons/vsc"
+import { VscFeedback, VscFileSymlinkDirectory } from "react-icons/vsc"
 import { TfiMore } from "react-icons/tfi"
+import { RegistrationButton } from "./components/RegistrationButton"
 
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
@@ -182,21 +182,8 @@ export default function Home() {
 									height={100}
 									alt="swcsc"
 								/>
-								<Image
-									src={"/images/sponsors/swcsc.png"}
-									width={100}
-									height={100}
-									alt="swcsc"
-								/>
 							</Link>
 							<p> and </p>
-							<Link href={"https://www.sec-ridge.com/"}>
-								<Image
-									src={"/images/sponsors/secridge.png"}
-									width={100}
-									height={100}
-									alt="secridge"
-								/>
 							<Link href={"https://www.sec-ridge.com/"}>
 								<Image
 									src={"/images/sponsors/secridge.png"}
@@ -263,26 +250,11 @@ export default function Home() {
 				id="about"
 				className="flex max-lg:flex-col justify-center items-center gap-32 max-lg:gap-8 w-full h-fit px-[15%] py-[10%] max-lg:px-[5%]"
 			>
-			<div
-				id="about"
-				className="flex max-lg:flex-col justify-center items-center gap-32 max-lg:gap-8 w-full h-fit px-[15%] py-[10%] max-lg:px-[5%]"
-			>
 				<div className="w-full flex gap-16 max-lg:p-16">
 					<div className="relative w-1/2 max-lg:w-full h-96 mt-32 ">
 						<div className="w-1/2 max-lg:w-full h-full">
 							<div className="absolute w-full h-full border border-white -top-12 max-lg:-top-4 -left-8 max-lg:-left-3" />
-							{currentImage1 && (
-								<Image
-									src={currentImage1}
-									className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${
-										fading1 ? "opacity-0" : "opacity-100"
-									}`}
-									draggable={false}
-									width={500}
-									height={500}
-									alt="not found"
-								/>
-							)}
+							
 							{currentImage1 && (
 								<Image
 									src={currentImage1}
@@ -301,22 +273,9 @@ export default function Home() {
 					<div className="relative w-1/2 h-96 max-lg:hidden">
 						<div className="w-1/2 h-full flex items-center">
 							<div className="absolute -bottom-6 w-full h-fit flex justify-center z-50">
-								{/* <RegistrationButton registration={registration} /> */}
+								<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
 							</div>
 
-							{currentImage2 && (
-								// <Image src={currentImage2} className="absolute top-0 left-0 w-full h-full object-cover" draggable={false} width={500} height={500} alt="not found" />
-								<Image
-									src={currentImage2}
-									className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${
-										fading2 ? "opacity-0" : "opacity-100"
-									}`}
-									draggable={false}
-									width={500}
-									height={500}
-									alt="not found"
-								/>
-							)}
 							{currentImage2 && (
 								// <Image src={currentImage2} className="absolute top-0 left-0 w-full h-full object-cover" draggable={false} width={500} height={500} alt="not found" />
 								<Image
@@ -372,10 +331,6 @@ export default function Home() {
 				id="qa"
 				className="flex flex-col h-fit"
 			>
-			<div
-				id="qa"
-				className="flex flex-col h-fit"
-			>
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
 						<h1 className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Our Events</h1>
@@ -386,13 +341,6 @@ export default function Home() {
 					</div>
 
 					<div className="w-full flex justify-center items-center">
-						<Image
-							src={"/images/smt.png"}
-							className="object-cover h-full w-fit"
-							width={500}
-							height={500}
-							alt="FAQ"
-						/>
 						<Image
 							src={"/images/smt.png"}
 							className="object-cover h-full w-fit"
@@ -626,56 +574,6 @@ export default function Home() {
 							github="https://github.com/TheCheesyWiggle"
 							linkedin="https://www.linkedin.com/in/finn-van-montfort-ab13731ab/"
 						/>
-						<Profile
-							name="Charlie"
-							position="Chief Organiser"
-							description="Oversees organization of all hack south west affliated hackathons"
-							image="/images/team/charlie.jpeg"
-							linkedin=" https://www.linkedin.com/in/charlie-winders-187333346"
-							github="https://github.com/cw1169"
-						/>
-						<Profile
-							name="Wiktor"
-							position="Founder of Hack South West & President of EXCS"
-							description="Oversee's the creation of HSW"
-							image="/images/team/wiktor.jpeg"
-							github="https://github.com/inspizzz"
-							linkedin="https://www.linkedin.com/in/wiktor-wiejak/"
-							website="https://www.wiktor.uk"
-						/>
-						<Profile
-							name="Nehir"
-							position="Event Co Director"
-							description="Assist with the creation of HSW"
-							image="/images/team/nehir.jpeg"
-							linkedin="https://www.linkedin.com/in/nehir-yurtsever-2932a0233/"
-						/>
-						<Profile
-							name="Maxime"
-							position="Cyber Security Society President"
-							description="Collaboration on CTF and general assitance"
-							image="/images/team/maxime.jpeg"
-							linkedin="https://www.linkedin.com/in/maxime-reynaud-profile/"
-							github="https://github.com/Stickman230"
-							cybersoc={true}
-						/>
-						<Profile
-							name="Zeynep"
-							position="Co-Academic Director of Cybersecurity society"
-							description=""
-							image="/images/team/zeynep.jpeg"
-							linkedin="https://www.linkedin.com/in/zeynep-g%C3%BCler2005/"
-							github="https://github.com/zeyneppguler23"
-							cybersoc={true}
-						/>
-						<Profile
-							name="Finn"
-							position="Web Developer/ Site Maintainer"
-							description="Oversee's the HSW website"
-							image="/images/team/finn.jpeg"
-							github="https://github.com/TheCheesyWiggle"
-							linkedin="https://www.linkedin.com/in/finn-van-montfort-ab13731ab/"
-						/>
 					</div>
 				</div>
 			</div>
@@ -692,10 +590,6 @@ export default function Home() {
 				id="qa"
 				className="flex flex-col"
 			>
-			<div
-				id="qa"
-				className="flex flex-col"
-			>
 				<div className="flex justify-around gap-16 max-lg:gap-8 w-full h-fit px-[15%] pt-32 pb-16 max-lg:px-[5%] bg-HSWsecondary2">
 					<div className="w-full">
 						<p className="text-6xl md:text-5xl sm:text-3xl font-bold text-HSWaccent">Questions &</p>
@@ -705,20 +599,9 @@ export default function Home() {
 							Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us
 							with absolutely any queries via our email.
 						</p>
-						<p className="text-md font-extralight">
-							Have questions? Here you&apos;ll find all the answers to your questions. If there is something missing feel free to reach out to us
-							with absolutely any queries via our email.
-						</p>
 					</div>
 
 					<div className="w-full flex justify-center items-center">
-						<Image
-							src={"/images/faq.png"}
-							className="object-cover h-full w-fit"
-							width={500}
-							height={500}
-							alt="FAQ"
-						/>
 						<Image
 							src={"/images/faq.png"}
 							className="object-cover h-full w-fit"
