@@ -27,13 +27,13 @@ export const PinContainer = ({
   const getShadowClass = () => {
     switch(sLevel) {
       case 'gold':
-        return 'group-hover/pin:shadow-yellow-400/60';
+        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-yellow-400/60';
       case 'silver':
-        return 'group-hover/pin:shadow-slate-300/70';
+        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-slate-300/70';
       case 'bronze':
-        return 'group-hover/pin:shadow-orange-600/60';
+        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-orange-600/60';
       default:
-        return 'group-hover/pin:shadow-slate-500/50';
+        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-slate-500/50';
     }
   };
 
