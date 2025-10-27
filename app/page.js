@@ -254,7 +254,6 @@ export default function Home() {
 					<div className="relative w-1/2 max-lg:w-full h-96 mt-32 ">
 						<div className="w-1/2 max-lg:w-full h-full">
 							<div className="absolute w-full h-full border border-white -top-12 max-lg:-top-4 -left-8 max-lg:-left-3" />
-							
 							{currentImage1 && (
 								<Image
 									src={currentImage1}
