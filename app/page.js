@@ -21,6 +21,12 @@ import { RiVipDiamondLine } from "react-icons/ri"
 import { FaArrowDown } from "react-icons/fa"
 import { VscFeedback, VscFileSymlinkDirectory } from "react-icons/vsc"
 import { TfiMore } from "react-icons/tfi"
+
+import { CiTrophy } from "react-icons/ci"
+
+import excs from "/public/images/sponsors/thumbnail_EXCS.png"
+import liminal from "/public/images/sponsors/liminal.svg"
+import solana from "/public/images/sponsors/solana.png"
 import { RegistrationButton } from "./components/RegistrationButton"
 
 export default function Home() {
