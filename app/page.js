@@ -1,33 +1,25 @@
 "use client"
 
-import { SouthWestImage } from "./components/General/SouthWestImage"
-
 // icons
 import { BsCalendar2Date } from "react-icons/bs"
 import { CiLocationOn, CiTrophy } from "react-icons/ci"
-import { Countdown } from "./components/Countdown"
-import { IoIosArrowDown } from "react-icons/io"
+import { VscFileSymlinkDirectory } from "react-icons/vsc"
 
+// components
+import { SouthWestImage } from "./components/General/SouthWestImage"
+import { RegistrationButton } from "./components/RegistrationButton"
+import { Countdown } from "./components/Countdown"
+import { Question } from "./components/Question"
 import { Profile } from "./components/Team/Profiles"
 import Sponsor from "./components/General/Sponsor"
-import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Question } from "./components/Question"
-import { Loading } from "./components/Loading"
-import { BsDiamond } from "react-icons/bs"
-import { BsSuitDiamond } from "react-icons/bs"
-import { RiVipDiamondLine } from "react-icons/ri"
-import { FaArrowDown } from "react-icons/fa"
-import { VscFeedback, VscFileSymlinkDirectory } from "react-icons/vsc"
-import { TfiMore } from "react-icons/tfi"
 
-import { CiTrophy } from "react-icons/ci"
+// hooks
+import { useEffect, useState } from "react"
 
-import excs from "/public/images/sponsors/thumbnail_EXCS.png"
-import liminal from "/public/images/sponsors/liminal.svg"
-import solana from "/public/images/sponsors/solana.png"
-import { RegistrationButton } from "./components/RegistrationButton"
+
+
 
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
