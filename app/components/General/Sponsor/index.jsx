@@ -5,7 +5,7 @@ import SponsorCard from "./Card"
 const info = {
 	liminal: {
 		name: "Liminal",
-		image: "/images/sponsors/liminal.svg",
+		image: "/images/sponsors/liminal.png",
 		site: "https://www.liminal.ai",
 		level: "gold",
 	},
