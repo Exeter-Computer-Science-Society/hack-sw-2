@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 export function Profile({ name, position, description, image, github = "", linkedin = "", website = "", cybersoc = false, easter_egg = false, cover = false }) {
 	const [lastTouched, setLastTouched] = useState(new Date().getTime());
 
+	// TODO: remove, do we still need Easter egg?
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const currentTime = new Date().getTime();
@@ -19,8 +20,6 @@ export function Profile({ name, position, description, image, github = "", linke
 				if (currentTime - lastTouched < 6000) {
 					setLastTouched(currentTime);
 					console.log("resetting")
-					const div = document.getElementById("git");
-					div.style.transform = `translate(0px, 0px)`;
 				}
 			}
 		}, 500)
