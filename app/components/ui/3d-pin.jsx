@@ -9,31 +9,31 @@ export const PinContainer = ({
   href,
   className,
   containerClassName,
-  sLevel="default",
+  sLevel = "default",
 }) => {
   const [transform, setTransform] = useState(
-    "translate(-50%,-50%) rotateX(0deg)"
+    "translate(-50%,-50%) rotateX(0deg)",
   );
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
   };
-  
+
   const onMouseLeave = () => {
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
   };
 
   // Define shadow classes based on sponsor level
   const getShadowClass = () => {
-    switch(sLevel) {
-      case 'gold':
-        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-yellow-400/60';
-      case 'silver':
-        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-slate-300/70';
-      case 'bronze':
-        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-orange-600/60';
+    switch (sLevel) {
+      case "gold":
+        return "group-hover/pin:drop-shadow-lg group-hover/pin:shadow-yellow-400/60";
+      case "silver":
+        return "group-hover/pin:drop-shadow-lg group-hover/pin:shadow-slate-300/70";
+      case "bronze":
+        return "group-hover/pin:drop-shadow-lg group-hover/pin:shadow-orange-600/60";
       default:
-        return 'group-hover/pin:drop-shadow-lg group-hover/pin:shadow-slate-500/50';
+        return "group-hover/pin:drop-shadow-lg group-hover/pin:shadow-slate-500/50";
     }
   };
 
@@ -41,7 +41,7 @@ export const PinContainer = ({
     <a
       className={cn(
         "relative group/pin z-50 cursor-pointer",
-        containerClassName
+        containerClassName,
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -61,7 +61,7 @@ export const PinContainer = ({
           }}
           className={cn(
             "absolute left-1/2 p-4 top-1/2 flex justify-start items-start rounded-2xl bg-black border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-300 overflow-hidden group-hover/pin:shadow-2xl",
-            getShadowClass()
+            getShadowClass(),
           )}
         >
           <div className={cn("relative z-50", className)}>{children}</div>
