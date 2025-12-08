@@ -1,0 +1,11 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  format:
+    name: Code Format Check
+    uses: ./.github/workflows/format.yaml
+
