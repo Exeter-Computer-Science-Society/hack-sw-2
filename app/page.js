@@ -27,10 +27,10 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration_open = new Date("2025-12-22T12:00:00").getTime() // when does registration open?
+	const registration_open = new Date("2026-01-12T12:00:00").getTime() // when does registration open?
 	const registration_closed = new Date("2026-01-31T08:00:00").getTime() // the date when registration closes before the event
 	const event_date = new Date("2026-01-31T08:00:00").getTime() // the date when the event starts
-    const event_link = "https://dorahacks.io/hackathon/hack-south-west"
+	const event_link = "https://dorahacks.io/hackathon/hack-south-west"
 
 	const questions = [
 		{
@@ -80,7 +80,6 @@ export default function Home() {
 	]
 
 	useEffect(() => {
-
 		// change the image every 5 seconds
 		const unload = setInterval(() => {
 			console.log("selecting new image for 1")
@@ -88,7 +87,6 @@ export default function Home() {
 
 			// select the next image after the fade out
 			setTimeout(() => {
-
 				// select the next image
 				let nextImage = images[Math.floor(Math.random() * images.length)]
 
@@ -117,19 +115,15 @@ export default function Home() {
 	}, [])
 
 	useEffect(() => {
-
 		// offset the second image change by 2.5 seconds
 		const timeout = setTimeout(() => {
-
 			// change the image every 5 seconds
 			const unload = setInterval(() => {
-
 				// fade out the current image
 				setFading2(true)
 
 				// select the next image after the fade out
 				setTimeout(() => {
-                    
 					// select the next image
 					let nextImage = images[Math.floor(Math.random() * images.length)]
 
@@ -477,6 +471,7 @@ export default function Home() {
 									<RegistrationButton
 										registration_open={registration_open}
 										registration_closed={registration_closed}
+                                        force_close={true}
 									/>
 								</div>
 							</div>
@@ -494,12 +489,17 @@ export default function Home() {
 									<b className="text-HSWaccent font-bold">Hackathon</b> Event
 								</p>
 								<p className="px-[10%]">
-									This event will push you to develop your own creative solution to a challenge faced by the world. We look out for solutions
+                                    This February, join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on Saturday, 31st January to Sunday, 
+                                    1st February, hosted at the Innovation Centre, Phase 2.
+								</p>
+
+                                <p className="px-[10%]">
+                                    This year we will push you to develop your own creative solution to blockchain banking. We look out for solutions
 									that incorporate a high level of technical knowledge to a problem of significant <b className="text-HSWaccent">impact</b> in
 									the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to continue to
 									develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also benefit
 									humanity!
-								</p>
+                                </p>
 
 								<p className="px-[10%]">
 									We are still working hard on organising this, please check out our socials for more information as it comes! <br />
@@ -523,11 +523,157 @@ export default function Home() {
 									for the latest updates.
 								</p>
 
+								{/* Schedule */}
+								<div className="px-[10%] w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
+
+									<div className="relative border-l-2 border-HSWaccent ml-4">
+										{/* New day */}
+										<div className="px-8 py-4">
+											<p className="w-fit text-center text-2xl text-HSWaccent">Saturday</p>
+											<hr className="border-HSWaccent" />
+										</div>
+
+										<div className="flex flex-col gap-2 ml-6">
+											{/* 8:00 AM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 8:00</p>
+												<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+											</div>
+
+											{/* board games, team building */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 8:30</p>
+												<p className="text-sm text-HSWtext/80">Board Games + Team Building</p>
+											</div>
+
+											{/* 8:30 AM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 11:30</p>
+												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
+											</div>
+
+											{/* 9:00 AM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 12:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Begins!</p>
+											</div>
+
+											{/* Lunch */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 13:00</p>
+												<p className="text-sm text-HSWtext/80">Lunch</p>
+											</div>
+
+                                            {/* Dinner */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 19:00</p>
+												<p className="text-sm text-HSWtext/80">Dinner</p>
+											</div>
+
+											{/* 9:00 PM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sat 22:00</p>
+												<p className="text-sm text-HSWtext/80">Venue Closes, Moving To Forum</p>
+											</div>
+										</div>
+
+										{/* New day */}
+										<div className="px-8 py-4">
+											<p className="w-fit text-center text-2xl text-HSWaccent">Sunday</p>
+											<hr className="border-HSWaccent" />
+										</div>
+
+										<div className="flex flex-col gap-2 ml-6">
+											{/* Venue Opens */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sun 08:00</p>
+												<p className="text-sm text-HSWtext/80">Venue Opens</p>
+											</div>
+
+                                            {/* Breakfast */}
+                                            <div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sun 08:30</p>
+												<p className="text-sm text-HSWtext/80">Breakfast</p>
+											</div>
+
+											{/* Hacking Ends */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sun 12:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Ends</p>
+											</div>
+
+											{/* Judging */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sun 12:30</p>
+												<p className="text-sm text-HSWtext/80">Judging Begins</p>
+											</div>
+
+											{/* Prizes & Closing Ceremony */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sun 14:00</p>
+												<p className="text-sm text-HSWtext/80">Prizes & Closing Ceremony</p>
+											</div>
+
+											{/* Venue Closes */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">Sun 15:00</p>
+												<p className="text-sm text-HSWtext/80">Venue Closes</p>
+											</div>
+										</div>
+									</div>
+
+									<p className="mt-4 text-center text-HSWtext/80">
+										🍕 <b>Food and refreshments provided throughout the day!</b>
+									</p>
+								</div>
+
+                                {/* Prizes */}
+								<div className="px-[10%] text-left w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-gold mt-6 mb-2">🏆 Prizes</p>
+
+									<div className="bg-HSWsecondary2 p-4 rounded-md mb-4 flex gap-2 justify-between">
+										<div>
+											<p className="font-semibold">🥇 1st Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>$xxx</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥈 2nd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>£xx</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥉 3rd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>£x</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
 								<div className="px-[10%] self-start z-50">
 									<RegistrationButton
 										registration_open={registration_open}
 										registration_closed={registration_closed}
-										force={true}
+										link={event_link}
 									/>
 								</div>
 							</div>
