@@ -1,5 +1,13 @@
+
+// components
 import Image from "next/image"
 import Link from "next/link"
+
+// icons
+import { RxCross1 } from "react-icons/rx";
+
+
+// fonts
 import { abcMarist } from '../../fonts';
 
 export function TopBar() {
@@ -52,16 +60,18 @@ export function TopBar() {
                     <p className={`${abcMarist.variable} font-marist text-3xl`}>liminal</p>
 				</Link>
 
+                <RxCross1 className="text-HSWtext w-4 h-4" />
+
                 <Link
                     href={"https://excs.uk/"}
                     className="flex gap-1 items-center h-8 w-fit"
                 >
                     <Image
-                        src={"/images/excs.svg"}
+                        src={"/images/sponsors/thumbnail_EXCS.png"}
                         width={100}
                         height={100}
                         alt="excs-logo"
-                        className="w-16 h-16"
+                        className="w-12 h-12"
                     />
                 </Link>
 			</div>
