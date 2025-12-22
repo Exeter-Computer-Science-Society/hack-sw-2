@@ -18,9 +18,6 @@ import Link from "next/link"
 // hooks
 import { useEffect, useState } from "react"
 
-
-
-
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
 
@@ -30,9 +27,10 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration_open = new Date("2025-10-23T12:00:00").getTime()
-    const registration_closed = new Date("2025-11-08T08:00:00").getTime()
-    const event_date = new Date("2025-11-08T08:00:00").getTime()
+	const registration_open = new Date("2025-12-22T12:00:00").getTime() // when does registration open?
+	const registration_closed = new Date("2026-01-31T08:00:00").getTime() // the date when registration closes before the event
+	const event_date = new Date("2026-01-31T08:00:00").getTime() // the date when the event starts
+    const event_link = "https://dorahacks.io/hackathon/hack-south-west"
 
 	const questions = [
 		{
@@ -82,6 +80,7 @@ export default function Home() {
 	]
 
 	useEffect(() => {
+
 		// change the image every 5 seconds
 		const unload = setInterval(() => {
 			console.log("selecting new image for 1")
@@ -89,6 +88,7 @@ export default function Home() {
 
 			// select the next image after the fade out
 			setTimeout(() => {
+
 				// select the next image
 				let nextImage = images[Math.floor(Math.random() * images.length)]
 
@@ -117,15 +117,19 @@ export default function Home() {
 	}, [])
 
 	useEffect(() => {
+
 		// offset the second image change by 2.5 seconds
 		const timeout = setTimeout(() => {
+
 			// change the image every 5 seconds
 			const unload = setInterval(() => {
+
 				// fade out the current image
 				setFading2(true)
 
 				// select the next image after the fade out
 				setTimeout(() => {
+                    
 					// select the next image
 					let nextImage = images[Math.floor(Math.random() * images.length)]
 
@@ -171,23 +175,24 @@ export default function Home() {
 							/>
 						</Link>
 
-						<div className="flex gap-1">
+						<div className="flex gap-2 items-center">
 							<p>Made possible with</p>
-							<Link href={"https://southwestcsc.org/"}>
+							<Link
+								href={"https://www.becomeliminal.com/"}
+								className="flex gap-1 items-center h-8 w-fit"
+							>
 								<Image
-									src={"/images/sponsors/swcsc.png"}
+									src={"/images/sponsors/liminal-logo.webp"}
 									width={100}
 									height={100}
-									alt="swcsc"
+									alt="liminal-logo"
+									className="w-8"
 								/>
-							</Link>
-							<p> and </p>
-							<Link href={"https://www.sec-ridge.com/"}>
 								<Image
-									src={"/images/sponsors/secridge.png"}
+									src={"/images/sponsors/liminal-text.webp"}
 									width={100}
 									height={100}
-									alt="secridge"
+									alt="liminal-text"
 								/>
 							</Link>
 						</div>
@@ -201,7 +206,7 @@ export default function Home() {
 					<div className="">
 						<div className="flex gap-2 items-center">
 							<BsCalendar2Date />
-							<p className="max-lg:text-sm">Saturday, Nov 8th, 8:00am</p>
+							<p className="max-lg:text-sm">Saturday, January 31st, 8:00am</p>
 						</div>
 
 						<div className="flex gap-2 items-center">
@@ -216,7 +221,11 @@ export default function Home() {
 					</div>
 
 					<div className="flex gap-4 max-lg:flex-col">
-						<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
+						<RegistrationButton
+							registration_open={registration_open}
+							registration_closed={registration_closed}
+							link={event_link}
+						/>
 
 						<button
 							className="bg-HSWsecondary px-4 py-2 rounded-md border border-gray-500 text-warmGray-500 flex gap-2 justify-center items-center"
@@ -224,8 +233,7 @@ export default function Home() {
 								document.getElementById("about").scrollIntoView({ behavior: "smooth" })
 							}}
 						>
-                            <p className="text-2xl max-lg:text-sm font-extrabold">Learn More</p>
-
+							<p className="text-2xl max-lg:text-sm font-extrabold">Learn More</p>
 						</button>
 
 						<Link
@@ -270,7 +278,10 @@ export default function Home() {
 					<div className="relative w-1/2 h-96 max-lg:hidden">
 						<div className="w-1/2 h-full flex items-center">
 							<div className="absolute -bottom-6 w-full h-fit flex justify-center z-50">
-								<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
+								<RegistrationButton
+									registration_open={registration_open}
+									registration_closed={registration_closed}
+								/>
 							</div>
 
 							{currentImage2 && (
@@ -463,7 +474,10 @@ export default function Home() {
 
 								{/* Registration */}
 								<div className="px-[10%] self-start z-50">
-									<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
+									<RegistrationButton
+										registration_open={registration_open}
+										registration_closed={registration_closed}
+									/>
 								</div>
 							</div>
 
@@ -487,18 +501,34 @@ export default function Home() {
 									humanity!
 								</p>
 
-                                <p className="px-[10%]">
+								<p className="px-[10%]">
 									We are still working hard on organising this, please check out our socials for more information as it comes! <br />
-									
 								</p>
 
-                                <p className="px-[10%] z-50">
-                                    Follow us on <Link href="https://www.linkedin.com/company/hack-south-west/" className="text-HSWaccent">LinkedIn</Link> and <Link href="https://www.instagram.com/hacksouthwest/" className="text-HSWaccent">Instagram</Link> for the latest updates.
-                                </p>
-
+								<p className="px-[10%] z-50">
+									Follow us on{" "}
+									<Link
+										href="https://www.linkedin.com/company/hack-south-west/"
+										className="text-HSWaccent"
+									>
+										LinkedIn
+									</Link>{" "}
+									and{" "}
+									<Link
+										href="https://www.instagram.com/hacksouthwest/"
+										className="text-HSWaccent"
+									>
+										Instagram
+									</Link>{" "}
+									for the latest updates.
+								</p>
 
 								<div className="px-[10%] self-start z-50">
-									<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} force={true}/>
+									<RegistrationButton
+										registration_open={registration_open}
+										registration_closed={registration_closed}
+										force={true}
+									/>
 								</div>
 							</div>
 						</div>
