@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { abcMarist } from '../../fonts';
 
 export function TopBar() {
 	return (
@@ -48,26 +49,19 @@ export function TopBar() {
 						alt="liminal-logo"
 						className="w-8"
 					/>
-					<Image
-						src={"/images/sponsors/liminal-text.webp"}
-						width={100}
-						height={100}
-						alt="liminal-text"
-					/>
+                    <p className={`${abcMarist.variable} font-marist text-3xl`}>liminal</p>
 				</Link>
-
-                <p>and</p>
 
                 <Link
                     href={"https://excs.uk/"}
                     className="flex gap-1 items-center h-8 w-fit"
                 >
                     <Image
-                        src={"/images/sponsors/thumbnail_EXCS.png"}
+                        src={"/images/excs.svg"}
                         width={100}
                         height={100}
                         alt="excs-logo"
-                        className="w-8 h-8"
+                        className="w-16 h-16"
                     />
                 </Link>
 			</div>
