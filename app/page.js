@@ -487,16 +487,21 @@ export default function Home() {
 									<b className="text-HSWaccent font-bold">Hackathon</b> Event
 								</p>
 								<p className="px-[10%]">
-                                    This February, join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on Saturday, 31st January to Sunday, 
-                                    1st February, hosted at the Innovation Centre, Phase 2.
+                                    This February, join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on <b>Saturday, 31st January to Sunday, 1st February</b>, 
+                                    hosted at the <b>Innovation Centre, Phase 2.</b>
 								</p>
 
                                 <p className="px-[10%]">
-                                    This year we will push you to develop your own creative solution to blockchain banking. We look out for solutions
-									that incorporate a high level of technical knowledge to a problem of significant <b className="text-HSWaccent">impact</b> in
-									the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to continue to
-									develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also benefit
-									humanity!
+                                    This year we will push you to develop your own creative solution to <b className="text-HSWaccent">blockchain banking</b>. We look out for solutions
+									that incorporate a high level of technical and design choice to the problem at hand. Although, you will likely only work on this problem for a limited 
+                                    amount of time, we encourage you to continue to develop and deploy your solutions to either the web or other sources to both add to your portfolio and 
+                                    to further your own learning.
+                                </p>
+
+                                <p className="px-[10%]">
+                                    We will also try our very best to help you get started in this problem space. That is why we have lined up a <b className="text-HSWaccent">series of workshops </b>
+                                    leading up to and during the event to help you build your skills and knowledge. We have also partnered with cloud service providers to offer you <b className="text-HSWaccent">free AI credits </b>
+                                    in hopes of assisting your development journey.
                                 </p>
 
 								<p className="px-[10%]">
