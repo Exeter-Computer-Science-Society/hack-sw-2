@@ -19,7 +19,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 
 // fonts
-import { abcMarist } from './fonts';
+import { abcMarist } from "./fonts"
 
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
@@ -37,46 +37,57 @@ export default function Home() {
 
 	const questions = [
 		{
+            id: 1,
 			question: "Should I attend Hack South West",
 			answer: "Absolutely! Hack South West is a great opportunity to learn new skills, meet new people, and have fun. Whether you're a beginner or an experienced hacker, there's something for everyone at Hack South West."
 		},
 		{
+			id: 2,
 			question: "What is a hackathon?",
 			answer: "A hackathon is an event where people come together to work on a project for a set amount of time. It is a great opportunity to learn new skills, meet new people, and have fun!"
 		},
 		{
+			id: 3,
 			question: "Who can attend?",
 			answer: "We welcome everyone, weather your a student here or external university or working in industry, we welcome everyone to come and join us for a weekend of fun and learning."
 		},
 		{
+			id: 4,
 			question: "Where is Hack South West Happening?",
 			answer: "We are hosting the event in the innovation centre at the University of Exeter. The address is: University of Exeter, Innovation Centre, Rennes Drive, Exeter, EX4 4RN"
 		},
 		{
+			id: 5,
 			question: "What will be available to eat?",
 			answer: "We will be providing all hackers with food and drinks throughout the event. Dietary requirement will be catered for as well so no need to worry!"
 		},
 		{
+			id: 6,
 			question: "Do I need to be able to code to attend?",
 			answer: "Not at all! Hack South West is open to everyone, regardless of your coding experience. We will have workshops and mentors available to help you get started with your project."
 		},
 		{
+			id: 7,
 			question: "How large can my team be?",
 			answer: "We enforce team sizes of no more than 4 people. This is to ensure that everyone has a fair chance of winning the competition."
 		},
 		{
+			id: 8,
 			question: "What should I bring?",
 			answer: "You should bring your laptop, charger, and any additional items to make your stay comfortable. We will provide you with seating, power, food, and a lovely atmosphere."
 		},
 		{
+			id: 9,
 			question: "Do we have a code of conduct?",
 			answer: "Yes, we have a code of conduct that all attendees must adhere to. This is to ensure that everyone has a safe and enjoyable experience at Hack South West."
 		},
 		{
+			id: 10,
 			question: "Do we have a code of intellectual property?",
 			answer: "Yes, check the link just to the left of this :)"
 		},
 		{
+			id: 11,
 			question: "What are the terms and conditions?",
 			answer: "Check the link just to the left of this :)"
 		}
@@ -163,18 +174,17 @@ export default function Home() {
 				<div className="hidden text-red-500" />
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div>
-						<Link href={"https://hack-south-west.excs.uk/"}>
-							<Image
-								src={"/images/HSW-logo.png"}
-								width={500}
-								height={500}
-								alt="Hack South West Logo"
-							/>
-						</Link>
+						<Image
+							src={"/images/HSW-logo.png"}
+							width={500}
+							height={500}
+							alt="Hack South West Logo"
+						/>
 
 						<div className="flex gap-2 items-center">
 							<p>Made possible with</p>
 							<Link
+								target="_blank"
 								href={"https://www.becomeliminal.com/"}
 								className="flex gap-1 items-center h-8 w-fit"
 							>
@@ -220,6 +230,7 @@ export default function Home() {
 						/>
 
 						<button
+							type="button"
 							className="bg-HSWsecondary px-4 py-2 rounded-md border border-gray-500 text-warmGray-500 flex gap-2 justify-center items-center"
 							onClick={() => {
 								document.getElementById("about").scrollIntoView({ behavior: "smooth" })
@@ -469,7 +480,7 @@ export default function Home() {
 									<RegistrationButton
 										registration_open={registration_open}
 										registration_closed={registration_closed}
-                                        force_close={true}
+										force_close={true}
 									/>
 								</div>
 							</div>
@@ -487,22 +498,23 @@ export default function Home() {
 									<b className="text-HSWaccent font-bold">Hackathon</b> Event
 								</p>
 								<p className="px-[10%]">
-                                    This February, join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on <b>Saturday, 31st January to Sunday, 1st February</b>, 
-                                    hosted at the <b>Innovation Centre, Phase 2.</b>
+									This February, join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on{" "}
+									<b>Saturday, 31st January to Sunday, 1st February</b>, hosted at the <b>Innovation Centre, Phase 2.</b>
 								</p>
 
-                                <p className="px-[10%]">
-                                    This year we will push you to develop your own creative solution to <b className="text-HSWaccent">blockchain banking</b>. We look out for solutions
-									that incorporate a high level of technical and design choice to the problem at hand. Although, you will likely only work on this problem for a limited 
-                                    amount of time, we encourage you to continue to develop and deploy your solutions to either the web or other sources to both add to your portfolio and 
-                                    to further your own learning.
-                                </p>
+								<p className="px-[10%]">
+									This year you will develop your own creative <b className="text-HSWaccent">AI Agent</b> solution in <b className="text-HSWaccent">blockchain banking</b>. We
+									look out for solutions that incorporate a high level of technical and design choice to the problem at hand. Although, you
+									will likely only work on this problem for a limited amount of time, we encourage you to continue to develop and deploy your
+									solutions to either the web or other sources to both add to your portfolio and to further your own learning.
+								</p>
 
-                                <p className="px-[10%]">
-                                    We will also try our very best to help you get started in this problem space. That is why we have lined up a <b className="text-HSWaccent">series of workshops </b>
-                                    leading up to and during the event to help you build your skills and knowledge. We have also partnered with cloud service providers to offer you <b className="text-HSWaccent">free AI credits </b>
-                                    in hopes of assisting your development journey.
-                                </p>
+								<p className="px-[10%]">
+									We will also try our very best to help you get started in this problem space. That is why we have lined up a{" "}
+									<b className="text-HSWaccent">series of workshops </b>
+									leading up to and during the event to help you build your skills and knowledge. We have also partnered with cloud service
+									providers to offer you an abundance of <b className="text-HSWaccent">free AI credits</b> in hopes of assisting your development journey.
+								</p>
 
 								<p className="px-[10%]">
 									We are still working hard on organising this, please check out our socials for more information as it comes! <br />
@@ -511,6 +523,7 @@ export default function Home() {
 								<p className="px-[10%] z-50">
 									Follow us on{" "}
 									<Link
+                                        target="_blank"
 										href="https://www.linkedin.com/company/hack-south-west/"
 										className="text-HSWaccent"
 									>
@@ -518,6 +531,7 @@ export default function Home() {
 									</Link>{" "}
 									and{" "}
 									<Link
+                                        target="_blank"
 										href="https://www.instagram.com/hacksouthwest/"
 										className="text-HSWaccent"
 									>
@@ -573,7 +587,7 @@ export default function Home() {
 												<p className="text-sm text-HSWtext/80">Lunch</p>
 											</div>
 
-                                            {/* Dinner */}
+											{/* Dinner */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
 												<p className="font-semibold text-lg text-HSWtext">Sat 19:00</p>
@@ -602,8 +616,8 @@ export default function Home() {
 												<p className="text-sm text-HSWtext/80">Venue Opens</p>
 											</div>
 
-                                            {/* Breakfast */}
-                                            <div className="relative flex gap-1 items-center">
+											{/* Breakfast */}
+											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
 												<p className="font-semibold text-lg text-HSWtext">Sun 08:30</p>
 												<p className="text-sm text-HSWtext/80">Breakfast</p>
@@ -644,7 +658,7 @@ export default function Home() {
 									</p>
 								</div>
 
-                                {/* Prizes */}
+								{/* Prizes */}
 								<div className="px-[10%] text-left w-full max-w-3xl">
 									<p className="text-2xl font-semibold text-gold mt-6 mb-2">🏆 Prizes</p>
 
@@ -825,9 +839,9 @@ export default function Home() {
 						<br />
 
 						<div className="w-full h-fit transition-all duration-100 flex flex-col">
-							{questions.map((q, index) => (
+							{questions.map((q) => (
 								<Question
-									key={index}
+									key={q.id}
 									info={q}
 								/>
 							))}
