@@ -37,7 +37,7 @@ export default function Home() {
 
 	const questions = [
 		{
-            id: 1,
+			id: 1,
 			question: "Should I attend Hack South West",
 			answer: "Absolutely! Hack South West is a great opportunity to learn new skills, meet new people, and have fun. Whether you're a beginner or an experienced hacker, there's something for everyone at Hack South West."
 		},
@@ -394,46 +394,54 @@ export default function Home() {
 									<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
 
 									<div className="relative border-l-2 border-HSWaccent ml-4">
-										{/* 8:00 AM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">8:00 AM</p>
-											<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+										{/* Friday */}
+										<div className="px-8 py-4">
+											<p className="w-fit text-center text-2xl text-HSWaccent">Saturday</p>
+											<hr className="border-HSWaccent" />
 										</div>
 
-										{/* 8:30 AM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">8:30 AM</p>
-											<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
-										</div>
+										<div className="flex flex-col gap-2 ml-6">
+											{/* 08:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:00</p>
+												<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+											</div>
 
-										{/* 9:00 AM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">9:00 AM</p>
-											<p className="text-sm text-HSWtext/80">Hacking Begins</p>
-										</div>
+											{/* 08:30 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:30</p>
+												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
+											</div>
 
-										{/* Throughout the Day */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">Throughout the Day</p>
-											<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
-										</div>
+											{/* 09:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">09:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Begins</p>
+											</div>
 
-										{/* 9:00 PM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">9:00 PM</p>
-											<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
-										</div>
+											{/* All Day */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">All Day</p>
+												<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
+											</div>
 
-										{/* 10:00 PM */}
-										<div className="ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">10:00 PM</p>
-											<p className="text-sm text-HSWtext/80">Event Close</p>
+											{/* 21:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">21:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
+											</div>
+
+											{/* 22:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">22:00</p>
+												<p className="text-sm text-HSWtext/80">Event Close</p>
+											</div>
 										</div>
 									</div>
 
@@ -498,22 +506,24 @@ export default function Home() {
 									<b className="text-HSWaccent font-bold">Hackathon</b> Event
 								</p>
 								<p className="px-[10%]">
-									This February, join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on{" "}
+									Join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on{" "}
 									<b>Saturday, 31st January to Sunday, 1st February</b>, hosted at the <b>Innovation Centre, Phase 2.</b>
 								</p>
 
 								<p className="px-[10%]">
-									This year you will develop your own creative <b className="text-HSWaccent">AI Agent</b> solution in <b className="text-HSWaccent">blockchain banking</b>. We
-									look out for solutions that incorporate a high level of technical and design choice to the problem at hand. Although, you
-									will likely only work on this problem for a limited amount of time, we encourage you to continue to develop and deploy your
-									solutions to either the web or other sources to both add to your portfolio and to further your own learning.
+									This year you will develop your own creative <b className="text-HSWaccent">AI Agent</b> solution in{" "}
+									<b className="text-HSWaccent">blockchain banking</b>. We look out for solutions that incorporate a high level of technical
+									and design choice to the problem at hand. Although, you will likely only work on this problem for a limited amount of time,
+									we encourage you to continue to develop and deploy your solutions to either the web or other sources to both add to your
+									portfolio and to further your own learning.
 								</p>
 
 								<p className="px-[10%]">
 									We will also try our very best to help you get started in this problem space. That is why we have lined up a{" "}
 									<b className="text-HSWaccent">series of workshops </b>
 									leading up to and during the event to help you build your skills and knowledge. We have also partnered with cloud service
-									providers to offer you an abundance of <b className="text-HSWaccent">free AI credits</b> in hopes of assisting your development journey.
+									providers to offer you an abundance of <b className="text-HSWaccent">free AI credits</b> in hopes of assisting your
+									development journey.
 								</p>
 
 								<p className="px-[10%]">
@@ -523,7 +533,7 @@ export default function Home() {
 								<p className="px-[10%] z-50">
 									Follow us on{" "}
 									<Link
-                                        target="_blank"
+										target="_blank"
 										href="https://www.linkedin.com/company/hack-south-west/"
 										className="text-HSWaccent"
 									>
@@ -531,7 +541,7 @@ export default function Home() {
 									</Link>{" "}
 									and{" "}
 									<Link
-                                        target="_blank"
+										target="_blank"
 										href="https://www.instagram.com/hacksouthwest/"
 										className="text-HSWaccent"
 									>
