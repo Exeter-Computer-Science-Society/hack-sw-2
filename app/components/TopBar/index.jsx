@@ -13,7 +13,6 @@ import { abcMarist } from '../../fonts';
 export function TopBar() {
 	return (
 		<div className="absolute top-0 left-0 right-0 w-full h-fit px-[15%] max-lg:px-[5%] py-4 flex justify-end items-center gap-4 bg-HSWsecondary z-[100] border-b border-HSWtext max-lg:text-xs">
-
 			<div className="flex gap-4 justify-center items-center">
 				<Link
 					href={"https://www.becomeliminal.com/"}
