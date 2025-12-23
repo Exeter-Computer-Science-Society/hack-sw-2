@@ -373,7 +373,7 @@ export default function Home() {
 
 								<Image
 									src={"/images/hacking.webp"}
-									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25"
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-10"
 									width={500}
 									height={500}
 									alt="CTF Hackathon Background"
@@ -489,7 +489,7 @@ export default function Home() {
 							<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
 								<Image
 									src={"/images/hackathon.webp"}
-									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25 z-0"
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-10 z-0"
 									width={500}
 									height={500}
 									alt="smt"
@@ -555,49 +555,49 @@ export default function Home() {
 											{/* 8:00 AM */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 8:00</p>
+												<p className="font-semibold text-lg text-HSWtext">08:00</p>
 												<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
 											</div>
 
 											{/* board games, team building */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 8:30</p>
+												<p className="font-semibold text-lg text-HSWtext">08:30</p>
 												<p className="text-sm text-HSWtext/80">Board Games + Team Building</p>
 											</div>
 
 											{/* 8:30 AM */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 11:30</p>
+												<p className="font-semibold text-lg text-HSWtext">11:30</p>
 												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
 											</div>
 
 											{/* 9:00 AM */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 12:00</p>
+												<p className="font-semibold text-lg text-HSWtext">12:00</p>
 												<p className="text-sm text-HSWtext/80">Hacking Begins!</p>
 											</div>
 
 											{/* Lunch */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 13:00</p>
+												<p className="font-semibold text-lg text-HSWtext">13:00</p>
 												<p className="text-sm text-HSWtext/80">Lunch</p>
 											</div>
 
 											{/* Dinner */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 19:00</p>
+												<p className="font-semibold text-lg text-HSWtext">19:00</p>
 												<p className="text-sm text-HSWtext/80">Dinner</p>
 											</div>
 
 											{/* 9:00 PM */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sat 22:00</p>
+												<p className="font-semibold text-lg text-HSWtext">22:00</p>
 												<p className="text-sm text-HSWtext/80">Venue Closes, Moving To Forum</p>
 											</div>
 										</div>
@@ -612,42 +612,42 @@ export default function Home() {
 											{/* Venue Opens */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sun 08:00</p>
+												<p className="font-semibold text-lg text-HSWtext">08:00</p>
 												<p className="text-sm text-HSWtext/80">Venue Opens</p>
 											</div>
 
 											{/* Breakfast */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sun 08:30</p>
+												<p className="font-semibold text-lg text-HSWtext">08:30</p>
 												<p className="text-sm text-HSWtext/80">Breakfast</p>
 											</div>
 
 											{/* Hacking Ends */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sun 12:00</p>
+												<p className="font-semibold text-lg text-HSWtext">12:00</p>
 												<p className="text-sm text-HSWtext/80">Hacking Ends</p>
 											</div>
 
 											{/* Judging */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sun 12:30</p>
+												<p className="font-semibold text-lg text-HSWtext">12:30</p>
 												<p className="text-sm text-HSWtext/80">Judging Begins</p>
 											</div>
 
 											{/* Prizes & Closing Ceremony */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sun 14:00</p>
+												<p className="font-semibold text-lg text-HSWtext">14:00</p>
 												<p className="text-sm text-HSWtext/80">Prizes & Closing Ceremony</p>
 											</div>
 
 											{/* Venue Closes */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
-												<p className="font-semibold text-lg text-HSWtext">Sun 15:00</p>
+												<p className="font-semibold text-lg text-HSWtext">15:00</p>
 												<p className="text-sm text-HSWtext/80">Venue Closes</p>
 											</div>
 										</div>
