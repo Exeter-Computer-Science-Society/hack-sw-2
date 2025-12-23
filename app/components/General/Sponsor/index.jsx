@@ -6,7 +6,7 @@ const info = {
 	liminal: {
 		name: "Liminal",
 		image: "/images/sponsors/liminal-logo.webp",
-		site: "https://www.becomeliminal.come",
+		site: "https://www.becomeliminal.com",
 		level: "gold",
 	},
 	// southwestcybersecuritycluster: {
