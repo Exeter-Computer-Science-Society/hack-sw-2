@@ -28,7 +28,7 @@ export function Countdown({ registration }) {
 				<div className='relative w-1/6 aspect-[3/4] flex flex-col justify-center items-cente'>
 					<div className='h-1/2 w-full bg-[#171616] rounded-2xl flex justify-center items-center max-lg:rounded-lg' />
 					<div className='h-1/2 w-full bg-HSWsecondary2 rounded-2xl flex justify-center items-center max-lg:rounded-lg' />
-					<p className="absolute w-full h-full justify-center flex items-center text-6xl font-extrabold text-HSWaccent max-lg:text-sm">{Math.max(0,Math.floor((counter % (1000 * 60 * 60 * 24))) / (1000 * 60 * 60))}</p>
+					<p className="absolute w-full h-full justify-center flex items-center text-6xl font-extrabold text-HSWaccent max-lg:text-sm">{Math.max(0,Math.floor((counter % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))}</p>
 				</div>
 
 				{/* minutes */}

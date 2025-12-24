@@ -11,6 +11,7 @@ export const metadata = {
 	description: "Website for the annual hack south west (HSW) ocurring typically in early february",
 }
 
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className="w-full h-full">
