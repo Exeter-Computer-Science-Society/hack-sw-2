@@ -583,12 +583,21 @@ export default function Home() {
 												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
 											</div>
 
-											{/* 9:00 AM */}
+											{/* Hacking Begins */}
 											<div className="relative flex gap-1 items-center">
 												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
 												<p className="font-semibold text-lg text-HSWtext">12:00</p>
 												<p className="text-sm text-HSWtext/80">Hacking Begins!</p>
 											</div>
+
+                                            {/* Workshop */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">12:15</p>
+												<p className="text-sm text-HSWtext/80">Intro to Blockchain Workshop</p>
+											</div>
+
+
 
 											{/* Lunch */}
 											<div className="relative flex gap-1 items-center">
