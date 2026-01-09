@@ -68,6 +68,12 @@ const info = {
         image: "/images/sponsors/exeter.png",
         site: "https://computerscience.exeter.ac.uk/",
         level: "bronze",
+    },
+    encode: {
+        name: "Encode Club",
+        image: "/images/sponsors/encode.webp",
+        site: "https://www.encodeclub.com/",
+        level: "bronze",
     }
 	// cybersoc: {
 	// 	name: "Cyber Security Society",
