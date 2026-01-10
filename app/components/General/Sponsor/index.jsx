@@ -5,28 +5,28 @@ import SponsorCard from "./Card"
 const info = {
 	liminal: {
 		name: "Liminal",
-		image: "/images/sponsors/liminal.png",
-		site: "https://www.liminal.ai",
+		image: "/images/sponsors/liminal-logo.webp",
+		site: "https://www.becomeliminal.com",
 		level: "gold",
 	},
-	southwestcybersecuritycluster: {
-		name: "South West Cyber Security Cluster",
-		image: "/images/sponsors/swcsc.png",
-		site: "https://southwestcsc.org/",
-		level: "silver",
-	},
-    rootmepro: {
-        name: "Root Me Pro",
-        image: "/images/sponsors/rootmepro.png",
-        site: "https://pro.root-me.org/",
-		level: "silver",
-    },
-	hh: {
-		name: "Hacking Hub",
-		image: "/images/sponsors/HackingHub.svg",
-		site: "https://www.hackinghub.io/",
-		level: "silver",
-	},
+	// southwestcybersecuritycluster: {
+	// 	name: "South West Cyber Security Cluster",
+	// 	image: "/images/sponsors/swcsc.png",
+	// 	site: "https://southwestcsc.org/",
+	// 	level: "silver",
+	// },
+    // rootmepro: {
+    //     name: "Root Me Pro",
+    //     image: "/images/sponsors/rootmepro.png",
+    //     site: "https://pro.root-me.org/",
+	// 	level: "silver",
+    // },
+	// hh: {
+	// 	name: "Hacking Hub",
+	// 	image: "/images/sponsors/HackingHub.svg",
+	// 	site: "https://www.hackinghub.io/",
+	// 	level: "silver",
+	// },
 	mintsw: {
 		name: "Mint South West",
 		image: "/images/sponsors/mintsw.png",
@@ -63,12 +63,24 @@ const info = {
 		site: "https://excs.uk/",
 		level: "bronze",
 	},
-	cybersoc: {
-		name: "Cyber Security Society",
-		image: "/images/sponsors/cybersoc.png",
-		site: "https://my.exeterguild.com/groups/TT2W9/cyber-security-society",
-		level: "bronze",
-	}
+    exeter: {
+        name: "Computer Science Dept",
+        image: "/images/sponsors/exeter.png",
+        site: "https://computerscience.exeter.ac.uk/",
+        level: "bronze",
+    },
+    encode: {
+        name: "Encode Club",
+        image: "/images/sponsors/encode.webp",
+        site: "https://www.encodeclub.com/",
+        level: "bronze",
+    }
+	// cybersoc: {
+	// 	name: "Cyber Security Society",
+	// 	image: "/images/sponsors/cybersoc.png",
+	// 	site: "https://my.exeterguild.com/groups/TT2W9/cyber-security-society",
+	// 	level: "bronze",
+	// }
 }
 
 export default function Sponsor() {

@@ -18,8 +18,8 @@ import Link from "next/link"
 // hooks
 import { useEffect, useState } from "react"
 
-
-
+// fonts
+import { abcMarist } from "./fonts"
 
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
@@ -30,52 +30,64 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration_open = new Date("2025-10-23T12:00:00").getTime()
-    const registration_closed = new Date("2025-11-08T08:00:00").getTime()
-    const event_date = new Date("2025-11-08T08:00:00").getTime()
+	const registration_open = new Date("2026-01-12T12:00:00").getTime() // when does registration open?
+	const registration_closed = new Date("2026-01-31T08:00:00").getTime() // the date when registration closes before the event
+	const event_date = new Date("2026-01-31T08:00:00").getTime() // the date when the event starts
+	const event_link = "https://dorahacks.io/hackathon/hack-south-west"
 
 	const questions = [
 		{
+			id: 1,
 			question: "Should I attend Hack South West",
 			answer: "Absolutely! Hack South West is a great opportunity to learn new skills, meet new people, and have fun. Whether you're a beginner or an experienced hacker, there's something for everyone at Hack South West."
 		},
 		{
+			id: 2,
 			question: "What is a hackathon?",
 			answer: "A hackathon is an event where people come together to work on a project for a set amount of time. It is a great opportunity to learn new skills, meet new people, and have fun!"
 		},
 		{
+			id: 3,
 			question: "Who can attend?",
 			answer: "We welcome everyone, weather your a student here or external university or working in industry, we welcome everyone to come and join us for a weekend of fun and learning."
 		},
 		{
+			id: 4,
 			question: "Where is Hack South West Happening?",
 			answer: "We are hosting the event in the innovation centre at the University of Exeter. The address is: University of Exeter, Innovation Centre, Rennes Drive, Exeter, EX4 4RN"
 		},
 		{
+			id: 5,
 			question: "What will be available to eat?",
 			answer: "We will be providing all hackers with food and drinks throughout the event. Dietary requirement will be catered for as well so no need to worry!"
 		},
 		{
+			id: 6,
 			question: "Do I need to be able to code to attend?",
 			answer: "Not at all! Hack South West is open to everyone, regardless of your coding experience. We will have workshops and mentors available to help you get started with your project."
 		},
 		{
+			id: 7,
 			question: "How large can my team be?",
 			answer: "We enforce team sizes of no more than 4 people. This is to ensure that everyone has a fair chance of winning the competition."
 		},
 		{
+			id: 8,
 			question: "What should I bring?",
 			answer: "You should bring your laptop, charger, and any additional items to make your stay comfortable. We will provide you with seating, power, food, and a lovely atmosphere."
 		},
 		{
+			id: 9,
 			question: "Do we have a code of conduct?",
 			answer: "Yes, we have a code of conduct that all attendees must adhere to. This is to ensure that everyone has a safe and enjoyable experience at Hack South West."
 		},
 		{
+			id: 10,
 			question: "Do we have a code of intellectual property?",
 			answer: "Yes, check the link just to the left of this :)"
 		},
 		{
+			id: 11,
 			question: "What are the terms and conditions?",
 			answer: "Check the link just to the left of this :)"
 		}
@@ -162,33 +174,28 @@ export default function Home() {
 				<div className="hidden text-red-500" />
 				<div className="flex flex-col gap-8 w-full h-full">
 					<div>
-						<Link href={"https://hack-south-west.excs.uk/"}>
-							<Image
-								src={"/images/HSW-logo.png"}
-								width={500}
-								height={500}
-								alt="Hack South West Logo"
-							/>
-						</Link>
+						<Image
+							src={"/images/HSW-logo.png"}
+							width={500}
+							height={500}
+							alt="Hack South West Logo"
+						/>
 
-						<div className="flex gap-1">
+						<div className="flex gap-2 items-center">
 							<p>Made possible with</p>
-							<Link href={"https://southwestcsc.org/"}>
+							<Link
+								target="_blank"
+								href={"https://www.becomeliminal.com/"}
+								className="flex gap-1 items-center h-8 w-fit"
+							>
 								<Image
-									src={"/images/sponsors/swcsc.png"}
+									src={"/images/sponsors/liminal-logo.webp"}
 									width={100}
 									height={100}
-									alt="swcsc"
+									alt="liminal-logo"
+									className="w-8"
 								/>
-							</Link>
-							<p> and </p>
-							<Link href={"https://www.sec-ridge.com/"}>
-								<Image
-									src={"/images/sponsors/secridge.png"}
-									width={100}
-									height={100}
-									alt="secridge"
-								/>
+								<p className={`${abcMarist.variable} font-marist text-3xl`}>liminal</p>
 							</Link>
 						</div>
 					</div>
@@ -201,7 +208,7 @@ export default function Home() {
 					<div className="">
 						<div className="flex gap-2 items-center">
 							<BsCalendar2Date />
-							<p className="max-lg:text-sm">Saturday, Nov 8th, 8:00am</p>
+							<p className="max-lg:text-sm">Saturday, January 31st, 8:00am</p>
 						</div>
 
 						<div className="flex gap-2 items-center">
@@ -216,16 +223,20 @@ export default function Home() {
 					</div>
 
 					<div className="flex gap-4 max-lg:flex-col">
-						<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
+						<RegistrationButton
+							registration_open={registration_open}
+							registration_closed={registration_closed}
+							link={event_link}
+						/>
 
 						<button
+							type="button"
 							className="bg-HSWsecondary px-4 py-2 rounded-md border border-gray-500 text-warmGray-500 flex gap-2 justify-center items-center"
 							onClick={() => {
 								document.getElementById("about").scrollIntoView({ behavior: "smooth" })
 							}}
 						>
-                            <p className="text-2xl max-lg:text-sm font-extrabold">Learn More</p>
-
+							<p className="text-2xl max-lg:text-sm font-extrabold">Learn More</p>
 						</button>
 
 						<Link
@@ -270,7 +281,10 @@ export default function Home() {
 					<div className="relative w-1/2 h-96 max-lg:hidden">
 						<div className="w-1/2 h-full flex items-center">
 							<div className="absolute -bottom-6 w-full h-fit flex justify-center z-50">
-								<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
+								<RegistrationButton
+									registration_open={registration_open}
+									registration_closed={registration_closed}
+								/>
 							</div>
 
 							{currentImage2 && (
@@ -359,7 +373,7 @@ export default function Home() {
 
 								<Image
 									src={"/images/hacking.webp"}
-									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25"
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-10"
 									width={500}
 									height={500}
 									alt="CTF Hackathon Background"
@@ -380,46 +394,54 @@ export default function Home() {
 									<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
 
 									<div className="relative border-l-2 border-HSWaccent ml-4">
-										{/* 8:00 AM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">8:00 AM</p>
-											<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+										{/* Friday */}
+										<div className="px-8 py-4">
+											<p className="w-fit text-center text-2xl text-HSWaccent">Saturday</p>
+											<hr className="border-HSWaccent" />
 										</div>
 
-										{/* 8:30 AM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">8:30 AM</p>
-											<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
-										</div>
+										<div className="flex flex-col gap-2 ml-6">
+											{/* 08:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:00</p>
+												<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+											</div>
 
-										{/* 9:00 AM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">9:00 AM</p>
-											<p className="text-sm text-HSWtext/80">Hacking Begins</p>
-										</div>
+											{/* 08:30 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:30</p>
+												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
+											</div>
 
-										{/* Throughout the Day */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">Throughout the Day</p>
-											<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
-										</div>
+											{/* 09:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">09:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Begins</p>
+											</div>
 
-										{/* 9:00 PM */}
-										<div className="mb-6 ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">9:00 PM</p>
-											<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
-										</div>
+											{/* All Day */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">All Day</p>
+												<p className="text-sm text-HSWtext/80">Explore Easter Eggs + Food!</p>
+											</div>
 
-										{/* 10:00 PM */}
-										<div className="ml-6 relative">
-											<div className="absolute -left-4 top-1 w-3 h-3 bg-HSWaccent rounded-full"></div>
-											<p className="font-semibold text-lg text-HSWtext">10:00 PM</p>
-											<p className="text-sm text-HSWtext/80">Event Close</p>
+											{/* 21:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">21:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Ends + Prizes</p>
+											</div>
+
+											{/* 22:00 */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">22:00</p>
+												<p className="text-sm text-HSWtext/80">Event Close</p>
+											</div>
 										</div>
 									</div>
 
@@ -463,7 +485,11 @@ export default function Home() {
 
 								{/* Registration */}
 								<div className="px-[10%] self-start z-50">
-									<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} />
+									<RegistrationButton
+										registration_open={registration_open}
+										registration_closed={registration_closed}
+										force_close={true}
+									/>
 								</div>
 							</div>
 
@@ -471,7 +497,7 @@ export default function Home() {
 							<div className="relative w-full h-full flex flex-col items-center gap-8 py-8 self-start">
 								<Image
 									src={"/images/hackathon.webp"}
-									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-25 z-0"
+									className="absolute top-0 left-0 right-0 w-full h-fit object-contain rounded-lg opacity-10 z-0"
 									width={500}
 									height={500}
 									alt="smt"
@@ -480,25 +506,211 @@ export default function Home() {
 									<b className="text-HSWaccent font-bold">Hackathon</b> Event
 								</p>
 								<p className="px-[10%]">
-									This event will push you to develop your own creative solution to a challenge faced by the world. We look out for solutions
-									that incorporate a high level of technical knowledge to a problem of significant <b className="text-HSWaccent">impact</b> in
-									the world. Although, you will likely only work on this problem for a limited amount of time, we encourage you to continue to
-									develop and deploy your solutions to either the web or other sources to both add to your portfolio, but also benefit
-									humanity!
+									Join us for an exhiliarating <b className="text-HSWaccent">24-hour Hackathon</b> on{" "}
+									<b>Saturday, 31st January to Sunday, 1st February</b>, hosted at the <b>Innovation Centre, Phase 2.</b>
 								</p>
 
-                                <p className="px-[10%]">
+								<p className="px-[10%]">
+									This year you will develop your own creative <b className="text-HSWaccent">AI Agent</b> solution in{" "}
+									<b className="text-HSWaccent">blockchain banking</b>. We look out for solutions that incorporate a high level of technical
+									and design choice to the problem at hand. Although, you will likely only work on this problem for a limited amount of time,
+									we encourage you to continue to develop and deploy your solutions to either the web or other sources to both add to your
+									portfolio and to further your own learning.
+								</p>
+
+								<p className="px-[10%]">
+									We will also try our very best to help you get started in this problem space. That is why we have lined up a{" "}
+									<b className="text-HSWaccent">series of workshops </b>
+									leading up to and during the event to help you build your skills and knowledge. We have also partnered with cloud service
+									providers to offer you an abundance of <b className="text-HSWaccent">free AI credits</b> in hopes of assisting your
+									development journey.
+								</p>
+
+								<p className="px-[10%]">
 									We are still working hard on organising this, please check out our socials for more information as it comes! <br />
-									
 								</p>
 
-                                <p className="px-[10%] z-50">
-                                    Follow us on <Link href="https://www.linkedin.com/company/hack-south-west/" className="text-HSWaccent">LinkedIn</Link> and <Link href="https://www.instagram.com/hacksouthwest/" className="text-HSWaccent">Instagram</Link> for the latest updates.
-                                </p>
+								<p className="px-[10%] z-50">
+									Follow us on{" "}
+									<Link
+										target="_blank"
+										href="https://www.linkedin.com/company/hack-south-west/"
+										className="text-HSWaccent"
+									>
+										LinkedIn
+									</Link>{" "}
+									and{" "}
+									<Link
+										target="_blank"
+										href="https://www.instagram.com/hacksouthwest/"
+										className="text-HSWaccent"
+									>
+										Instagram
+									</Link>{" "}
+									for the latest updates.
+								</p>
 
+								{/* Schedule */}
+								<div className="px-[10%] w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-HSWaccent mt-4 mb-6 text-center">🕗 Schedule</p>
+
+									<div className="relative border-l-2 border-HSWaccent ml-4">
+										{/* New day */}
+										<div className="px-8 py-4">
+											<p className="w-fit text-center text-2xl text-HSWaccent">Saturday</p>
+											<hr className="border-HSWaccent" />
+										</div>
+
+										<div className="flex flex-col gap-2 ml-6">
+											{/* 8:00 AM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:00</p>
+												<p className="text-sm text-HSWtext/80">Registration Opens + Talk To Sponsors</p>
+											</div>
+
+											{/* board games, team building */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:30</p>
+												<p className="text-sm text-HSWtext/80">Board Games + Team Building</p>
+											</div>
+
+											{/* 8:30 AM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">11:30</p>
+												<p className="text-sm text-HSWtext/80">Welcome Presentation</p>
+											</div>
+
+											{/* Hacking Begins */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">12:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Begins!</p>
+											</div>
+
+                                            {/* Workshop */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">12:15</p>
+												<p className="text-sm text-HSWtext/80">Intro to Blockchain Workshop</p>
+											</div>
+
+
+
+											{/* Lunch */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">13:00</p>
+												<p className="text-sm text-HSWtext/80">Lunch</p>
+											</div>
+
+											{/* Dinner */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">19:00</p>
+												<p className="text-sm text-HSWtext/80">Dinner</p>
+											</div>
+
+											{/* 9:00 PM */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">22:00</p>
+												<p className="text-sm text-HSWtext/80">Venue Closes, Moving To Forum</p>
+											</div>
+										</div>
+
+										{/* New day */}
+										<div className="px-8 py-4">
+											<p className="w-fit text-center text-2xl text-HSWaccent">Sunday</p>
+											<hr className="border-HSWaccent" />
+										</div>
+
+										<div className="flex flex-col gap-2 ml-6">
+											{/* Venue Opens */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:00</p>
+												<p className="text-sm text-HSWtext/80">Venue Opens</p>
+											</div>
+
+											{/* Breakfast */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">08:30</p>
+												<p className="text-sm text-HSWtext/80">Breakfast</p>
+											</div>
+
+											{/* Hacking Ends */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">12:00</p>
+												<p className="text-sm text-HSWtext/80">Hacking Ends</p>
+											</div>
+
+											{/* Judging */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">12:30</p>
+												<p className="text-sm text-HSWtext/80">Judging Begins</p>
+											</div>
+
+											{/* Prizes & Closing Ceremony */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">14:00</p>
+												<p className="text-sm text-HSWtext/80">Prizes & Closing Ceremony</p>
+											</div>
+
+											{/* Venue Closes */}
+											<div className="relative flex gap-1 items-center">
+												<div className="w-3 h-3 bg-HSWaccent rounded-full"></div>
+												<p className="font-semibold text-lg text-HSWtext">15:00</p>
+												<p className="text-sm text-HSWtext/80">Venue Closes</p>
+											</div>
+										</div>
+									</div>
+
+									<p className="mt-4 text-center text-HSWtext/80">
+										🍕 <b>Food and refreshments provided throughout the day!</b>
+									</p>
+								</div>
+
+								{/* Prizes */}
+								<div className="px-[10%] text-left w-full max-w-3xl">
+									<p className="text-2xl font-semibold text-gold mt-6 mb-2">🏆 Prizes</p>
+
+									<div className="bg-HSWsecondary2 p-4 rounded-md mb-4 flex gap-2 justify-between">
+										<div>
+											<p className="font-semibold">🥇 1st Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>$xxx</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥈 2nd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>£xx</li>
+											</ul>
+										</div>
+
+										<div>
+											<p className="font-semibold">🥉 3rd Place</p>
+											<ul className="list-disc list-inside mb-3">
+												<li>£x</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 
 								<div className="px-[10%] self-start z-50">
-									<RegistrationButton registration_open={registration_open} registration_closed={registration_closed} force={true}/>
+									<RegistrationButton
+										registration_open={registration_open}
+										registration_closed={registration_closed}
+										link={event_link}
+									/>
 								</div>
 							</div>
 						</div>
@@ -646,9 +858,9 @@ export default function Home() {
 						<br />
 
 						<div className="w-full h-fit transition-all duration-100 flex flex-col">
-							{questions.map((q, index) => (
+							{questions.map((q) => (
 								<Question
-									key={index}
+									key={q.id}
 									info={q}
 								/>
 							))}

@@ -25,6 +25,9 @@ module.exports = {
 			aspectRatio: {
 				'3/4': '3 / 4',
 			},
+            fontFamily: {
+                marist: ['var(--font-abc-marist)'],
+            },
 		},
 		colors: {
 			...colors,
