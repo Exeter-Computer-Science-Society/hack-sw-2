@@ -30,7 +30,7 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration_open = new Date("2026-01-12T12:00:00").getTime() // when does registration open?
+	const registration_open = new Date("2026-01-14T12:00:00").getTime() // when does registration open?
 	const registration_closed = new Date("2026-01-31T08:00:00").getTime() // the date when registration closes before the event
 	const event_date = new Date("2026-01-31T08:00:00").getTime() // the date when the event starts
 	const event_link = "https://dorahacks.io/hackathon/hack-south-west"
