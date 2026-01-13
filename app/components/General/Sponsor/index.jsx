@@ -51,12 +51,6 @@ const info = {
 		site: "https://www.checkout.com/",
 		level: "bronze",
 	},
-	dora: {
-		name: "Dora Hacks",
-		image: "/images/sponsors/dora.png",
-		site: "https://www.dorahacks.com/",
-		level: "bronze",
-	},
 	excs: {
 		name: "Computer Science Society",
 		image: "/images/sponsors/excs.svg",
@@ -64,7 +58,7 @@ const info = {
 		level: "bronze",
 	},
     exeter: {
-        name: "Computer Science Dept",
+        name: "Exeter CS Department",
         image: "/images/sponsors/exeter.png",
         site: "https://computerscience.exeter.ac.uk/",
         level: "bronze",
@@ -73,6 +67,12 @@ const info = {
         name: "Encode Club",
         image: "/images/sponsors/encode.webp",
         site: "https://www.encodeclub.com/",
+        level: "bronze",
+    },
+    tenzing: {
+        name: "Tenzing",
+        image: "/images/sponsors/tenzing.jpg",
+        site: "https://tenzingnaturalenergy.com/",
         level: "bronze",
     }
 	// cybersoc: {
