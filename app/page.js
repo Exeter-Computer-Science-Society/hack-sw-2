@@ -30,7 +30,7 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	const registration_open = new Date("2026-01-12T12:00:00").getTime() // when does registration open?
+	const registration_open = new Date("2026-01-14T12:00:00").getTime() // when does registration open?
 	const registration_closed = new Date("2026-01-31T08:00:00").getTime() // the date when registration closes before the event
 	const event_date = new Date("2026-01-31T08:00:00").getTime() // the date when the event starts
 	const event_link = "https://dorahacks.io/hackathon/hack-south-west"
@@ -685,21 +685,22 @@ export default function Home() {
 										<div>
 											<p className="font-semibold">🥇 1st Place</p>
 											<ul className="list-disc list-inside mb-3">
-												<li>$xxx</li>
+												<li>Liminal Insight Day</li>
+                                                <li>Mechanical Keyboard</li>
 											</ul>
 										</div>
 
 										<div>
 											<p className="font-semibold">🥈 2nd Place</p>
 											<ul className="list-disc list-inside mb-3">
-												<li>£xx</li>
+												<li>Gaming Mouse</li>
 											</ul>
 										</div>
 
 										<div>
 											<p className="font-semibold">🥉 3rd Place</p>
 											<ul className="list-disc list-inside mb-3">
-												<li>£x</li>
+												<li>Large Mousepad</li>
 											</ul>
 										</div>
 									</div>
@@ -744,7 +745,7 @@ export default function Home() {
 						<Profile
 							name="Wiktor"
 							position="Founder of Hack South West & President of EXCS"
-							description="Oversee's the creation of HSW"
+							description="Oversee the creation of HSW"
 							image="/images/team/wiktor.jpeg"
 							github="https://github.com/inspizzz"
 							linkedin="https://www.linkedin.com/in/wiktor-wiejak/"
