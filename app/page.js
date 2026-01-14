@@ -24,7 +24,6 @@ import { abcMarist } from "./fonts"
 export default function Home() {
 	const images = Array.from({ length: 27 }, (_, i) => `/images/conveyor_belt/${i + 1}.jpg`)
 
-	const [open, setOpen] = useState(false)
 	const [currentImage1, setCurrentImage1] = useState("/images/conveyor_belt/1.jpg")
 	const [currentImage2, setCurrentImage2] = useState("/images/conveyor_belt/2.jpg")
 	const [fading1, setFading1] = useState(false)
@@ -33,7 +32,7 @@ export default function Home() {
 	const registration_open = new Date("2026-01-14T12:00:00").getTime() // when does registration open?
 	const registration_closed = new Date("2026-01-31T08:00:00").getTime() // the date when registration closes before the event
 	const event_date = new Date("2026-01-31T08:00:00").getTime() // the date when the event starts
-	const event_link = "https://dorahacks.io/hackathon/hack-south-west"
+	const event_link = "https://hack-south-west.devpost.com/" // the link to the registration page
 
 	const questions = [
 		{
