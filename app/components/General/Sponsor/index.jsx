@@ -33,12 +33,6 @@ const info = {
         site: "https://computerscience.exeter.ac.uk/",
         level: "bronze",
     },
-    encode: {
-        name: "Encode Club",
-        image: "/images/sponsors/encode.webp",
-        site: "https://www.encodeclub.com/",
-        level: "bronze",
-    },
     tenzing: {
         name: "Tenzing",
         image: "/images/sponsors/tenzing.jpg",
@@ -109,6 +103,37 @@ export default function Sponsor() {
 					))}
 				</div>
 			</div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-HSWaccent mb-8 sm:mb-12 lg:mb-16">Meet the Partners</h2>
+
+            <div className="mx-auto max-w-7xl">
+                <div
+                    className="
+                    grid
+                    grid-cols-2
+                    sm:grid-cols-3
+                    lg:grid-cols-4
+                    xl:grid-cols-5
+                    gap-2
+                    sm:gap-3
+                    lg:gap-4
+                    p-2 sm:p-4 lg:p-6
+                "
+                >
+                    <SponsorCard
+                        sName={"Encode Club"}
+                        sSite={"https://www.encodeclub.com/"}
+                        sImage={"/images/sponsors/encode.webp"}
+                        sLevel={"partner"}
+                    />
+                    <SponsorCard
+                        sName={"Hackathons UK"}
+                        sSite={"https://www.hackathons.org.uk/"}
+                        sImage={"/images/sponsors/hackathonsUk.png"}
+                        sLevel={"partner"}
+                    />
+                </div>
+            </div>
 		</section>
 	)
 }
