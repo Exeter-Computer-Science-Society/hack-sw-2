@@ -685,21 +685,21 @@ export default function Home() {
 											<p className="font-semibold">🥇 1st Place</p>
 											<ul className="list-disc list-inside mb-3">
 												<li>Liminal Insight Day</li>
-                                                <li>Mechanical Keyboard</li>
+                                                <li>£££ Cash</li>
 											</ul>
 										</div>
 
 										<div>
 											<p className="font-semibold">🥈 2nd Place</p>
 											<ul className="list-disc list-inside mb-3">
-												<li>Gaming Mouse</li>
+												<li>££ Cash</li>
 											</ul>
 										</div>
 
 										<div>
 											<p className="font-semibold">🥉 3rd Place</p>
 											<ul className="list-disc list-inside mb-3">
-												<li>Large Mousepad</li>
+												<li>£ Cash</li>
 											</ul>
 										</div>
 									</div>
