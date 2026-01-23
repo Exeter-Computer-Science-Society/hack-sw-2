@@ -9,6 +9,12 @@ const info = {
 		site: "https://www.becomeliminal.com",
 		level: "gold",
 	},
+    nvidia: {
+        name: "NVIDIA",
+        image: "/images/sponsors/nvidia.png",
+        site: "https://www.nvidia.com/",
+        level: "silver",
+    },
     superteam: {
 		name: "Superteam Exeter",
 		image: "/images/sponsors/superteamexeter.jpeg",
