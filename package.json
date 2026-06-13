@@ -6,26 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "motion": "^12.23.22",
-    "next": "^14.2.33",
+    "next": "^16.2.9",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
-    "react-scripts": "^0.0.0",
     "react-spinners": "^0.15.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "daisyui": "^4.11.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8.5.6",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.9",
+    "postcss": "^8.5.15",
     "tailwindcss": "^3.4.18"
+  },
+  "overrides": {
+    "postcss": "$postcss"
   }
 }

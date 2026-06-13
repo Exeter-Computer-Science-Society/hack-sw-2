@@ -8,9 +8,12 @@ export function Countdown({ registration }) {
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
+		// Guard against SSR/client hydration mismatch since the value depends on the current time.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setMounted(true)
-		setInterval(() => setCounter(registration - new Date().getTime()), 500);
-	}, [])
+		const intervalId = setInterval(() => setCounter(registration - new Date().getTime()), 500)
+		return () => clearInterval(intervalId)
+	}, [registration])
 
 
 	return mounted && (

@@ -2,9 +2,8 @@ import { REM } from "next/font/google"
 import "./globals.css"
 import { TopBar } from "./components/TopBar"
 import { Footer } from "./components/Footer"
-import Head from 'next/head';
 
-const inter = REM({ weights: [400, 500, 600], subsets: ["latin"] })
+const inter = REM({ weight: ["400", "500", "600"], subsets: ["latin"] })
 
 export const metadata = {
 	title: "Hack South West",
