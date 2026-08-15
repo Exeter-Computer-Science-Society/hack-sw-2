@@ -1,0 +1,28 @@
+{
+	// Cloudflare Workers config for the ExeHacks site.
+	//
+	// This project is a Next.js STATIC EXPORT (`output: "export"` in
+	// next.config.mjs). `next build` writes plain files to ./out and never
+	// produces a server bundle — there is no .next/standalone directory.
+	//
+	// Without this file `wrangler deploy` auto-detects "Next.js", assumes a
+	// server-rendered app, and migrates the project to the OpenNext Cloudflare
+	// adapter. That adapter then fails reading
+	// .next/standalone/.next/server/pages-manifest.json, because a static export
+	// never creates it. Declaring the assets directory here keeps that
+	// auto-configuration from running at all.
+	//
+	// No "main" entry: this is an assets-only Worker that just serves ./out.
+	"name": "hack-sw-website",
+	"compatibility_date": "2026-08-15",
+	"assets": {
+		"directory": "./out",
+		// Serve the exported out/404.html for unknown paths. Routes are emitted as
+		// directories (trailingSlash: true), so /conditions/ resolves to
+		// out/conditions/index.html on its own.
+		"not_found_handling": "404-page"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
