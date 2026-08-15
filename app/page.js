@@ -52,12 +52,12 @@ export default function Home() {
 		{
 			id: 3,
 			question: "Isn't this event called Hack South West?",
-			answer: "It was. Same committee, same venue, same event — new name. Every edition has been held in Exeter, so the old name claimed more ground than the event covered. You'll still find us under the old name on LinkedIn, Instagram and Devpost while the rebrand settles in."
+			answer: "It was. Same society, same venue, same event — new name, and the person who started it is still on the team. Every edition has been held in Exeter, so the old name claimed more ground than the event covered. You'll still find us under the old name on LinkedIn, Instagram and Devpost while the rebrand settles in."
 		},
 		{
 			id: 13,
 			question: "Who actually runs ExeHacks?",
-			answer: "The Exeter Computer Science Society (EXCS). Same committee that ran Hack South West, under a name that matches where the event is."
+			answer: "The Exeter Computer Science Society (EXCS) — the same society that ran Hack South West, still with the person who started it, under a name that matches where the event is."
 		},
 		{
 			id: 14,
@@ -503,8 +503,8 @@ export default function Home() {
 							Powered by <span className="grad-text">EXCS</span>. Part of South West Collective.
 						</h2>
 						<p>
-							ExeHacks is run by the <b>Exeter Computer Science Society</b>. Both events, start to finish. Same committee that ran
-							Hack South West — that part doesn&apos;t change.
+							ExeHacks is run by the <b>Exeter Computer Science Society</b>. Both events, start to finish. Same society that ran
+							Hack South West, still with the person who started it — that part doesn&apos;t change.
 						</p>
 						<p>
 							It also sits in South West Collective, a builder and founder community covering Exeter, Bristol, Bath and Plymouth. The
@@ -796,16 +796,29 @@ export default function Home() {
 					<div className="section-head reveal">
 						<span className="section-tag">Who runs this</span>
 						<h2 className="h-section">Meet the team.</h2>
-						<p className="lead">
-							Small on purpose, for now. If you want to help run ExeHacks, come and find us at EXCS.
-						</p>
+						<p className="lead">ExeHacks is run by four people. If you want to help build it, we&apos;re recruiting.</p>
 					</div>
 
-					<div className="team-grid solo reveal d1">
+					<div className="team-grid reveal d1">
 						<Profile
 							name="Kazybek Khairulla"
-							position="Main Organizer"
-							description="Runs ExeHacks end to end — venue, sponsors, schedule and the weekend itself."
+							position="Director"
+							description="Runs ExeHacks end to end — venue, schedule and the weekend itself."
+						/>
+						<Profile
+							name="Wiktor Wiejak"
+							position="Director, Logistics"
+							description="Started the event as Hack South West. Runs the venue, the kit and the weekend's moving parts."
+						/>
+						<Profile
+							name="Devansh Mehrotra"
+							position="Head of Partnerships"
+							description="Brings in sponsors and the societies we run things with."
+						/>
+						<Profile
+							name="Alya Ormon"
+							position="Head of Growth"
+							description="Gets ExeHacks in front of the people who should be building at it."
 						/>
 					</div>
 				</div>
