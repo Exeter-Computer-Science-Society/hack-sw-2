@@ -12,17 +12,20 @@
 	// never creates it. Declaring the assets directory here keeps that
 	// auto-configuration from running at all.
 	//
-	// No "main" entry: this is an assets-only Worker that just serves ./out.
+	// Deliberately minimal. There is no "main", so this is an assets-only Worker
+	// that just serves ./out — no code runs, which is why there is no
+	// "observability" block either (there would be nothing to observe).
 	"name": "hack-sw-website",
-	"compatibility_date": "2026-08-15",
+
+	// Kept a little behind today so it can never be ahead of the runtime the
+	// deploy lands on. The build log showed workerd 1.20260811.1.
+	"compatibility_date": "2026-08-01",
+
 	"assets": {
 		"directory": "./out",
 		// Serve the exported out/404.html for unknown paths. Routes are emitted as
 		// directories (trailingSlash: true), so /conditions/ resolves to
 		// out/conditions/index.html on its own.
 		"not_found_handling": "404-page"
-	},
-	"observability": {
-		"enabled": true
 	}
 }
