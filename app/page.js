@@ -27,15 +27,15 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	// The 2026 hackathon moves to February. The exact date is not confirmed yet, so
+	// The next hackathon is February 2027. The exact date is not confirmed yet, so
 	// these are null and the page shows a "date to be confirmed" state instead of a
 	// countdown or a live register button. Set them to real timestamps
-	// (new Date("2026-02-…T…").getTime()) once the date lands and both come back on
+	// (new Date("2027-02-…T…").getTime()) once the date lands and both come back on
 	// their own — no other edits needed.
 	const event_date = null // kickoff — drives the countdown
 	const registration_open = null // when registration opens
 	const registration_closed = null // when registration closes before the event
-	const event_window = "February 2026 · date to be confirmed"
+	const event_window = "February 2027 · date to be confirmed"
 	const event_link = LUMA_URL // the Luma event page — set it in app/config.js
 
 	const questions = [
@@ -111,13 +111,11 @@ export default function Home() {
 		}
 	]
 
-	const ctfSchedule = [
-		{ time: "08:00", what: "Registration Opens + Talk To Sponsors" },
-		{ time: "08:30", what: "Welcome Presentation" },
-		{ time: "09:00", what: "Hacking Begins" },
-		{ time: "All Day", what: "Explore Easter Eggs + Food!" },
-		{ time: "21:00", what: "Hacking Ends + Prizes" },
-		{ time: "22:00", what: "Event Close" }
+	// Past editions, newest first. Add a `href` when an edition has its own page.
+	const pastEvents = [
+		{ when: "Jan 2026", name: "Hack South West", what: "24-hour hackathon" },
+		{ when: "Nov 2025", name: "Capture The Flag", what: "12 hours, 30 boxes" },
+		{ when: "Feb 2024", name: "Hack South West", what: "24-hour hackathon", href: "/past/hsw-2024-feb" }
 	]
 
 	const hackSaturday = [
@@ -385,7 +383,7 @@ export default function Home() {
 								className="h-section reveal d1"
 								style={{ maxWidth: "20ch" }}
 							>
-								<span className="grad-text">February 2026.</span> Date to be confirmed.
+								<span className="grad-text">February 2027.</span> Date to be confirmed.
 							</h2>
 							<p
 								className="lead reveal d2"
@@ -428,9 +426,23 @@ export default function Home() {
 							four, and whatever you can ship in a weekend. Beginners are welcome — we run workshops and put mentors on the floor.
 						</p>
 						<p>
-							We run two events a year. A Capture The Flag day in November, then the 24-hour hackathon in February. Come to one, or
-							both.
+							We run it once a year, in February. It ran as Hack South West before this one — here&apos;s what came before.
 						</p>
+
+						<ul className="past-list">
+							{pastEvents.map((e) => (
+								<li
+									className="past-row"
+									key={`${e.when}-${e.name}`}
+								>
+									<span className="pe-when">{e.when}</span>
+									<span className="pe-name">
+										{e.href ? <Link href={e.href}>{e.name} ↗</Link> : e.name}
+									</span>
+									<span className="pe-what">{e.what}</span>
+								</li>
+							))}
+						</ul>
 
 						<div className="hero-cta mt-8">
 							<Link
@@ -503,7 +515,7 @@ export default function Home() {
 							Powered by <span className="grad-text">EXCS</span>. Part of South West Collective.
 						</h2>
 						<p>
-							ExeHacks is run by the <b>Exeter Computer Science Society</b>. Both events, start to finish. Same society that ran
+							ExeHacks is run by the <b>Exeter Computer Science Society</b>. Start to finish. Same society that ran
 							Hack South West, still with the person who started it — that part doesn&apos;t change.
 						</p>
 						<p>
@@ -558,108 +570,16 @@ export default function Home() {
 			>
 				<div className="wrap">
 					<div className="section-head reveal">
-						<span className="section-tag">Two events, one community</span>
-						<h2 className="h-section">Our events.</h2>
-						<p className="lead">
-							What will you be doing during our events! Here you can find out more about both of our events!
-						</p>
+						<span className="section-tag">One weekend a year</span>
+						<h2 className="h-section">The event.</h2>
+						<p className="lead">Here&apos;s what the weekend looks like, hour by hour, and what you can win.</p>
 					</div>
 
-					<div className="events-grid">
-						{/* ---- CTF ---- */}
+					<div className="events-grid single">
+						{/* ---- 24-hour hackathon ---- */}
 						<article className="gcard event reveal d1">
 							<div className="event-top">
-								<span className="event-kicker">November · One day</span>
-								<span className="event-pill live">Capture the Flag</span>
-							</div>
-
-							<h3>
-								<span>Capture</span>
-								<span className="grad-text">The Flag</span>
-							</h3>
-
-							<p className="ev-desc">
-								Join us for an action-packed <b>12-hour Capture the Flag Hackathon</b> on <b>Friday, 8th November</b>, hosted at the{" "}
-								<b>Innovation Centre, Phase 2</b>. In this track, your cybersecurity knowledge will be pushed to the limit! With
-								three exciting difficulties and <b>30 unique boxes</b> to solve, there’s something for everyone. Every completed
-								challenge will grant you a flag to unlock points at <b>any moment</b> during the hackathon. Explore hidden Easter
-								eggs around the venue, meet our sponsors, and enjoy a full day of hacking, learning, and collaboration.
-							</p>
-
-							<div className="ev-facts">
-								<div className="ev-fact">
-									<span className="k">When</span> Friday, 8th November · 08:00–22:00
-								</div>
-								<div className="ev-fact">
-									<span className="k">Where</span> Innovation Centre, Phase 2
-								</div>
-								<div className="ev-fact">
-									<span className="k">Format</span> 30 boxes across three difficulties
-								</div>
-								<div className="ev-fact">
-									<span className="k">Food</span> Provided throughout the day
-								</div>
-							</div>
-
-							<div>
-								<span className="section-tag">Schedule</span>
-								<div className="sched mt-4">
-									<div className="sched-day">Saturday</div>
-									{ctfSchedule.map((s) => (
-										<div
-											className="sched-row"
-											key={s.time}
-										>
-											<span className="t">{s.time}</span>
-											<span className="w">{s.what}</span>
-										</div>
-									))}
-								</div>
-							</div>
-
-							<div>
-								<span className="section-tag">Prizes</span>
-								<div className="prize-rows mt-4">
-									<div className="prize-row">
-										<span className="pos">1st place</span>
-										<ul>
-											<li>£100</li>
-											<li>512GB SSD</li>
-											<li>PicoUSB</li>
-											<li>XXL Mouse Pads</li>
-										</ul>
-									</div>
-									<div className="prize-row">
-										<span className="pos">2nd place</span>
-										<ul>
-											<li>£50</li>
-											<li>PicoUSB</li>
-											<li>Beanies</li>
-										</ul>
-									</div>
-									<div className="prize-row">
-										<span className="pos">3rd place</span>
-										<ul>
-											<li>Thermos Bottles</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-
-							<div className="hero-cta">
-								<RegistrationButton
-									registration_open={registration_open}
-									registration_closed={registration_closed}
-									link={event_link}
-									label="Sign up for the CTF"
-								/>
-							</div>
-						</article>
-
-						{/* ---- 24-hour hackathon ---- */}
-						<article className="gcard event reveal d2">
-							<div className="event-top">
-								<span className="event-kicker">February 2026 · The big one</span>
+								<span className="event-kicker">February 2027 · The big one</span>
 								<span className="event-pill soon">Flagship hackathon</span>
 							</div>
 
@@ -669,7 +589,7 @@ export default function Home() {
 							</h3>
 
 							<p className="ev-desc">
-								A <b>24-hour hackathon</b> in <b>February 2026</b>, hosted at the <b>Innovation Centre, Phase 2</b>. We&apos;re
+								A <b>24-hour hackathon</b> in <b>February 2027</b>, hosted at the <b>Innovation Centre, Phase 2</b>. We&apos;re
 								confirming the exact weekend now — the running order below is the shape of it.
 							</p>
 							<p className="ev-desc">
@@ -782,7 +702,7 @@ export default function Home() {
 					</div>
 
 					<p className="mono text-center mt-10 reveal" style={{ color: "var(--text-dim)" }}>
-						🍕 Food and refreshments provided throughout both events.
+						🍕 Food and refreshments provided throughout the weekend.
 					</p>
 				</div>
 			</section>
@@ -859,7 +779,7 @@ export default function Home() {
 						</p>
 
 						<div className="faq-side-links">
-							<Link href="/">Hack South West 2025</Link>
+							<Link href="/past/hsw-2024-feb">Past editions</Link>
 							<Link href="/conditions/intellectual">Intellectual Property</Link>
 							<Link href="/conditions/terms">Terms &amp; Conditions</Link>
 							<Link

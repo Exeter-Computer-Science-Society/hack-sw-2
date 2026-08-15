@@ -1,193 +1,163 @@
-import { SouthWestImage } from "@/app/components/General/SouthWestImage";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
-// icons
-import { FiTarget } from "react-icons/fi";
-import { IoCameraOutline } from "react-icons/io5";
-import { GiTargetPrize } from "react-icons/gi";
-import { Flipper } from "./Flipper";
+export const metadata = {
+	title: "Hack South West, February 2024 — ExeHacks archive",
+	description:
+		"The February 2024 edition of Hack South West: 128 tickets, 13 products built, and attendees from five cities across the South West.",
+}
 
+const stats = [
+	{ num: "128", lab: "Tickets sold" },
+	{ num: "56%", lab: "First-timers" },
+	{ num: "13", lab: "Products built" },
+	{ num: "5", lab: "Cities represented" },
+]
 
+const photos = [
+	{ src: "/images/everyone.JPEG", alt: "The room during the 2024 hackathon" },
+	{ src: "/images/introduction.jpg", alt: "The opening talk" },
+	{ src: "/images/presentation.JPEG", alt: "A team presenting to the judges" },
+	{ src: "/images/organisers.JPEG", alt: "The 2024 organising team" },
+	{ src: "/images/pizza.JPEG", alt: "Food at the 2024 hackathon" },
+]
 
-/**
- * 128 tickets sold
- * 56% new customers
- * 70% male 23% female
- * plymouth bath exeter, durham
- * @returns 
- */
+// Podium order is second, first, third so the winner sits in the middle.
+const winners = [
+	{ cls: "second", rank: "2nd place", team: "BathX", project: "pool" },
+	{ cls: "first", rank: "1st place", team: "Headge Hackers", project: "LendEase" },
+	{ cls: "third", rank: "3rd place", team: "Asians ++", project: "Asians ++ Training" },
+]
+
 export default function PastHackathon() {
 	return (
-		<div className="bg-HSWprimary w-full h-fit">
-			<SouthWestImage />
-
-			<div className="flex flex-col items-center justify-center w-full h-[100vh] px-[15%] pt-[15%]">
-
-				<div className="flex flex-col gap-8 w-full h-full">
-					<div className="flex justify-start items-baseline gap-4">
-						<div className="flex justify-start items-baseline">
-							<p className="text-8xl font-extrabold">Hack</p>
-
-							<p className="text-HSWaccent text-8xl font-sans">S</p>
-							<p className="text-4xl font-mono">outh</p>
-
-							<p className="text-HSWaccent text-8xl font-sans">W</p>
-							<p className="text-4xl font-mono">est</p>
-						</div>
-					</div>
-
-					<div className="">
-						<p className="text-xl font-mono">We ran the largest Hackathon in the South West</p>
-						<p className="flex gap-2"> 
-							<span className="font-bold">Exeter,</span>
-							<span className="font-bold">Bristol,</span>
-							<span className="font-bold">Plymouth,</span>
-							<span className="font-bold">Bournemouth,</span>
-							<span className="font-bold">Cardiff</span>
+		<div className="w-full h-fit">
+			{/* ============ HEADER ============ */}
+			<section className="band">
+				<div className="wrap">
+					<div className="section-head">
+						<span className="section-tag">Archive · February 2024</span>
+						<h2
+							className="h-section"
+							style={{ margin: "1rem 0 1.2rem" }}
+						>
+							Hack South West, <span className="grad-text">2024</span>.
+						</h2>
+						<p className="lead">
+							The February 2024 edition, back when the event still carried the old name. Attendees came from Exeter, Bristol,
+							Plymouth, Bournemouth and Cardiff.
 						</p>
 					</div>
 
-					{/* targets / statistics */}
-					<div>
-						<div className="flex gap-2 items-center">
-							<FiTarget />
-							<p>128 tickets sold</p>
-						</div>
+					<div className="stat-grid">
+						{stats.map((s) => (
+							<div
+								className="stat"
+								key={s.lab}
+							>
+								<div className="num">{s.num}</div>
+								<div className="lab">{s.lab}</div>
+							</div>
+						))}
+					</div>
 
-						<div className="flex gap-2 items-center">
-							<FiTarget />
-							<p>56% new customers</p>
-						</div>
+					<p
+						className="mono"
+						style={{ color: "var(--text-faint)", marginTop: "1.2rem", fontSize: "0.9rem" }}
+					>
+						{"// 70% male, 23% female, the rest undisclosed"}
+					</p>
+				</div>
+			</section>
 
-						<div className="flex gap-2 items-center">
-							<FiTarget />
-							<p>70% male, 23% female attendees</p>
-						</div>
+			{/* ============ PHOTOS ============ */}
+			<section className="band band-alt">
+				<div className="wrap">
+					<div className="section-head">
+						<span className="section-tag">On the day</span>
+						<h2 className="h-section">Some photos.</h2>
+					</div>
 
-						<div className="flex gap-2 items-center">
-							<FiTarget />
-							<p>13 incredible financial products developed</p>
-						</div>
+					<div className="gallery">
+						{photos.map((p) => (
+							<div
+								className="ph"
+								key={p.src}
+							>
+								<Image
+									src={p.src}
+									width={500}
+									height={500}
+									alt={p.alt}
+								/>
+							</div>
+						))}
+
+						<Link
+							className="ph ph-more"
+							href="https://onedrive.live.com/?authkey=%21AGQXRe896Z0mers&id=DF91CDD1C74AC0FB%2110730&cid=DF91CDD1C74AC0FB"
+							target="_blank"
+							rel="noopener"
+						>
+							<span>View more ↗</span>
+						</Link>
 					</div>
 				</div>
-			</div>
+			</section>
 
-			{/* photo gallery */}
-			<div className="flex flex-col items-center justify-center w-full h-fit px-[5%]">
-				<h1 className="text-4xl self-start">Some Photos</h1>
+			{/* ============ WINNERS ============ */}
+			<section className="band">
+				<div className="wrap">
+					<div className="section-head">
+						<span className="section-tag">Who took it</span>
+						<h2 className="h-section">Winners.</h2>
+						<p className="lead">Every podium team went home with Raspberry Pi Zeros.</p>
+					</div>
 
-				<div className="w-full h-full p-2 grid grid-flow-column grid-cols-4 gap-2 ">
-					<Image src="/images/pizza.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
-					<Image src="/images/everyone.JPEG" className="rounded-2xl w-full h-full col-span-2" width={500} height={500} alt="not found" />
-					<Image src="/images/introduction.jpg" className="rounded-2xl w-full h-full" width={500} height={500} alt="not found" />
-					<Image src="/images/organisers.JPEG" className=" rounded-2xl w-full h-full object-cover col-span-2" width={500} height={500} alt="not found" />
-					
-					<Image src="/images/presentation.JPEG" className="rounded-2xl w-full h-full" width={500} height={500} alt="not found" />
-					<Link href="https://onedrive.live.com/?authkey=%21AGQXRe896Z0mers&id=DF91CDD1C74AC0FB%2110730&cid=DF91CDD1C74AC0FB" className="h-full w-full rounded-2xl bg-HSWprimary border border-HSWaccent hover:border-HSWtext flex flex-col justify-center items-center" target="_blank">
-						<p>View More Photos</p>
-						<IoCameraOutline />
+					<div className="podium">
+						{winners.map((w) => (
+							<div
+								className={`pcol ${w.cls}`}
+								key={w.cls}
+							>
+								{w.cls === "first" && <span className="topline" />}
+								<div className="rank">{w.rank}</div>
+								<div className="amt">{w.team}</div>
+								<div className="perk">{w.project}</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* ============ SPONSOR + BACK ============ */}
+			<section className="band band-alt">
+				<div className="wrap flex flex-col items-center text-center gap-6">
+					<span className="section-tag">Sponsored by</span>
+					<Link
+						href="https://excs.uk"
+						target="_blank"
+						rel="noopener"
+					>
+						<Image
+							src="/images/sponsors/excs.svg"
+							className="h-16 w-fit object-contain"
+							width={500}
+							height={500}
+							alt="Exeter Computer Science Society"
+						/>
 					</Link>
+
+					<div className="hero-cta">
+						<Link
+							className="btn btn-ghost"
+							href="/"
+						>
+							ExeHacks runs next in February 2027
+						</Link>
+					</div>
 				</div>
-			</div>
-
-			<div className="flex flex-col gap-8 items-center justify-center w-full h-[100vh] px-[5%] py-[5%]">
-				<h1 className="text-4xl">Winners</h1>
-
-				<div className="flex gap-4 w-2/3 justify-between h-[300px]">
-					
-
-					<Flipper className="w-full h-full">
-						{/* front facing */}
-						<div className="w-full h-full aspect-auto">
-							<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
-						</div>
-
-						{/* reat facing */}
-						<div className="w-full h-full flex flex-col justify-center items-center gap-2">
-							<p className="text-2xl font-bold">Second Place</p>
-
-							<div className="flex gap-2 justify-start items-center">
-								<FiTarget />
-								<p className="text-xl">BathX</p>
-							</div>
-							
-							<div className="flex gap-2 justify-start items-center">
-								<FiTarget />
-								<p className="text-xl">pool</p>
-							</div>
-
-							<div className="flex gap-2 justify-start items-center">
-								<GiTargetPrize />
-								<p className="text-xl text-red-500">Raspberry Pi Zeros</p>
-							</div>
-						</div>
-					</Flipper>
-
-					<Flipper className="w-full h-full">
-						{/* front facing */}
-						<div className="w-full h-full aspect-auto">
-							<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
-						</div>
-
-						{/* reat facing */}
-						<div className="w-full h-full flex flex-col justify-center items-center gap-2">
-							<p className="text-2xl font-bold">First Place</p>
-
-							<div className="flex gap-2 justify-start items-center">
-								<FiTarget />
-								<p className="text-xl">Headge Hackers</p>
-							</div>
-							
-							<div className="flex gap-2 justify-start items-center">
-								<FiTarget />
-								<p className="text-xl">LendEase</p>
-							</div>
-
-							<div className="flex gap-2 justify-start items-center">
-								<GiTargetPrize />
-								<p className="text-xl">Raspberry Pi Zeros</p>
-							</div>
-						</div>
-					</Flipper>
-
-					<Flipper className="w-full h-full">
-						{/* front facing */}
-						<div className="w-full h-full">
-							<Image src="/images/winners.JPEG" className="rounded-2xl w-full h-full object-cover" width={500} height={500} alt="not found" />
-						</div>
-
-						{/* reat facing */}
-						<div className="w-full h-full flex flex-col justify-center items-center gap-2">
-							<p className="text-2xl font-bold">Third Place</p>
-
-							<div className="flex gap-2 justify-start items-center">
-								<FiTarget />
-								<p className="text-xl">Asians ++</p>
-							</div>
-							
-							<div className="flex gap-2 justify-start items-center">
-								<FiTarget />
-								<p className="text-xl">Asians ++ Training</p>
-							</div>
-
-							<div className="flex gap-2 justify-start items-center">
-								<GiTargetPrize />
-								<p className="text-xl">Raspberry Pi Zeros</p>
-							</div>
-						</div>
-					</Flipper>
-				</div>
-				
-			</div>
-
-			<div className="flex items-center gap-2 justify-center w-full h-fit px-[5%] py-[5%]">
-				<h1 className="text-4xl self-center select-none">Sponsored By</h1>
-				<Link href={"https://excs.uk"} target="_blank">
-					<Image  src="/excs.svg" className="self-center rounded-2xl w-fit h-16 object-contain select-none" width={500} height={500} alt="not found" />
-				</Link>
-				
-			</div>
+			</section>
 		</div>
 	)
 }

@@ -355,8 +355,26 @@ section.band { padding: clamp(72px, 11vw, 140px) 0; position: relative; }
 .stat .num { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
 .stat .lab { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.55rem; }
 
+/* past editions, folded into the About section */
+.past-list { list-style: none; margin: 1.4rem 0 0; padding: 0; border-top: 1px solid var(--line); }
+.past-row {
+	display: grid; grid-template-columns: 88px 1fr auto; gap: 0.9rem; align-items: baseline;
+	padding: 0.75rem 0; border-bottom: 1px solid var(--line-2);
+}
+.pe-when { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.pe-name { font-weight: 600; color: var(--text); }
+.pe-name a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+.pe-name a:hover { color: var(--green); }
+.pe-what { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint); text-align: right; }
+@media (max-width: 520px) {
+	.past-row { grid-template-columns: 76px 1fr; }
+	.pe-what { grid-column: 2; text-align: left; }
+}
+
 /* events */
 .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+/* one event: keep the card off full bleed so the copy stays readable */
+.events-grid.single { grid-template-columns: minmax(0, 820px); justify-content: center; }
 .event { padding: clamp(1.6rem, 2.5vw, 2.4rem); display: flex; flex-direction: column; gap: 1.1rem; min-height: 100%; }
 .event-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .event-kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); }
@@ -409,6 +427,15 @@ section.band { padding: clamp(72px, 11vw, 140px) 0; position: relative; }
 .gallery .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(8,8,12,0.55)); }
 .gallery .ph:hover img { transform: scale(1.06); filter: grayscale(0) contrast(1.05); }
 .gallery .ph.wide { grid-column: span 2; aspect-ratio: auto; }
+/* the "view more" tile that closes out an archive gallery */
+.gallery .ph-more {
+	display: grid; place-items: center; text-align: center;
+	background: var(--surface); border: 1px dashed var(--line);
+	font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-dim);
+	transition: border-color .25s, color .25s, background .25s;
+}
+.gallery .ph-more::after { content: none; }
+.gallery .ph-more:hover { border-color: var(--green); color: var(--green); background: var(--surface-2); }
 
 /* prizes */
 .prize-wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
@@ -633,6 +660,10 @@ html[data-theme="retro"] .chip { border-radius: 0; border: 2px solid var(--line)
 html[data-theme="retro"] .chip .dot { border-radius: 0; }
 html[data-theme="retro"] .event-pill { border-radius: 0; }
 html[data-theme="retro"] .prize-row { border-radius: 0; border: 2px solid var(--line); }
+html[data-theme="retro"] .past-list { border-top: 2px solid var(--line); }
+html[data-theme="retro"] .past-row { border-bottom: 2px solid var(--line-2); }
+html[data-theme="retro"] .pe-when, html[data-theme="retro"] .pe-what { font-size: 1rem; }
+html[data-theme="retro"] .pe-name { font-family: var(--font-pixel); font-size: 0.95rem; }
 html[data-theme="retro"] .cc-row { border-radius: 0; border: 2px solid var(--line); }
 html[data-theme="retro"] .cc-dot { border-radius: 0; }
 html[data-theme="retro"] .cc-name { font-family: var(--font-pixel); }
@@ -726,6 +757,7 @@ html[data-theme="retro"] .sched-row, html[data-theme="retro"] .sched-row .t { fo
 
 /* ---- photos: CRT green wash ---- */
 html[data-theme="retro"] .gallery .ph { border-radius: 0; border: 2px solid var(--line); }
+html[data-theme="retro"] .gallery .ph-more { border: 2px dashed var(--line); font-size: 1.1rem; }
 html[data-theme="retro"] .gallery .ph img,
 html[data-theme="retro"] .crt-photo img,
 html[data-theme="retro"] .tcard .pic img { filter: grayscale(0.5) contrast(1.15) brightness(0.92) sepia(0.35) hue-rotate(58deg) saturate(1.4); }

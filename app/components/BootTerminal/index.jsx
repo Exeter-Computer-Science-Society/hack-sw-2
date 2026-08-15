@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 // out. Ported from the design prototype's app.js typewriter.
 const LINES = [
 	{ t: "./register --hackathon", cmd: true },
-	{ t: "booting ExeHacks 2026 ...", arrow: true },
+	{ t: "booting ExeHacks 2027 ...", arrow: true },
 	{ t: "formerly: Hack South West", ok: true },
 	{ t: "location: Innovation Centre, Exeter", ok: true },
 	{ t: "run by: EXCS", ok: true },
