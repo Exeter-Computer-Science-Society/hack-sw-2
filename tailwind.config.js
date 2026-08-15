@@ -31,11 +31,20 @@ module.exports = {
 		},
 		colors: {
 			...colors,
-			HSWprimary: "#101010",
-			HSWsecondary: "#1b1b1b",
-			HSWsecondary2: "#1b1b1b",
-			HSWaccent: "#05ff61",
-			HSWtext: "#e4e4e4",
+			// ExeHacks retro palette. The HSW* names are kept so pages that were not
+			// part of the rebrand (feedback, conditions, past events) pick up the new
+			// look without being rewritten. New work should prefer the EXH* names.
+			EXHbg: "#0a0b0a",
+			EXHsurface: "#11160f",
+			EXHsurface2: "#161d14",
+			EXHgreen: "#3dff88",
+			EXHpurple: "#e264ff",
+			EXHtext: "#d6f7da",
+			HSWprimary: "#0a0b0a",
+			HSWsecondary: "#11160f",
+			HSWsecondary2: "#161d14",
+			HSWaccent: "#3dff88",
+			HSWtext: "#d6f7da",
 			gold: "#FFD700",
 			silver: "#C0C0C0",
 			bronze: "#CD7F32",

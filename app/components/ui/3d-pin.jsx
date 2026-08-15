@@ -60,7 +60,8 @@ export const PinContainer = ({
             transform: transform,
           }}
           className={cn(
-            "absolute left-1/2 p-4 top-1/2 flex justify-start items-start rounded-2xl bg-black border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-300 overflow-hidden group-hover/pin:shadow-2xl",
+            // Hard edges and phosphor borders to match the ExeHacks retro theme.
+            "absolute left-1/2 p-4 top-1/2 flex justify-start items-start bg-EXHsurface border-2 border-[color:var(--line)] group-hover/pin:border-[color:var(--green)] transition duration-300 overflow-hidden group-hover/pin:shadow-2xl",
             getShadowClass()
           )}
         >
