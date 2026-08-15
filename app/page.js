@@ -14,6 +14,9 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useReveal } from "./components/Reveal/useReveal"
 
+// config
+import { LUMA_URL } from "./config"
+
 export default function Home() {
 	useReveal()
 
@@ -33,7 +36,7 @@ export default function Home() {
 	const registration_open = null // when registration opens
 	const registration_closed = null // when registration closes before the event
 	const event_window = "February 2026 · date to be confirmed"
-	const event_link = "/register" // our own form — see app/register/page.jsx
+	const event_link = LUMA_URL // the Luma event page — set it in app/config.js
 
 	const questions = [
 		{

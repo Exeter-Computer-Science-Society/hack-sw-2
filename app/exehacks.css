@@ -482,81 +482,6 @@ section.band { padding: clamp(72px, 11vw, 140px) 0; position: relative; }
 .faq-side-links a { font-family: var(--font-mono); font-size: 0.84rem; color: var(--text-dim); transition: color .2s; }
 .faq-side-links a:hover { color: var(--green); }
 
-/* ============================================================
-   FORMS — the registration page
-   ============================================================ */
-.form-shell { max-width: 720px; }
-.form-grid { display: flex; flex-direction: column; gap: 1.4rem; }
-.fieldset { display: flex; flex-direction: column; gap: 1.1rem; border: none; padding: 0; margin: 0; }
-.fieldset-legend {
-	font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
-	letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim);
-	padding: 0; margin-bottom: 0.2rem;
-	display: flex; align-items: center; gap: 0.55rem;
-}
-.fieldset-legend::before { content: ""; width: 22px; height: 1px; background: var(--grad); }
-
-.field { display: flex; flex-direction: column; gap: 0.45rem; }
-.field-label { font-size: 0.95rem; font-weight: 600; color: var(--text); }
-.field-label .req { color: var(--green); }
-.field-hint { font-size: 0.84rem; color: var(--text-faint); }
-
-.input, .textarea, .select {
-	width: 100%;
-	font-family: inherit;
-	font-size: 1rem;
-	color: var(--text);
-	background: rgba(255,255,255,0.02);
-	border: 1px solid var(--line);
-	border-radius: 10px;
-	padding: 0.8rem 0.95rem;
-	transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
-	appearance: none;
-}
-.textarea { min-height: 96px; resize: vertical; }
-.select {
-	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%237fbb8a' d='M0 0h10L5 6z'/></svg>");
-	background-repeat: no-repeat;
-	background-position: right 0.95rem center;
-	padding-right: 2.4rem;
-}
-.select option { background: var(--surface); color: var(--text); }
-.input::placeholder, .textarea::placeholder { color: var(--text-faint); }
-.input:focus, .textarea:focus, .select:focus {
-	outline: none;
-	border-color: var(--green);
-	background: rgba(255,255,255,0.04);
-	box-shadow: 0 0 0 3px rgba(61,255,136,0.15);
-}
-.input[aria-invalid="true"], .select[aria-invalid="true"] { border-color: #ff4d5e; }
-
-/* checkbox and radio rows */
-.checkline { display: flex; align-items: flex-start; gap: 0.7rem; cursor: pointer; font-size: 0.95rem; }
-.checkline input { margin: 0; width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--green); margin-top: 0.15rem; }
-.checkline span { color: var(--text-dim); }
-.checkline a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-.optionrow { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.optionrow .checkline {
-	border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem;
-	background: rgba(255,255,255,0.02); transition: border-color .2s, background .2s;
-}
-.optionrow .checkline:hover { border-color: rgba(61,255,136,0.5); }
-.optionrow .checkline span { color: var(--text); }
-
-/* submit area + result banners */
-.form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding-top: 0.4rem; }
-.form-note { font-size: 0.84rem; color: var(--text-faint); max-width: 52ch; }
-.form-banner {
-	display: flex; flex-direction: column; gap: 0.4rem;
-	padding: 1rem 1.15rem; border-radius: 12px; font-size: 0.95rem;
-	border: 1px solid var(--line); background: rgba(255,255,255,0.02); color: var(--text-dim);
-}
-.form-banner b { color: var(--text); }
-.form-banner a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-.form-banner.ok { border-color: rgba(61,255,136,0.5); background: rgba(61,255,136,0.07); }
-.form-banner.bad { border-color: rgba(255,77,94,0.5); background: rgba(255,77,94,0.07); color: #ff9aa4; }
-.form-banner.bad b { color: #ffc2c8; }
-
 /* final CTA */
 .finalcta { position: relative; overflow: hidden; }
 .finalcta .panel {
@@ -710,20 +635,6 @@ html[data-theme="retro"] .chip { border-radius: 0; border: 2px solid var(--line)
 html[data-theme="retro"] .chip .dot { border-radius: 0; }
 html[data-theme="retro"] .event-pill { border-radius: 0; }
 html[data-theme="retro"] .prize-row { border-radius: 0; border: 2px solid var(--line); }
-/* VT323 sits low in its em box, so its descenders clip against a tight control.
-   Give the controls an explicit line box rather than inheriting the body's. */
-html[data-theme="retro"] .input,
-html[data-theme="retro"] .textarea,
-html[data-theme="retro"] .select {
-	border-radius: 0; border: 2px solid var(--line);
-	font-size: 1.15rem; line-height: 1.6; padding-block: 0.55rem;
-}
-html[data-theme="retro"] .optionrow .checkline { border-radius: 0; border: 2px solid var(--line); font-size: 1.05rem; }
-html[data-theme="retro"] .checkline, html[data-theme="retro"] .field-hint, html[data-theme="retro"] .form-note { font-size: 1.05rem; }
-html[data-theme="retro"] .field-label { font-family: var(--font-pixel); font-size: 0.95rem; }
-html[data-theme="retro"] .form-banner { border-radius: 0; border: 2px solid var(--line); font-size: 1.15rem; }
-html[data-theme="retro"] .form-banner.ok { border-color: var(--green); box-shadow: 5px 5px 0 0 rgba(226,100,255,0.16); }
-html[data-theme="retro"] .form-banner.bad { border-color: rgba(255,77,94,0.6); }
 html[data-theme="retro"] .cc-row { border-radius: 0; border: 2px solid var(--line); }
 html[data-theme="retro"] .cc-dot { border-radius: 0; }
 html[data-theme="retro"] .cc-name { font-family: var(--font-pixel); }

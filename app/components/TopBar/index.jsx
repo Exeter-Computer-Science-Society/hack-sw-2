@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
+import { RegistrationButton } from "../RegistrationButton"
+
 export function TopBar() {
 	const [scrolled, setScrolled] = useState(false)
 
@@ -66,12 +68,7 @@ export function TopBar() {
 						</Link>
 					</div>
 
-					<Link
-						className="btn btn-primary"
-						href="/register"
-					>
-						Register <span className="arrow">↗</span>
-					</Link>
+					<RegistrationButton label="Register" />
 				</div>
 			</div>
 		</header>

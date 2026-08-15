@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+import { LUMA_URL } from "../../config"
+
 export function Footer() {
 	return (
 		<footer className="foot">
@@ -23,7 +25,15 @@ export function Footer() {
 
 					<div className="foot-col">
 						<h5>Event</h5>
-						<Link href="/register">Register</Link>
+						{LUMA_URL && (
+							<Link
+								href={LUMA_URL}
+								target="_blank"
+								rel="noopener"
+							>
+								Register on Luma ↗
+							</Link>
+						)}
 						<Link href="/#about">About</Link>
 						<Link href="/#events">Events</Link>
 						<Link href="/#team">Team</Link>
