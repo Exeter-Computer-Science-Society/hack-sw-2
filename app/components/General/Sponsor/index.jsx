@@ -81,8 +81,22 @@ export default function Sponsor() {
 	const sponsors = Object.values(info)
 
 	return (
-		<section className="w-full px-4 sm:px-8 py-8 sm:py-16">
-			<h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-HSWaccent mb-8 sm:mb-12 lg:mb-16">Meet the Sponsors</h2>
+		<section className="w-full">
+			<div className="section-head">
+				<span className="section-tag">Who has backed us</span>
+				<h2 className="h-section">Past sponsors.</h2>
+				<p className="lead">
+					These organisations backed the event when it ran as Hack South West. Sponsorship for ExeHacks is open — if you want
+					your logo here,{" "}
+					<a
+						href="mailto:excs@exeterguild.com"
+						style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+					>
+						talk to us
+					</a>
+					.
+				</p>
+			</div>
 
 			<div className="mx-auto max-w-7xl">
 				<div
@@ -110,7 +124,10 @@ export default function Sponsor() {
 				</div>
 			</div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-HSWaccent mb-8 sm:mb-12 lg:mb-16">Meet the Partners</h2>
+            <div className="section-head mt-16">
+                <span className="section-tag">Who we have worked with</span>
+                <h2 className="h-section">Past partners.</h2>
+            </div>
 
             <div className="mx-auto max-w-7xl">
                 <div
