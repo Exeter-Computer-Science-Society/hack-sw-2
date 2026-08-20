@@ -17,10 +17,7 @@ export function Footer() {
 								Exe<span className="sw">Hacks</span>
 							</b>
 						</Link>
-						<p>
-							Exeter&apos;s student hackathon, run by the Exeter Computer Science Society. Formerly Hack South West. Part of South
-							West Collective.
-						</p>
+						<p>Exeter&apos;s student hackathon, run by the Exeter Computer Science Society. Formerly Hack South West.</p>
 					</div>
 
 					<div className="foot-col">
@@ -42,14 +39,15 @@ export function Footer() {
 
 					<div className="foot-col">
 						<h5>Community</h5>
-						<Link
-							href="https://swcollective.co"
-							target="_blank"
-						>
-							South West Collective ↗
-						</Link>
-						<Link href="/#collective">How we fit together</Link>
+						<Link href="/#excs">Who runs it</Link>
 						<Link href="/#rebrand">Why the new name</Link>
+						<Link
+							href="https://swcollective.uk"
+							target="_blank"
+							rel="noopener"
+						>
+							Partner: South West Collective ↗
+						</Link>
 					</div>
 
 					<div className="foot-col">
@@ -66,6 +64,7 @@ export function Footer() {
 						>
 							Instagram ↗
 						</Link>
+						<Link href="/sponsor">Sponsor</Link>
 						<Link href="/feedback">Feedback</Link>
 						<Link href="/past/hsw-2024-feb">Past events ↗</Link>
 					</div>
@@ -80,21 +79,6 @@ export function Footer() {
 
 				<div className="foot-bottom">
 					<p>© 2026 ExeHacks · formerly Hack South West · EXCS</p>
-					<div className="foot-cities">
-						<span className="mono">South West Collective:</span>
-						<span>
-							<b>●</b> Exeter
-						</span>
-						<span>
-							<b>●</b> Bristol
-						</span>
-						<span>
-							<b>●</b> Bath
-						</span>
-						<span>
-							<b>●</b> Plymouth
-						</span>
-					</div>
 				</div>
 			</div>
 		</footer>

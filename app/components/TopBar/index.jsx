@@ -57,17 +57,6 @@ export function TopBar() {
 						</Link>
 					</nav>
 
-					<div className="nav-sponsors">
-						<Link
-							className="nl"
-							href="https://swcollective.co"
-							target="_blank"
-							rel="noopener"
-						>
-							South West Collective ↗
-						</Link>
-					</div>
-
 					<RegistrationButton label="Register" />
 				</div>
 			</div>

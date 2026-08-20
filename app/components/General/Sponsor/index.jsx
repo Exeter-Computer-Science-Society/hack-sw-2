@@ -1,6 +1,9 @@
 "use client"
 
+import Link from "next/link"
+
 import SponsorCard from "./Card"
+import { SponsorForm } from "../../SponsorForm"
 
 const info = {
 	liminal: {
@@ -25,12 +28,6 @@ const info = {
 		name: "Solana",
 		image: "/images/sponsors/solana.png",
 		site: "https://www.solana.com/",
-		level: "bronze",
-	},
-	excs: {
-		name: "Computer Science Society",
-		image: "/images/sponsors/excs.svg",
-		site: "https://excs.uk/",
 		level: "bronze",
 	},
     exeter: {
@@ -83,19 +80,43 @@ export default function Sponsor() {
 	return (
 		<section className="w-full">
 			<div className="section-head">
-				<span className="section-tag">Who has backed us</span>
-				<h2 className="h-section">Past sponsors.</h2>
+				<span className="section-tag">Partner with us</span>
+				<h2 className="h-section">Put your name on a track.</h2>
 				<p className="lead">
-					These organisations backed the event when it ran as Hack South West. Sponsorship for ExeHacks is open — if you want
-					your logo here,{" "}
+					We&apos;re raising the 2027 weekend now. A partner gets a named prize track on this page, a logo on the site and in
+					the room, and a slot to talk to the teams.
+				</p>
+				<ul className="partner-offer">
+					<li>Named track and prize — your brief, one line</li>
+					<li>Logo here, on slides, and at the venue</li>
+					<li>Optional workshop, booth, or judging seat</li>
+				</ul>
+				<p className="mono" style={{ color: "var(--text-dim)", marginTop: "0.8rem" }}>
+					Powered by{" "}
 					<a
-						href="mailto:excs@exeterguild.com"
+						href="https://excs.uk/"
+						target="_blank"
+						rel="noopener"
 						style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
 					>
-						talk to us
+						the Exeter Computer Science Society ↗
 					</a>
-					.
+					{" · "}
+					<Link
+						href="/sponsor"
+						style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+					>
+						Share this form
+					</Link>
 				</p>
+			</div>
+
+			<SponsorForm />
+
+			<div className="section-head mt-16">
+				<span className="section-tag">Who has backed us</span>
+				<h2 className="h-section">Past sponsors.</h2>
+				<p className="lead">These organisations backed the event when it ran as Hack South West.</p>
 			</div>
 
 			<div className="mx-auto max-w-7xl">
@@ -124,10 +145,10 @@ export default function Sponsor() {
 				</div>
 			</div>
 
-            <div className="section-head mt-16">
-                <span className="section-tag">Who we have worked with</span>
-                <h2 className="h-section">Past partners.</h2>
-            </div>
+			<div className="section-head mt-16">
+				<span className="section-tag">Who we have worked with</span>
+				<h2 className="h-section">Past partners.</h2>
+			</div>
 
             <div className="mx-auto max-w-7xl">
                 <div

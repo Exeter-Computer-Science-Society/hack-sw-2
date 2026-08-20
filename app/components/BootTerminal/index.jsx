@@ -10,7 +10,7 @@ const LINES = [
 	{ t: "formerly: Hack South West", ok: true },
 	{ t: "location: Innovation Centre, Exeter", ok: true },
 	{ t: "run by: EXCS", ok: true },
-	{ t: "community: South West Collective", ok: true },
+	{ t: "open to: every skill level", ok: true },
 	{ t: "prize pool: £500+ loaded", ok: true },
 	{ t: "beginners: WELCOME", ok: true },
 	{ t: "food: unlimited pizza", ok: true },

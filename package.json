@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "formspree:deploy": "formspree deploy"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "motion": "^12.23.22",
@@ -21,6 +23,7 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@formspree/cli": "^0.9.6",
     "autoprefixer": "^10.4.21",
     "daisyui": "^4.11.1",
     "eslint": "^9",

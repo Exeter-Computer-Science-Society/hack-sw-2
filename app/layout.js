@@ -1,6 +1,7 @@
 import { Bricolage_Grotesque, JetBrains_Mono, Pixelify_Sans, VT323 } from "next/font/google"
 import "./globals.css"
 import "./exehacks.css"
+import { FormspreeProvider } from "./components/FormspreeProvider"
 import { TopBar } from "./components/TopBar"
 import { Footer } from "./components/Footer"
 
@@ -28,9 +29,11 @@ export default function RootLayout({ children }) {
 			className={`w-full h-full ${fontVars}`}
 		>
 			<body className="w-full h-fit">
-				<TopBar />
-				{children}
-				<Footer />
+				<FormspreeProvider>
+					<TopBar />
+					{children}
+					<Footer />
+				</FormspreeProvider>
 
 				{/* CRT scanline overlay — retro theme only, styled in exehacks.css */}
 				<div

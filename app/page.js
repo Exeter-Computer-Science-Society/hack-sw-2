@@ -27,15 +27,13 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	// The next hackathon is February 2027. The exact date is not confirmed yet, so
-	// these are null and the page shows a "date to be confirmed" state instead of a
-	// countdown or a live register button. Set them to real timestamps
-	// (new Date("2027-02-…T…").getTime()) once the date lands and both come back on
-	// their own — no other edits needed.
+	// February 2027 is the locked window. The exact weekend is not in yet, so these
+	// stay null (no countdown). Set them to real timestamps
+	// (new Date("2027-02-…T…").getTime()) once the weekend lands.
 	const event_date = null // kickoff — drives the countdown
 	const registration_open = null // when registration opens
 	const registration_closed = null // when registration closes before the event
-	const event_window = "February 2027 · date to be confirmed"
+	const event_window = "February 2027"
 	const event_link = LUMA_URL // the Luma event page — set it in app/config.js
 
 	const questions = [
@@ -58,11 +56,6 @@ export default function Home() {
 			id: 13,
 			question: "Who actually runs ExeHacks?",
 			answer: "The Exeter Computer Science Society (EXCS) — the same society that ran Hack South West, still with the person who started it, under a name that matches where the event is."
-		},
-		{
-			id: 14,
-			question: "What is South West Collective?",
-			answer: "A builder and founder community for the South West, covering Exeter, Bristol, Bath and Plymouth. It features hackathons run by societies across the region and runs its own events in several cities. ExeHacks is the Exeter one — EXCS still runs it. You can find the Collective at swcollective.co"
 		},
 		{
 			id: 4,
@@ -108,6 +101,11 @@ export default function Home() {
 			id: 12,
 			question: "What are the terms and conditions?",
 			answer: "Check the link just to the left of this :)"
+		},
+		{
+			id: 14,
+			question: "How do I sponsor ExeHacks?",
+			answer: "There's a short enquiry form under Partner with us on this page, and a dedicated sponsor page in the footer. Fill it in and it goes to the EXCS inbox. We reply from the same address."
 		}
 	]
 
@@ -123,7 +121,7 @@ export default function Home() {
 		{ time: "08:30", what: "Board Games + Team Building" },
 		{ time: "11:30", what: "Welcome Presentation" },
 		{ time: "12:00", what: "Hacking Begins!" },
-		{ time: "12:15", what: "Intro to Blockchain Workshop" },
+		{ time: "12:15", what: "Workshop" },
 		{ time: "13:00", what: "Lunch" },
 		{ time: "19:00", what: "Dinner" },
 		{ time: "22:00", what: "Venue Closes, Moving To Forum" }
@@ -224,35 +222,24 @@ export default function Home() {
 				</div>
 
 				<div className="wrap hero-inner">
-					<div className="hero-text">
-						<span
-							className="brace brace-l"
-							aria-hidden="true"
-						>
-							{"{"}
-						</span>
-						<span
-							className="brace brace-r"
-							aria-hidden="true"
-						>
-							{"}"}
-						</span>
-
-						<span className="hero-eyebrow eyebrow reveal">
+					<div className="hero-lockup reveal">
+						<span className="hero-eyebrow eyebrow">
 							<span className="pulse" />
 							<span>Formerly Hack South West · University of Exeter</span>
 						</span>
 
-						<h1 className="reveal d1">
-							<span className="l1">Exe</span>
+						<h1 aria-label="ExeHacks">
 							<span
-								className="l2 grad-text glitch"
-								data-text="Hacks"
+								className="wordmark glitch"
+								aria-hidden="true"
+								data-text=".EXEHACKS"
 							>
-								Hacks
+								.EXEHACKS
 							</span>
 						</h1>
+					</div>
 
+					<div className="hero-text">
 						{/*
 							Hero copy, variant B ("more personality") — leads with the rename, which is
 							the story while the rebrand is still news.
@@ -269,7 +256,16 @@ export default function Home() {
 						<p className="hero-headline reveal d1">We changed the name, not the venue.</p>
 
 						<p className="hero-sub reveal d2">
-							Hack South West is now <b>ExeHacks</b>. Same event, same people, run by <b>EXCS</b>.
+							Hack South West is now <b>ExeHacks</b>. Same event, same people, run by <b>EXCS</b>.{" "}
+							<button
+								type="button"
+								className="hero-inline-link"
+								onClick={() => {
+									document.getElementById("rebrand").scrollIntoView({ behavior: "smooth" })
+								}}
+							>
+								Why the new name
+							</button>
 						</p>
 
 						<div className="hero-meta reveal d2">
@@ -280,11 +276,11 @@ export default function Home() {
 								</span>
 								<span className="chip cyan">
 									<span className="dot" />
-									University of Exeter, Innovation Centre
+									Innovation Centre, Exeter
 								</span>
 								<span className="chip purple">
 									<span className="dot" />
-									Over £500 in prizes
+									£500+ prizes
 								</span>
 							</div>
 						</div>
@@ -307,16 +303,6 @@ export default function Home() {
 								}}
 							>
 								See the schedule
-							</button>
-
-							<button
-								type="button"
-								className="btn btn-ghost"
-								onClick={() => {
-									document.getElementById("rebrand").scrollIntoView({ behavior: "smooth" })
-								}}
-							>
-								Why the new name
 							</button>
 						</div>
 
@@ -383,13 +369,13 @@ export default function Home() {
 								className="h-section reveal d1"
 								style={{ maxWidth: "20ch" }}
 							>
-								<span className="grad-text">February 2027.</span> Date to be confirmed.
+								<span className="grad-text">February 2027.</span> 24 hours in Exeter.
 							</h2>
 							<p
 								className="lead reveal d2"
 								style={{ margin: "0 auto" }}
 							>
-								We&apos;re locking the weekend in now. Follow the socials and you&apos;ll hear it first.
+								One weekend at the Innovation Centre. Follow the socials for the running order as it lands.
 							</p>
 							<div className="hero-cta reveal d3 justify-center">
 								<Link
@@ -398,7 +384,7 @@ export default function Home() {
 									target="_blank"
 									rel="noopener"
 								>
-									Get the date <span className="arrow">↗</span>
+									Follow the updates <span className="arrow">↗</span>
 								</Link>
 							</div>
 						</>
@@ -500,65 +486,27 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* ============ SOUTH WEST COLLECTIVE ============ */}
+			{/* ============ WHO RUNS IT ============ */}
 			<section
 				className="band band-alt"
-				id="collective"
+				id="excs"
 			>
-				<div className="wrap welcome-grid">
-					<div className="welcome-copy reveal">
-						<span className="section-tag">Who runs it, who it sits with</span>
+				<div className="wrap">
+					<div
+						className="welcome-copy reveal"
+						style={{ maxWidth: "56ch" }}
+					>
+						<span className="section-tag">Who runs it</span>
 						<h2
 							className="h-section"
 							style={{ margin: "1rem 0 1.4rem" }}
 						>
-							Powered by <span className="grad-text">EXCS</span>. Part of South West Collective.
+							Powered by <span className="grad-text">EXCS</span>.
 						</h2>
 						<p>
 							ExeHacks is run by the <b>Exeter Computer Science Society</b>. Start to finish. Same society that ran
 							Hack South West, still with the person who started it — that part doesn&apos;t change.
 						</p>
-						<p>
-							It also sits in South West Collective, a builder and founder community covering Exeter, Bristol, Bath and Plymouth. The
-							Collective features hackathons run by societies across the region and runs its own events in several cities. ExeHacks is
-							the Exeter one. The regional reach didn&apos;t go away — it moved somewhere that can carry it properly.
-						</p>
-
-						<div className="hero-cta mt-8">
-							<Link
-								className="btn btn-primary"
-								href="https://swcollective.co"
-								target="_blank"
-								rel="noopener"
-							>
-								South West Collective <span className="arrow">↗</span>
-							</Link>
-						</div>
-					</div>
-
-					<div className="reveal d1">
-						<div className="collective-cities">
-							<div className="cc-row">
-								<span className="cc-dot" />
-								<span className="cc-name">Exeter</span>
-								<span className="cc-note">ExeHacks — run by EXCS</span>
-							</div>
-							<div className="cc-row">
-								<span className="cc-dot" />
-								<span className="cc-name">Bristol</span>
-								<span className="cc-note">Collective events</span>
-							</div>
-							<div className="cc-row">
-								<span className="cc-dot" />
-								<span className="cc-name">Bath</span>
-								<span className="cc-note">Collective events</span>
-							</div>
-							<div className="cc-row">
-								<span className="cc-dot" />
-								<span className="cc-name">Plymouth</span>
-								<span className="cc-note">Collective events</span>
-							</div>
-						</div>
 					</div>
 				</div>
 			</section>
@@ -572,11 +520,10 @@ export default function Home() {
 					<div className="section-head reveal">
 						<span className="section-tag">One weekend a year</span>
 						<h2 className="h-section">The event.</h2>
-						<p className="lead">Here&apos;s what the weekend looks like, hour by hour, and what you can win.</p>
+						<p className="lead">24 hours to build something. Pick a track, or sponsor one.</p>
 					</div>
 
 					<div className="events-grid single">
-						{/* ---- 24-hour hackathon ---- */}
 						<article className="gcard event reveal d1">
 							<div className="event-top">
 								<span className="event-kicker">February 2027 · The big one</span>
@@ -589,40 +536,8 @@ export default function Home() {
 							</h3>
 
 							<p className="ev-desc">
-								A <b>24-hour hackathon</b> in <b>February 2027</b>, hosted at the <b>Innovation Centre, Phase 2</b>. We&apos;re
-								confirming the exact weekend now — the running order below is the shape of it.
-							</p>
-							<p className="ev-desc">
-								This year you will develop your own creative <b>AI Agent</b> solution in <b>blockchain banking</b>. We look out for
-								solutions that incorporate a high level of technical and design choice to the problem at hand. Although, you will
-								likely only work on this problem for a limited amount of time, we encourage you to continue to develop and deploy
-								your solutions to either the web or other sources to both add to your portfolio and to further your own learning.
-							</p>
-							<p className="ev-desc">
-								We will also try our very best to help you get started in this problem space. That is why we have lined up a{" "}
-								<b>series of workshops</b> leading up to and during the event to help you build your skills and knowledge. We have
-								also partnered with cloud service providers to offer you an abundance of <b>free AI credits</b> in hopes of
-								assisting your development journey.
-							</p>
-							<p className="ev-desc">
-								We are still working hard on organising this, please check out our socials for more information as it comes! Follow
-								us on{" "}
-								<Link
-									target="_blank"
-									href="https://www.linkedin.com/company/hack-south-west/"
-									style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-								>
-									LinkedIn
-								</Link>{" "}
-								and{" "}
-								<Link
-									target="_blank"
-									href="https://www.instagram.com/hacksouthwest/"
-									style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
-								>
-									Instagram
-								</Link>{" "}
-								for the latest updates.
+								<b>February 2027</b> at the <b>Innovation Centre, Phase 2</b>. Food, workshops, teams of up to four. Build whatever
+								you want — the tracks below are how you win, not a brief you have to follow.
 							</p>
 
 							<div className="ev-facts">
@@ -636,57 +551,66 @@ export default function Home() {
 									<span className="k">Teams</span> Up to 4 people
 								</div>
 								<div className="ev-fact">
-									<span className="k">Perks</span> Free AI credits, food, workshops
+									<span className="k">Perks</span> Food, workshops, mentors
 								</div>
 							</div>
 
-							<div>
-								<span className="section-tag">Schedule</span>
-								<div className="sched mt-4">
-									<div className="sched-day">Saturday</div>
-									{hackSaturday.map((s) => (
-										<div
-											className="sched-row"
-											key={`sat-${s.time}`}
-										>
-											<span className="t">{s.time}</span>
-											<span className="w">{s.what}</span>
-										</div>
-									))}
-
-									<div className="sched-day">Sunday</div>
-									{hackSunday.map((s) => (
-										<div
-											className="sched-row"
-											key={`sun-${s.time}`}
-										>
-											<span className="t">{s.time}</span>
-											<span className="w">{s.what}</span>
-										</div>
-									))}
+							<div className="event-body">
+								<div className="event-copy">
+									<span className="section-tag">Tracks &amp; prizes</span>
+									<div className="tracks">
+										<article className="track">
+											<h4>Overall</h4>
+											<p>Best project of the weekend. First, second and third from the £500+ pool.</p>
+											<span className="track-meta">1st · 2nd · 3rd</span>
+										</article>
+										<article className="track">
+											<h4>Best first hack</h4>
+											<p>For teams new to hackathons. Judged on learning and a finish, not polish.</p>
+											<span className="track-meta">Beginner prize</span>
+										</article>
+										<article className="track">
+											<h4>Hackiest hack</h4>
+											<p>The thing that barely holds together and still does the job.</p>
+											<span className="track-meta">Side prize</span>
+										</article>
+										<article className="track open">
+											<h4>Sponsor a track</h4>
+											<p>Name a prize, write one line, put your logo on it. We add the track when you sign, not before.</p>
+											<Link
+												className="track-meta"
+												href="/sponsor"
+											>
+												Send an enquiry →
+											</Link>
+										</article>
+									</div>
 								</div>
-							</div>
 
-							<div>
-								<span className="section-tag">Prizes</span>
-								<div className="prize-rows mt-4">
-									<div className="prize-row">
-										<span className="pos">1st place</span>
-										<ul>
-											<li>£££ Cash</li>
-										</ul>
-									</div>
-									<div className="prize-row">
-										<span className="pos">2nd place</span>
-										<ul>
-											<li>££ Cash</li>
-										</ul>
-									</div>
-									<div className="prize-row">
-										<span className="pos">3rd place</span>
-										<ul>
-											<li>£ Cash</li>
-										</ul>
+								<div className="event-side">
+									<span className="section-tag">Schedule</span>
+									<div className="sched mt-4">
+										<div className="sched-day">Saturday</div>
+										{hackSaturday.map((s) => (
+											<div
+												className="sched-row"
+												key={`sat-${s.time}`}
+											>
+												<span className="t">{s.time}</span>
+												<span className="w">{s.what}</span>
+											</div>
+										))}
+
+										<div className="sched-day">Sunday</div>
+										{hackSunday.map((s) => (
+											<div
+												className="sched-row"
+												key={`sun-${s.time}`}
+											>
+												<span className="t">{s.time}</span>
+												<span className="w">{s.what}</span>
+											</div>
+										))}
 									</div>
 								</div>
 							</div>
@@ -697,6 +621,12 @@ export default function Home() {
 									registration_closed={registration_closed}
 									link={event_link}
 								/>
+								<Link
+									className="btn btn-ghost"
+									href="/sponsor"
+								>
+									Sponsor the weekend
+								</Link>
 							</div>
 						</article>
 					</div>
