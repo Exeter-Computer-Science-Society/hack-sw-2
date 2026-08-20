@@ -1,26 +1,21 @@
-name: Deploy to GitHub Pages
+name: Deploy to Cloudflare
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-# Allow the workflow to publish to Pages via OIDC; nothing else.
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Let an in-flight deploy finish rather than cancelling it mid-publish.
+# One deploy at a time. Let an in-flight publish finish.
 concurrency:
-  group: pages
+  group: cloudflare
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v5
         with:
@@ -31,23 +26,17 @@ jobs:
         run: npm ci
 
       - name: Audit production dependencies
-        run: npm audit --audit-level=high
+        run: npm audit --omit=dev --audit-level=high
 
-      - name: Build static export
+      - name: Deploy Formspree forms and build static export
         run: npm run build
+        env:
+          FORMSPREE_DEPLOY_KEY: ${{ secrets.FORMSPREE_DEPLOY_KEY }}
+          NEXT_PUBLIC_FORMSPREE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_PROJECT_ID }}
 
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v4
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v3
         with:
-          path: out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

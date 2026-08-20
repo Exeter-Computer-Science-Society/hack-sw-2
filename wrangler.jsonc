@@ -1,4 +1,5 @@
 {
+	"$schema": "./node_modules/wrangler/config-schema.json",
 	// Cloudflare Workers config for the ExeHacks site.
 	//
 	// This project is a Next.js STATIC EXPORT (`output: "export"` in
@@ -15,6 +16,11 @@
 	// Deliberately minimal. There is no "main", so this is an assets-only Worker
 	// that just serves ./out — no code runs, which is why there is no
 	// "observability" block either (there would be nothing to observe).
+	//
+	// Workers Builds (Settings → Build):
+	//   Build command:  npm run build
+	//   Deploy command: npm run deploy
+	//   Build variables: FORMSPREE_DEPLOY_KEY, NEXT_PUBLIC_FORMSPREE_PROJECT_ID
 	"name": "hack-sw-website",
 
 	// Kept a little behind today so it can never be ahead of the runtime the
@@ -23,9 +29,10 @@
 
 	"assets": {
 		"directory": "./out",
-		// Serve the exported out/404.html for unknown paths. Routes are emitted as
-		// directories (trailingSlash: true), so /conditions/ resolves to
-		// out/conditions/index.html on its own.
+		// Next emits /sponsor/index.html (trailingSlash: true). Force the slash so
+		// /sponsor and /sponsor/ both resolve, matching the export.
+		"html_handling": "force-trailing-slash",
+		// Serve the exported out/404.html for unknown paths.
 		"not_found_handling": "404-page"
 	}
 }
