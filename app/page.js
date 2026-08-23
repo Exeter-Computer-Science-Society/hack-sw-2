@@ -658,6 +658,7 @@ export default function Home() {
 						<Profile
 							name="Wiktor Wiejak"
 							position="Director, Logistics"
+							image="/images/team/wiktor.jpeg"
 							description="Started the event as Hack South West. Runs the venue, the kit and the weekend's moving parts."
 						/>
 						<Profile
