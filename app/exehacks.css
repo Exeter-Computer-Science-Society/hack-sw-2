@@ -657,21 +657,14 @@ a.track-meta:hover { color: var(--green-2); }
 		var(--bg-2);
 }
 .tcard .pic-fallback span {
-	font-family: var(--font-mono); font-size: 1.6rem; font-weight: 700;
-	color: var(--green); letter-spacing: 0.06em; text-shadow: 0 0 16px rgba(61,255,136,0.35);
+	font-family: var(--font-mono); font-size: 3rem; font-weight: 700;
+	color: var(--green); letter-spacing: 0.06em; text-shadow: 0 0 20px rgba(61,255,136,0.35);
 }
 .tcard { display: flex; flex-direction: column; overflow: hidden; }
-/* Round avatar rather than a full-bleed square, so the photo reads as a portrait
-   and does not dominate the card. */
-.tcard .pic {
-	width: 88px; height: 88px; flex-shrink: 0;
-	margin: 1.4rem 1.1rem 0;
-	border-radius: 50%; overflow: hidden;
-	border: 1px solid var(--line); background: var(--bg-2);
-}
+.tcard .pic { aspect-ratio: 1/1; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--bg-2); }
 .tcard .pic img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.35) contrast(1.05); transition: filter .4s ease, transform .5s ease; }
-.tcard:hover .pic img { filter: grayscale(0) contrast(1.05); transform: scale(1.06); }
-.tcard .body { padding: 1rem 1.1rem 0.6rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+.tcard:hover .pic img { filter: grayscale(0) contrast(1.05); transform: scale(1.04); }
+.tcard .body { padding: 1.1rem 1.1rem 0.6rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
 .tcard .nm { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
 .tcard .role { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
 .tcard .bio { font-size: 0.88rem; color: var(--text-dim); text-wrap: pretty; }
@@ -904,7 +897,6 @@ html[data-theme="retro"] .partner { border-radius: 0; border: 2px dashed var(--l
 html[data-theme="retro"] .pcol { border-radius: 0; border: 2px solid var(--line); border-bottom: none; }
 html[data-theme="retro"] .pcol.first { background: var(--surface-2); }
 html[data-theme="retro"] .tcard .links a { border-radius: 0; border: 2px solid var(--line); }
-html[data-theme="retro"] .tcard .pic { border: 2px solid var(--line); }
 html[data-theme="retro"] .finalcta .panel { border-radius: 0; border: 2px solid var(--green); box-shadow: 10px 10px 0 0 rgba(226,100,255,0.16); }
 
 /* ---- buttons: blocky w/ hard offset shadow ---- */

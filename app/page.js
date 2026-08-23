@@ -653,17 +653,19 @@ export default function Home() {
 						<Profile
 							name="Kazybek Khairulla"
 							position="Director"
+							image="/images/team/2027/Kazybek.JPG"
 							description="Runs ExeHacks end to end — venue, schedule and the weekend itself."
 						/>
 						<Profile
 							name="Wiktor Wiejak"
 							position="Director, Logistics"
-							image="/images/team/wiktor.jpeg"
+							image="/images/team/2027/Wiktor.jpeg"
 							description="Started the event as Hack South West. Runs the venue, the kit and the weekend's moving parts."
 						/>
 						<Profile
 							name="Devansh Mehrotra"
 							position="Head of Partnerships"
+							image="/images/team/2027/Devansh.jpeg"
 							description="Brings in sponsors and the societies we run things with."
 						/>
 						<Profile
