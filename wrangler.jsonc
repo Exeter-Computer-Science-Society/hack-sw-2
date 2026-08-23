@@ -17,10 +17,14 @@
 	// that just serves ./out — no code runs, which is why there is no
 	// "observability" block either (there would be nothing to observe).
 	//
-	// Workers Builds (Settings → Build):
+	// Workers Builds (Settings → Build) on the EXCS account — not South West Collective:
 	//   Build command:  npm run build
 	//   Deploy command: npm run deploy
 	//   Build variables: FORMSPREE_DEPLOY_KEY, NEXT_PUBLIC_FORMSPREE_PROJECT_ID
+	//
+	// Do not run `wrangler deploy` from a South West Collective login.
+	// `wrangler whoami` must show the Exeter Computer Science Society account.
+	// Pin that account with CLOUDFLARE_ACCOUNT_ID before deploying.
 	"name": "hack-sw-website",
 
 	// Kept a little behind today so it can never be ahead of the runtime the
