@@ -19,6 +19,16 @@ export const metadata = {
 	title: "ExeHacks — Exeter's student hackathon",
 	description:
 		"ExeHacks is the University of Exeter's student hackathon, run by the Exeter Computer Science Society (EXCS). Formerly Hack South West.",
+	// Sized favicons from public/images/icons/. public/favicon.ico is the same
+	// mark so browsers that still request /favicon.ico get the new icon.
+	icons: {
+		icon: [
+			{ url: "/images/icons/exehacks-favicon-purple-16.png", sizes: "16x16", type: "image/png" },
+			{ url: "/images/icons/exehacks-favicon-purple-32.png", sizes: "32x32", type: "image/png" },
+		],
+		shortcut: "/images/icons/exehacks-favicon-purple-32.png",
+		apple: "/images/icons/exehacks-icon.png",
+	},
 }
 
 export default function RootLayout({ children }) {
