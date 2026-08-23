@@ -83,11 +83,11 @@ export default function Sponsor() {
 				<span className="section-tag">Partner with us</span>
 				<h2 className="h-section">Put your name on a track.</h2>
 				<p className="lead">
-					We&apos;re raising the 2027 weekend now. A partner gets a named prize track on this page, a logo on the site and in
+					We&apos;re raising the 6–7 February 2027 weekend now. A partner gets a named prize track on this page, a logo on the site and in
 					the room, and a slot to talk to the teams.
 				</p>
 				<ul className="partner-offer">
-					<li>Named track and prize — your brief, one line</li>
+					<li>Named track and prize: your brief, one line</li>
 					<li>Logo here, on slides, and at the venue</li>
 					<li>Optional workshop, booth, or judging seat</li>
 				</ul>

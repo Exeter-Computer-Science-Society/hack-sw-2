@@ -4,7 +4,7 @@ import { LUMA_URL } from '../../config';
 
 /**
  * Registration call to action. Registration lives on a Luma event page, so this is a
- * link out — gated by two optional timestamps:
+ * link out, gated by two optional timestamps:
  *
  *   force_close                               -> closed, whatever the dates say
  *   registration_closed set and in the past   -> closed

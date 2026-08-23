@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata = {
-	title: "Hack South West, February 2024 — ExeHacks archive",
+	title: "Hack South West, February 2024: ExeHacks archive",
 	description:
 		"The February 2024 edition of Hack South West: 128 tickets, 13 products built, and attendees from five cities across the South West.",
 }
@@ -153,7 +153,7 @@ export default function PastHackathon() {
 							className="btn btn-ghost"
 							href="/"
 						>
-							ExeHacks runs next in February 2027
+							ExeHacks runs next on 6–7 February 2027
 						</Link>
 					</div>
 				</div>

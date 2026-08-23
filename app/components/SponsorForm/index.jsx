@@ -9,7 +9,7 @@ const INTERESTS = [
 	{ value: "workshop", label: "Workshop or talk" },
 	{ value: "booth", label: "Booth on the weekend" },
 	{ value: "judging", label: "Judging seat" },
-	{ value: "general", label: "General — not sure yet" },
+	{ value: "general", label: "General, not sure yet" },
 ]
 
 export function SponsorForm() {

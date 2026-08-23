@@ -1,5 +1,5 @@
 /* ============================================================
-   ExeHacks — reboot design system
+   ExeHacks: reboot design system
    Ported from the Claude Design project "HackSouthWest"
    (ExeHacks.html + styles.css + retro.css).
 
@@ -160,7 +160,7 @@ h2.h-section, .h-section {
 }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
 
-/* disabled / pending state — used by the registration button */
+/* disabled / pending state. Used by the registration button. */
 .btn-muted {
 	background: rgba(255,255,255,0.02);
 	border-color: var(--line);
@@ -309,7 +309,7 @@ h2.h-section, .h-section {
 	70%, 100% { box-shadow: 0 0 0 11px rgba(5,255,97,0); }
 }
 
-/* filename lockup — poster, not a stacked website heading */
+/* filename lockup: poster, not a stacked website heading */
 .hero-lockup h1 {
 	position: relative;
 	width: max-content;
@@ -345,7 +345,7 @@ h2.h-section, .h-section {
 	opacity: 0.7;
 }
 
-/* the message line under the wordmark — the wordmark is the lockup, this is the headline */
+/* the message line under the wordmark. The wordmark is the lockup, this is the headline. */
 .hero-headline {
 	font-size: clamp(1.5rem, 2.6vw, 2.15rem);
 	font-weight: 700;
@@ -464,8 +464,9 @@ section.band { padding: clamp(72px, 11vw, 140px) 0; position: relative; }
 .sched-row .t { font-family: var(--font-mono); font-size: 0.82rem; color: var(--green); width: 64px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .sched-row .w { color: var(--text-dim); }
 
-/* tracks — title + one line, SotonHack-style */
+/* tracks: title + one line, SotonHack-style */
 .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 0.85rem; }
+.tracks .track:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .track {
 	display: flex; flex-direction: column; gap: 0.4rem;
 	padding: 1rem 1.1rem; border: 1px solid var(--line);
@@ -770,7 +771,7 @@ footer.foot { border-top: 1px solid var(--line); padding: clamp(56px, 8vw, 90px)
 
 /* ============================================================
    ============================================================
-   RETRO / pixel-terminal theme — active under
+   RETRO / pixel-terminal theme, active under
    html[data-theme="retro"]
    ============================================================
    ============================================================ */
@@ -804,7 +805,13 @@ html[data-theme="retro"] {
 }
 
 /* ---- base ink & type ---- */
-html[data-theme="retro"] body { font-family: var(--font-term); letter-spacing: 0.01em; }
+/* Body copy uses Bricolage so sponsors and the public can actually read
+   paragraphs. VT323 stays on terminal chrome: labels, ticker, boot window. */
+html[data-theme="retro"] body {
+	font-family: var(--font-display);
+	letter-spacing: -0.011em;
+	line-height: 1.6;
+}
 html[data-theme="retro"] ::selection { background: var(--purple); color: #0a0b0a; }
 
 html[data-theme="retro"] h1,
@@ -826,15 +833,6 @@ html[data-theme="retro"] .stat .num,
 html[data-theme="retro"] .pcol .amt,
 html[data-theme="retro"] .cd-unit .v { font-family: var(--font-pixel); }
 
-/* bump VT323 readability for body copy */
-html[data-theme="retro"] .lead,
-html[data-theme="retro"] .hero-sub,
-html[data-theme="retro"] .welcome-copy p,
-html[data-theme="retro"] .ev-desc,
-html[data-theme="retro"] .faq-a-inner,
-html[data-theme="retro"] .foot-brand p,
-html[data-theme="retro"] .tcard .bio,
-html[data-theme="retro"] .finalcta p { font-size: 1.28rem; line-height: 1.4; }
 html[data-theme="retro"] .faq-q { font-family: var(--font-pixel); font-size: 1.18rem; }
 
 /* gradient text -> solid green phosphor w/ chroma shadow */
@@ -883,8 +881,8 @@ html[data-theme="retro"] .sponsor-field select,
 html[data-theme="retro"] .sponsor-field textarea {
 	border-radius: 0;
 	border: 2px solid var(--line);
-	font-family: var(--font-term, var(--font-vt323), var(--font-mono));
-	font-size: 1.2rem;
+	font-family: var(--font-display);
+	font-size: 1rem;
 }
 html[data-theme="retro"] .sponsor-field input:focus,
 html[data-theme="retro"] .sponsor-field select:focus,
@@ -1009,7 +1007,7 @@ html[data-theme="retro"] body::after {
    GLITCH wordmark
    Inline glitch (final CTA "build", etc.): overlays stay clipped
    most of the time, then tick. Hero lockup is a different treatment
-   — settled chromatic offset, one boot, then rare ticks.
+   settled chromatic offset, one boot, then rare ticks.
    ============================================================ */
 html[data-theme="retro"] .glitch { position: relative; display: inline-block; }
 html[data-theme="retro"] .glitch::before,

@@ -27,14 +27,13 @@ export default function Home() {
 	const [fading1, setFading1] = useState(false)
 	const [fading2, setFading2] = useState(false)
 
-	// February 2027 is the locked window. The exact weekend is not in yet, so these
-	// stay null (no countdown). Set them to real timestamps
-	// (new Date("2027-02-…T…").getTime()) once the weekend lands.
-	const event_date = null // kickoff — drives the countdown
+	// 6–7 February 2027 is the locked weekend. Countdown and registration
+	// timestamps stay null until we have exact kickoff and signup times.
+	const event_date = null // kickoff. Drives the countdown.
 	const registration_open = null // when registration opens
 	const registration_closed = null // when registration closes before the event
-	const event_window = "February 2027"
-	const event_link = LUMA_URL // the Luma event page — set it in app/config.js
+	const event_window = "6–7 February 2027"
+	const event_link = LUMA_URL // the Luma event page. Set it in app/config.js.
 
 	const questions = [
 		{
@@ -48,14 +47,19 @@ export default function Home() {
 			answer: "A hackathon is an event where people come together to work on a project for a set amount of time. It is a great opportunity to learn new skills, meet new people, and have fun!"
 		},
 		{
+			id: 15,
+			question: "When is ExeHacks?",
+			answer: "6–7 February 2027 at the Innovation Centre, Phase 2, University of Exeter. Saturday into Sunday, 24 hours."
+		},
+		{
 			id: 3,
 			question: "Isn't this event called Hack South West?",
-			answer: "It was. Same society, same venue, same event — new name, and the person who started it is still on the team. Every edition has been held in Exeter, so the old name claimed more ground than the event covered. You'll still find us under the old name on LinkedIn, Instagram and Devpost while the rebrand settles in."
+			answer: "It was. Same society, same venue, same event, new name, and the person who started it is still on the team. Every edition has been held in Exeter, so the old name claimed more ground than the event covered. You'll still find us under the old name on LinkedIn, Instagram and Devpost while the rebrand settles in."
 		},
 		{
 			id: 13,
 			question: "Who actually runs ExeHacks?",
-			answer: "The Exeter Computer Science Society (EXCS) — the same society that ran Hack South West, still with the person who started it, under a name that matches where the event is."
+			answer: "The Exeter Computer Science Society (EXCS), the same society that ran Hack South West, still with the person who started it, under a name that matches where the event is."
 		},
 		{
 			id: 4,
@@ -114,6 +118,14 @@ export default function Home() {
 		{ when: "Jan 2026", name: "Hack South West", what: "24-hour hackathon" },
 		{ when: "Nov 2025", name: "Capture The Flag", what: "12 hours, 30 boxes" },
 		{ when: "Feb 2024", name: "Hack South West", what: "24-hour hackathon", href: "/past/hsw-2024-feb" }
+	]
+
+	const prizeTracks = [
+		{ title: "Best Overall", blurb: "Best project of the weekend." },
+		{ title: "Best of AI Agents", blurb: "Best use of AI agents." },
+		{ title: "Best Use of Cloud", blurb: "Best project built on the cloud." },
+		{ title: "Best of Hardware", blurb: "Best project that lives in hardware." },
+		{ title: "Best of Impact for Exeter / the South West", blurb: "Best project with a real impact on Exeter or the South West." }
 	]
 
 	const hackSaturday = [
@@ -241,7 +253,7 @@ export default function Home() {
 
 					<div className="hero-text">
 						{/*
-							Hero copy, variant B ("more personality") — leads with the rename, which is
+							Hero copy, variant B ("more personality"). Leads with the rename, which is
 							the story while the rebrand is still news.
 
 							Variant A ("straight") is the swap for once the rename stops being news.
@@ -257,6 +269,7 @@ export default function Home() {
 
 						<p className="hero-sub reveal d2">
 							Hack South West is now <b>ExeHacks</b>. Same event, same people, run by <b>EXCS</b>.{" "}
+							<b>{event_window}</b> at the Innovation Centre.{" "}
 							<button
 								type="button"
 								className="hero-inline-link"
@@ -307,7 +320,7 @@ export default function Home() {
 						</div>
 
 						<p className="hero-note reveal d3">
-							{"// Organised by EXCS — the University of Exeter Computer Science Society"}
+							{"// Organised by EXCS, the University of Exeter Computer Science Society"}
 						</p>
 					</div>
 
@@ -328,7 +341,7 @@ export default function Home() {
 							className="ticker-item"
 							key={i}
 						>
-							<span className="star">✦</span> BEGINNERS WELCOME <span className="star">✦</span> <em>£500+ IN PRIZES</em>{" "}
+							<span className="star">✦</span> BEGINNERS WELCOME <span className="star">✦</span> <em>6–7 FEB 2027</em>{" "}
 							<span className="star">✦</span> FREE FOOD ALL WEEKEND <span className="star">✦</span> <em>24 HOURS</em>{" "}
 							<span className="star">✦</span> WORKSHOPS &amp; MENTORS <span className="star">✦</span> <em>MEET YOUR TEAM</em>{" "}
 							<span className="star">✦</span> BUILD ANYTHING <span className="star">✦</span>{" "}
@@ -369,23 +382,24 @@ export default function Home() {
 								className="h-section reveal d1"
 								style={{ maxWidth: "20ch" }}
 							>
-								<span className="grad-text">February 2027.</span> 24 hours in Exeter.
+								<span className="grad-text">{event_window}.</span> Saturday into Sunday.
 							</h2>
 							<p
 								className="lead reveal d2"
 								style={{ margin: "0 auto" }}
 							>
-								One weekend at the Innovation Centre. Follow the socials for the running order as it lands.
+								24 hours at the Innovation Centre, Phase 2. The weekend is locked.
 							</p>
 							<div className="hero-cta reveal d3 justify-center">
-								<Link
+								<button
+									type="button"
 									className="btn btn-ghost"
-									href="https://www.instagram.com/hacksouthwest/"
-									target="_blank"
-									rel="noopener"
+									onClick={() => {
+										document.getElementById("events").scrollIntoView({ behavior: "smooth" })
+									}}
 								>
-									Follow the updates <span className="arrow">↗</span>
-								</Link>
+									See the schedule
+								</button>
 							</div>
 						</>
 					)}
@@ -409,10 +423,10 @@ export default function Home() {
 
 						<p>
 							ExeHacks is the University of Exeter&apos;s student hackathon, run by <b>EXCS</b>. You get 24 hours, a team of up to
-							four, and whatever you can ship in a weekend. Beginners are welcome — we run workshops and put mentors on the floor.
+							four, and whatever you can ship in a weekend. Beginners are welcome. We run workshops and put mentors on the floor.
 						</p>
 						<p>
-							We run it once a year, in February. It ran as Hack South West before this one — here&apos;s what came before.
+							We run it once a year. Next date: <b>{event_window}</b>. It ran as Hack South West before this one. Here&apos;s what came before.
 						</p>
 
 						<ul className="past-list">
@@ -480,7 +494,7 @@ export default function Home() {
 						<p className="lead">
 							Every edition has been held in Exeter, so the old name claimed more ground than the event covered. The new one says
 							where it is, and puts us next to SotonHacks, HackNotts, DurHack and the rest of the UK student circuit. Same organisers,
-							same venue, same event — if you came before, you already know this one.
+							same venue, same event. If you came before, you already know this one.
 						</p>
 					</div>
 				</div>
@@ -505,7 +519,7 @@ export default function Home() {
 						</h2>
 						<p>
 							ExeHacks is run by the <b>Exeter Computer Science Society</b>. Start to finish. Same society that ran
-							Hack South West, still with the person who started it — that part doesn&apos;t change.
+							Hack South West, still with the person who started it. That part doesn&apos;t change.
 						</p>
 					</div>
 				</div>
@@ -520,13 +534,13 @@ export default function Home() {
 					<div className="section-head reveal">
 						<span className="section-tag">One weekend a year</span>
 						<h2 className="h-section">The event.</h2>
-						<p className="lead">24 hours to build something. Pick a track, or sponsor one.</p>
+						<p className="lead">24 hours to build something. These are the tracks we&apos;re planning.</p>
 					</div>
 
 					<div className="events-grid single">
 						<article className="gcard event reveal d1">
 							<div className="event-top">
-								<span className="event-kicker">February 2027 · The big one</span>
+								<span className="event-kicker">{event_window} · The big one</span>
 								<span className="event-pill soon">Flagship hackathon</span>
 							</div>
 
@@ -536,8 +550,8 @@ export default function Home() {
 							</h3>
 
 							<p className="ev-desc">
-								<b>February 2027</b> at the <b>Innovation Centre, Phase 2</b>. Food, workshops, teams of up to four. Build whatever
-								you want — the tracks below are how you win, not a brief you have to follow.
+								<b>{event_window}</b> at the <b>Innovation Centre, Phase 2</b>. Food, workshops, teams of up to four. Build whatever
+								you want. The tracks below are how you win, not a brief you have to follow.
 							</p>
 
 							<div className="ev-facts">
@@ -557,40 +571,24 @@ export default function Home() {
 
 							<div className="event-body">
 								<div className="event-copy">
-									<span className="section-tag">Tracks &amp; prizes</span>
+									<span className="section-tag">Tracks we&apos;re planning</span>
 									<div className="tracks">
-										<article className="track">
-											<h4>Overall</h4>
-											<p>Best project of the weekend. First, second and third from the £500+ pool.</p>
-											<span className="track-meta">1st · 2nd · 3rd</span>
-										</article>
-										<article className="track">
-											<h4>Best first hack</h4>
-											<p>For teams new to hackathons. Judged on learning and a finish, not polish.</p>
-											<span className="track-meta">Beginner prize</span>
-										</article>
-										<article className="track">
-											<h4>Hackiest hack</h4>
-											<p>The thing that barely holds together and still does the job.</p>
-											<span className="track-meta">Side prize</span>
-										</article>
-										<article className="track open">
-											<h4>Sponsor a track</h4>
-											<p>Name a prize, write one line, put your logo on it. We add the track when you sign, not before.</p>
-											<Link
-												className="track-meta"
-												href="/sponsor"
+										{prizeTracks.map((track) => (
+											<article
+												className="track"
+												key={track.title}
 											>
-												Send an enquiry →
-											</Link>
-										</article>
+												<h4>{track.title}</h4>
+												<p>{track.blurb}</p>
+											</article>
+										))}
 									</div>
 								</div>
 
 								<div className="event-side">
 									<span className="section-tag">Schedule</span>
 									<div className="sched mt-4">
-										<div className="sched-day">Saturday</div>
+										<div className="sched-day">Saturday 6 Feb</div>
 										{hackSaturday.map((s) => (
 											<div
 												className="sched-row"
@@ -601,7 +599,7 @@ export default function Home() {
 											</div>
 										))}
 
-										<div className="sched-day">Sunday</div>
+										<div className="sched-day">Sunday 7 Feb</div>
 										{hackSunday.map((s) => (
 											<div
 												className="sched-row"
@@ -652,26 +650,22 @@ export default function Home() {
 					<div className="team-grid reveal d1">
 						<Profile
 							name="Kazybek Khairulla"
-							position="Director"
+							position="Lead Organizer"
 							image="/images/team/2027/Kazybek.JPG"
-							description="Runs ExeHacks end to end — venue, schedule and the weekend itself."
 						/>
 						<Profile
 							name="Wiktor Wiejak"
-							position="Director, Logistics"
+							position="Logistics"
 							image="/images/team/2027/Wiktor.jpeg"
-							description="Started the event as Hack South West. Runs the venue, the kit and the weekend's moving parts."
 						/>
 						<Profile
 							name="Devansh Mehrotra"
-							position="Head of Partnerships"
+							position="Operations"
 							image="/images/team/2027/Devansh.jpeg"
-							description="Brings in sponsors and the societies we run things with."
 						/>
 						<Profile
 							name="Alya Ormon"
-							position="Head of Growth"
-							description="Gets ExeHacks in front of the people who should be building at it."
+							position="Marketing"
 						/>
 					</div>
 				</div>
@@ -755,7 +749,7 @@ export default function Home() {
 							</span>
 							?
 						</h2>
-						<p>Round up your team, grab your spot, and we&apos;ll see you at the start line.</p>
+						<p>Round up your team, grab your spot, and we&apos;ll see you {event_window}.</p>
 						<div className="hero-cta">
 							<RegistrationButton
 								registration_open={registration_open}

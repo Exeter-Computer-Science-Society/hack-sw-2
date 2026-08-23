@@ -1,4 +1,4 @@
-# Deploys the Worker to the EXCS Cloudflare account — not South West Collective.
+# Deploys the Worker to the EXCS Cloudflare account, not South West Collective.
 # Local `wrangler whoami` on this machine is South West Collective, so a bare
 # `wrangler deploy` would create hack-sw-website on the wrong account.
 #

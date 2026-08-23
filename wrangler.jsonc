@@ -4,7 +4,7 @@
 	//
 	// This project is a Next.js STATIC EXPORT (`output: "export"` in
 	// next.config.mjs). `next build` writes plain files to ./out and never
-	// produces a server bundle — there is no .next/standalone directory.
+	// produces a server bundle. There is no .next/standalone directory.
 	//
 	// Without this file `wrangler deploy` auto-detects "Next.js", assumes a
 	// server-rendered app, and migrates the project to the OpenNext Cloudflare
@@ -14,10 +14,10 @@
 	// auto-configuration from running at all.
 	//
 	// Deliberately minimal. There is no "main", so this is an assets-only Worker
-	// that just serves ./out — no code runs, which is why there is no
+	// that just serves ./out. No code runs, which is why there is no
 	// "observability" block either (there would be nothing to observe).
 	//
-	// Workers Builds (Settings → Build) on the EXCS account — not South West Collective:
+	// Workers Builds (Settings → Build) on the EXCS account, not South West Collective:
 	//   Build command:  npm run build
 	//   Deploy command: npm run deploy
 	//   Build variables: FORMSPREE_DEPLOY_KEY, NEXT_PUBLIC_FORMSPREE_PROJECT_ID

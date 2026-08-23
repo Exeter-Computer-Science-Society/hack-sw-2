@@ -16,9 +16,9 @@ const vt323 = VT323({ weight: "400", subsets: ["latin"], display: "swap", variab
 const fontVars = [bricolage.variable, jetbrains.variable, pixelify.variable, vt323.variable].join(" ")
 
 export const metadata = {
-	title: "ExeHacks — Exeter's student hackathon",
+	title: "ExeHacks: Exeter's student hackathon",
 	description:
-		"ExeHacks is the University of Exeter's student hackathon, run by the Exeter Computer Science Society (EXCS). Formerly Hack South West.",
+		"ExeHacks is the University of Exeter's student hackathon, 6–7 February 2027 at the Innovation Centre. Run by the Exeter Computer Science Society (EXCS). Formerly Hack South West.",
 	// Sized favicons from public/images/icons/. public/favicon.ico is the same
 	// mark so browsers that still request /favicon.ico get the new icon.
 	icons: {
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
 					<Footer />
 				</FormspreeProvider>
 
-				{/* CRT scanline overlay — retro theme only, styled in exehacks.css */}
+				{/* CRT scanline overlay. Retro theme only, styled in exehacks.css */}
 				<div
 					className="scanlines"
 					aria-hidden="true"

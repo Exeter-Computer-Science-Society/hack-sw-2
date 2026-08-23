@@ -51,7 +51,7 @@ export function Profile({ name, position, description, image = "", github = "", 
 					<Link
 						href="https://www.linkedin.com/company/exeter-cyber-security-society/posts/?feedView=all"
 						target="_blank"
-						aria-label={`${name} — CyberSoc`}
+						aria-label={`${name}, CyberSoc`}
 					>
 						<Image
 							src="/images/sponsors/cybersoc.jpg"
