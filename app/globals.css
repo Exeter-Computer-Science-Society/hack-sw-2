@@ -2,6 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	@apply text-HSWtext
-}
+/* Base ink, canvas and type now come from the ExeHacks design system in
+   ./exehacks.css, which layout.js imports directly after this file. */

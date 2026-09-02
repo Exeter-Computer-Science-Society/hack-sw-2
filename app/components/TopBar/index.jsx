@@ -1,49 +1,65 @@
+"use client"
 
-// components
-import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
-// icons
-import { RxCross1 } from "react-icons/rx";
-
-
-// fonts
-import { abcMarist } from '../../fonts';
+import { RegistrationButton } from "../RegistrationButton"
 
 export function TopBar() {
+	const [scrolled, setScrolled] = useState(false)
+
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 24)
+		onScroll()
+		window.addEventListener("scroll", onScroll, { passive: true })
+		return () => window.removeEventListener("scroll", onScroll)
+	}, [])
+
 	return (
-		<div className="absolute top-0 left-0 right-0 w-full h-fit px-[15%] max-lg:px-[5%] py-4 flex justify-end items-center gap-4 bg-HSWsecondary z-[100] border-b border-HSWtext max-lg:text-xs">
-			<div className="flex gap-4 justify-center items-center">
+		<header className={`nav ${scrolled ? "scrolled" : ""}`}>
+			<div className="wrap nav-inner">
 				<Link
-                    target="_blank"
-					href={"https://www.becomeliminal.com/"}
-					className="flex gap-1 items-center h-8 w-fit"
+					className="brand"
+					href="/"
+					aria-label="ExeHacks home"
 				>
-					<Image
-						src={"/images/sponsors/liminal-logo.webp"}
-						width={100}
-						height={100}
-						alt="liminal-logo"
-						className="w-8"
-					/>
-                    <p className={`${abcMarist.variable} font-marist text-3xl`}>liminal</p>
+					<span className="mk" />
+					<b>
+						Exe<span className="sw">Hacks</span>
+					</b>
 				</Link>
 
-                <RxCross1 className="text-HSWtext w-4 h-4" />
+				<div className="nav-right">
+					<nav className="nav-links">
+						<Link
+							className="nl"
+							href="/#about"
+						>
+							About
+						</Link>
+						<Link
+							className="nl"
+							href="/#events"
+						>
+							Events
+						</Link>
+						<Link
+							className="nl"
+							href="/#team"
+						>
+							Team
+						</Link>
+						<Link
+							className="nl"
+							href="/#faq"
+						>
+							FAQ
+						</Link>
+					</nav>
 
-                <Link
-                    href={"https://excs.uk/"}
-                    className="flex gap-1 items-center h-8 w-fit"
-                >
-                    <Image
-                        src={"/images/sponsors/thumbnail_EXCS.png"}
-                        width={100}
-                        height={100}
-                        alt="excs-logo"
-                        className="w-12 h-12"
-                    />
-                </Link>
+					<RegistrationButton label="Register" />
+				</div>
 			</div>
-		</div>
+		</header>
 	)
 }

@@ -1,29 +1,39 @@
 'use client'
 
-import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { useEffect, useRef, useState } from "react";
 
 export function Question({ info }) {
 
 	const [open, setOpen] = useState(false)
+	const [height, setHeight] = useState(0)
+	const innerRef = useRef(null)
+
+	// The design animates the answer open with a max-height transition, which
+	// needs the measured content height rather than a guessed constant.
+	useEffect(() => {
+		const measure = () => {
+			setHeight(open && innerRef.current ? innerRef.current.scrollHeight : 0)
+		}
+		measure()
+		window.addEventListener("resize", measure)
+		return () => window.removeEventListener("resize", measure)
+	}, [open])
 
 	return (
-		<div className="flex flex-col transition-all duration-500 hover:bg-HSWsecondary cursor-pointer px-4 py-2" onClick={() => setOpen(!open)}>
-			<div className="flex justify-between">
-				<p className="text-xl font-light text-HSWtext">{info.question}</p>
-				{ open ? <IoIosArrowDown className="text-HSWtext w-8 h-8 cursor-pointer transition-all duration-200" /> : <IoIosArrowDown className="text-HSWtext w-8 h-8 cursor-pointer transform rotate-180 transition-all duration-200" /> }
+		<div className={`faq-item ${open ? "open" : ""}`}>
+			<button
+				className="faq-q"
+				type="button"
+				aria-expanded={open}
+				onClick={() => setOpen(!open)}
+			>
+				{info.question}
+				<span className="ic" aria-hidden="true" />
+			</button>
+
+			<div className="faq-a" style={{ maxHeight: height ? `${height}px` : 0 }}>
+				<div className="faq-a-inner" ref={innerRef}>{info.answer}</div>
 			</div>
-
-			{
-				open && (
-					<div className="pl-4 text-sm font-extralight select-none">
-						<p className="text-lg font-extralight text-HSWtext">{info.answer}</p>
-					</div>
-				)
-			}
-
-			{/* <p className="text-lg font-light text-HSWtext">{q.answer}</p> */}
-			<div className="border-b border-gray-200" />
 		</div>
 	)
 }

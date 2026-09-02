@@ -1,0 +1,17 @@
+{
+  "forms": {
+    "sponsorForm": {
+      "name": "Sponsor enquiry",
+      "fields": {
+        "name": { "type": "text", "required": true },
+        "org": { "type": "text", "required": true },
+        "email": { "type": "email", "required": true },
+        "interest": { "type": "text", "required": true },
+        "message": { "type": "text", "required": true, "maxlength": 1000 }
+      },
+      "actions": [
+        { "type": "email", "to": "excs@groups.exeterguild.com" }
+      ]
+    }
+  }
+}

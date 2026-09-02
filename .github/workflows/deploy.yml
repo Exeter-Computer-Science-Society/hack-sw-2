@@ -31,10 +31,12 @@ jobs:
         run: npm ci
 
       - name: Audit production dependencies
-        run: npm audit --audit-level=high
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Build static export
         run: npm run build
+        env:
+          NEXT_PUBLIC_FORMSPREE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_PROJECT_ID }}
 
       - uses: actions/configure-pages@v5
 

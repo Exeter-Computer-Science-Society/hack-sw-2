@@ -1,6 +1,9 @@
 "use client"
 
+import Link from "next/link"
+
 import SponsorCard from "./Card"
+import { SponsorForm } from "../../SponsorForm"
 
 const info = {
 	liminal: {
@@ -25,12 +28,6 @@ const info = {
 		name: "Solana",
 		image: "/images/sponsors/solana.png",
 		site: "https://www.solana.com/",
-		level: "bronze",
-	},
-	excs: {
-		name: "Computer Science Society",
-		image: "/images/sponsors/excs.svg",
-		site: "https://excs.uk/",
 		level: "bronze",
 	},
     exeter: {
@@ -81,8 +78,46 @@ export default function Sponsor() {
 	const sponsors = Object.values(info)
 
 	return (
-		<section className="w-full px-4 sm:px-8 py-8 sm:py-16">
-			<h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-HSWaccent mb-8 sm:mb-12 lg:mb-16">Meet the Sponsors</h2>
+		<section className="w-full">
+			<div className="section-head">
+				<span className="section-tag">Partner with us</span>
+				<h2 className="h-section">Put your name on a track.</h2>
+				<p className="lead">
+					We&apos;re raising the 6–7 February 2027 weekend now. A partner gets a named prize track on this page, a logo on the site and in
+					the room, and a slot to talk to the teams.
+				</p>
+				<ul className="partner-offer">
+					<li>Named track and prize: your brief, one line</li>
+					<li>Logo here, on slides, and at the venue</li>
+					<li>Optional workshop, booth, or judging seat</li>
+				</ul>
+				<p className="mono" style={{ color: "var(--text-dim)", marginTop: "0.8rem" }}>
+					Powered by{" "}
+					<a
+						href="https://excs.uk/"
+						target="_blank"
+						rel="noopener"
+						style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+					>
+						the Exeter Computer Science Society ↗
+					</a>
+					{" · "}
+					<Link
+						href="/sponsor"
+						style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+					>
+						Share this form
+					</Link>
+				</p>
+			</div>
+
+			<SponsorForm />
+
+			<div className="section-head mt-16">
+				<span className="section-tag">Who has backed us</span>
+				<h2 className="h-section">Past sponsors.</h2>
+				<p className="lead">These organisations backed the event when it ran as Hack South West.</p>
+			</div>
 
 			<div className="mx-auto max-w-7xl">
 				<div
@@ -110,7 +145,10 @@ export default function Sponsor() {
 				</div>
 			</div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-HSWaccent mb-8 sm:mb-12 lg:mb-16">Meet the Partners</h2>
+			<div className="section-head mt-16">
+				<span className="section-tag">Who we have worked with</span>
+				<h2 className="h-section">Past partners.</h2>
+			</div>
 
             <div className="mx-auto max-w-7xl">
                 <div
