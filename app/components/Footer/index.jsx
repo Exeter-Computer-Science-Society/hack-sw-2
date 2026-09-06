@@ -33,7 +33,6 @@ export function Footer() {
 						)}
 						<Link href="/#about">About</Link>
 						<Link href="/#events">Events</Link>
-						<Link href="/#team">Team</Link>
 						<Link href="/#faq">FAQ</Link>
 					</div>
 

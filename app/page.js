@@ -5,7 +5,6 @@ import { RegistrationButton } from "./components/RegistrationButton"
 import { BootTerminal } from "./components/BootTerminal"
 import { Countdown } from "./components/Countdown"
 import { Question } from "./components/Question"
-import { Profile } from "./components/Team/Profiles"
 import Sponsor from "./components/General/Sponsor"
 import Image from "next/image"
 import Link from "next/link"
@@ -632,42 +631,6 @@ export default function Home() {
 					<p className="mono text-center mt-10 reveal" style={{ color: "var(--text-dim)" }}>
 						🍕 Food and refreshments provided throughout the weekend.
 					</p>
-				</div>
-			</section>
-
-			{/* ============ TEAM ============ */}
-			<section
-				className="band band-alt"
-				id="team"
-			>
-				<div className="wrap">
-					<div className="section-head reveal">
-						<span className="section-tag">Who runs this</span>
-						<h2 className="h-section">Meet the team.</h2>
-						<p className="lead">ExeHacks is run by four people. If you want to help build it, we&apos;re recruiting.</p>
-					</div>
-
-					<div className="team-grid reveal d1">
-						<Profile
-							name="Kazybek Khairulla"
-							position="Lead Organizer"
-							image="/images/team/2027/Kazybek.JPG"
-						/>
-						<Profile
-							name="Wiktor Wiejak"
-							position="Logistics"
-							image="/images/team/2027/Wiktor.jpeg"
-						/>
-						<Profile
-							name="Devansh Mehrotra"
-							position="Operations"
-							image="/images/team/2027/Devansh.jpeg"
-						/>
-						<Profile
-							name="Alya Ormon"
-							position="Marketing"
-						/>
-					</div>
 				</div>
 			</section>
 
